@@ -36,6 +36,7 @@ group :development, :test do
   gem 'hirb-unicode', '~> 0.0.5'
   gem 'better_errors', '~> 2.5', '>= 2.5.1'
   gem 'rspec-rails', '~> 3.9'
+  gem 'hirb-unicode', '~> 0.0.5'
 end
 
 group :development do
