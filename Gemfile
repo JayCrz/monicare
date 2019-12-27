@@ -30,14 +30,12 @@ gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
 gem 'devise', '~> 4.7', '>= 4.7.1'
 
 
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'hirb-unicode', '~> 0.0.5'
   gem 'better_errors', '~> 2.5', '>= 2.5.1'
   gem 'rspec-rails', '~> 3.9'
-  gem 'hirb-unicode', '~> 0.0.5'
 end
 
 group :development do
