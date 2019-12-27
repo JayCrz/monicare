@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :teachers, only:[:index, :show] do	
-    member do	  root 'homepage#show'
+    member do
       get :student #/teacher/:id/stenduen/:id	
     end	
   end	
