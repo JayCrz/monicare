@@ -1,0 +1,3 @@
+class UserRedirectController < ApplicationController
+  
+end
