@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   root 'homepage#show'
   
   resource :dashboard, only:[:show] do
-    root to: 'dashboards#show'
     resources :children do 
       get :overview
       resources :eat, except:[:index]
@@ -17,7 +16,7 @@ Rails.application.routes.draw do
   end
 
   namespace :teacher do
-    root to: 'dashboards#show'
+    # root to: 'dashboards#show'
     resource :dashboard, only:[:show] do
       resources :myclass, only:[:show]
       resources :children do 
