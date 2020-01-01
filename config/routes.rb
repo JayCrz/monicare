@@ -14,8 +14,9 @@ Rails.application.routes.draw do
       resources :medicine, except:[:index] 
     end
   end
-
+  
   namespace :teacher do
+    resources :children, only:[:new] 
     # root to: 'dashboards#show'
     resource :dashboard, only:[:show] do
       resources :myclass, only:[:show]
