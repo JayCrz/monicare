@@ -22,6 +22,15 @@
     <%= form.text_area :parent_sign, class:'form-control' %>
     </div>
 
+    <div class="signature-pad-wrapper mb-3">
+      <canvas id="signature-pad" class="signature-pad"></canvas>
+    </div>
+    <!--
+    <button id="draw">簽名</button>
+    <button id="undo">回上一步</button>
+    <button id="clear">清除</button>
+    <button id="save-jpeg">儲存</button>
+    -->
     <div class="form-group">
     <%= form.hidden_field :category, :value => 'medicine',  class:'form-control' %>
     <%= form.hidden_field :child_id, :value => params[:child_id],  class:'form-control' %>
@@ -32,3 +41,5 @@
     </div>
   <% end %>
 </div>
+
+<%= javascript_pack_tag 'signature_pad.js' %>
