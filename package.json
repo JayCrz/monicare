@@ -7,7 +7,8 @@
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.2.2",
     "bootstrap": "^4.4.1",
-    "popper.js": "^1.16.0"
+    "popper.js": "^1.16.0",
+    "signature_pad": "^3.0.0-beta.3"
   },
   "version": "0.1.0",
   "devDependencies": {
