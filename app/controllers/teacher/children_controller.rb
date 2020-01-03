@@ -23,16 +23,24 @@ class Teacher::ChildrenController < BabyclassAppliciationController
   end
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> add teacher view overview (#26)
   def overview
     @student = Child.find(params[:child_id])
     @dashboards = @student.dashboards.where('finished_at IS NOT NULL')
   end
+<<<<<<< HEAD
 
   private
 =======
   private
 
 >>>>>>> changed regist design
+=======
+
+  private
+>>>>>>> add teacher view overview (#26)
   def child_params
     params.require(:child).permit(:name, 
                                  :user_id, 
