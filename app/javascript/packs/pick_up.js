@@ -1,9 +1,4 @@
 import $ from 'jquery'
-$(document).ready(() => {
-  $('').on('click', () => {
-    
-  })
-})
 
 window.onload = function() {
   let anchor = /(#.*)/;
