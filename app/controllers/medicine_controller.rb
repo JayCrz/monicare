@@ -5,7 +5,10 @@ class MedicineController < ChildrenlistAppliciationController
   end
 
   def create
+    image = decode_base64_image(params[:dashboard][:parent_sign])
     @medicine = Dashboard.new(medicine_params)
+    @medicine.parent_sign = image
+
     redirect_to dashboard_child_path(params[:child_id]),notice:'新增成功' if	@medicine.save
   end
 
@@ -14,6 +17,8 @@ class MedicineController < ChildrenlistAppliciationController
 
   def update
     if @find_medicine.update(medicine_params)
+      image = decode_base64_image(params[:dashboard][:parent_sign])
+      @find_medicine.update_attribute(:parent_sign, image)
       redirect_to dashboard_child_path(params[:child_id]), notice:'更新成功'
     else
       render :edit,notice: '更新錯誤,請重新輸入'
@@ -22,7 +27,7 @@ class MedicineController < ChildrenlistAppliciationController
 
   def destroy
     redirect_to dashboard_child_path(params[:child_id]), notice: '資料已刪除' if @find_medicine.destroy
-  end
+  end 
   
   private
   def medicine_params
@@ -40,5 +45,14 @@ class MedicineController < ChildrenlistAppliciationController
 
   def find_child
     @find_child = Child.find(params[:child_id])
-  end   
+  end
+
+  def decode_base64_image(encoded_file)
+    image_source = encoded_file.split(',').last
+    decoded_file = Base64.decode64(image_source)
+    file = Tempfile.new(['image','.png'])
+    file.binmode
+    file.write decoded_file
+    return file
+  end
 end
