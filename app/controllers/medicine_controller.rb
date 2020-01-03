@@ -1,4 +1,4 @@
-class MedicineController < ApplicationController
+class MedicineController < ChildrenlistAppliciationController
   before_action :find_child, only:[:new,:edit]
   before_action :find_medicine, only:[:edit,:update,:destroy]
   def new

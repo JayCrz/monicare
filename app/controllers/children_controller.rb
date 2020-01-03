@@ -1,4 +1,4 @@
-class ChildrenController < ApplicationController
+class ChildrenController < ChildrenlistAppliciationController
   def new
   
   end
