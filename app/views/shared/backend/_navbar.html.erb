@@ -20,9 +20,6 @@
           <%= link_to babyclass.nursery_class, teacher_dashboard_myclass_path(babyclass), class:'dropdown-item'%>
         <% end %>
       </div>
-  </li>
-    <li class="nav-item ">
-      <%= link_to '我的學生', teacher_dashboard_path, class:'nav-link' %>
     </li>
   <form class="form-inline my-2 my-lg-0">
     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -30,8 +27,8 @@
   </form>
   <div> 
     <% if teacher_signed_in? %>
-      <a href="#" class="btn"><%= current_teacher.name + '老師' %></a>
-       <%= link_to "登出", destroy_teacher_session_path, method: 'delete', class: 'btn'	 %>
+      <%= link_to "#{current_teacher.name}老師", teacher_dashboard_path, class:'btn' %>
+      <%= link_to "登出", destroy_teacher_session_path, method: 'delete', class: 'btn'	 %>
     <% else %>
       <%= link_to "註冊", new_teacher_registration_path, class: 'btn'	 %>
       <%= link_to "登入", new_teacher_session_path, class: 'btn'	 %>
