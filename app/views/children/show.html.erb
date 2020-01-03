@@ -1,7 +1,9 @@
 <%= render 'shared/frontend/navbar' %>
 <%= render 'shared/flash' if notice %>
 <div class="container">
-  <h1 class="text-warning text-center"><%= @child.name %></h1>
+  <h1 class="text-center">
+    <%= link_to @child.name, dashboard_child_overview_path(params[:id]), class:'text-warning' %>
+  </h1>
   <div class="row">
   <div class="col-4">
     <div class="list-group">
