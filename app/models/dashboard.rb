@@ -1,4 +1,4 @@
 class Dashboard < ApplicationRecord
-  enum category: [:medicine, :meal, :misc]
+  enum category: [:medicine, :eat, :misc]
   belongs_to :child
 end

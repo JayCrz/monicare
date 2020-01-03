@@ -1,11 +1,8 @@
 <%= render 'shared/frontend/navbar'%>
-
-
 <div class="container">
   <h1 class="text-warning">名字</h1>
   <table class="table table-hover table-secondary ">
     <tbody class="text-info">
-
         <tr>
             <th scope="row">餐別</th>
             <td><%= @meal_dashboards.title %></td>
@@ -18,14 +15,7 @@
             <th scope="row">用餐內容</th>
             <td><%= @meal_dashboards.content %></td>
         </tr>
-
-
-
-
-        <td><%= link_to '回到上一頁', dashboard_child_path(id: params[:child_id]), class:'btn btn-warning'  %></td>
-
-
-  
+        <td><%= link_to '回到上一頁', dashboard_child_path(id: params[:child_id]), class:'btn btn-warning' %></td>
     </tbody>
   </table>
 </div>

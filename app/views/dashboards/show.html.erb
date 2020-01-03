@@ -1,7 +1,5 @@
 <%= render 'shared/frontend/navbar' %>
-
 <h1>My children</h1>
-
 <div class="row">
   <% @children.each do |child| %>
     <%= link_to dashboard_child_overview_path(child.id) do %>

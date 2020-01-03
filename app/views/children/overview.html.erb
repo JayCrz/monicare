@@ -1,4 +1,22 @@
 <%= render 'shared/frontend/navbar' %>
+<div class="text-center">
+</div>
+<div class="container text-center">
+<h2 class="text-warning">
+  <%= @child.name %>的行程列表
+  <%= link_to "功能列表", dashboard_child_path(@child.id), class: 'btn btn-light' %>
+</h2>
+<table class="table">
+  <tbody class="text-white">
+    <% @dashboards.order(finished_at: :desc).each do |dashboard| %>
+      <tr>
+          <td><%= link_to dashboard.title, "/dashboard/children/#{dashboard.child_id}/#{dashboard.category}/#{dashboard.id}", class: 'font-weight-bold text-danger' %></td>
+          <td><%= dashboard.finished_at.to_date %></td>
+          <td><%= dashboard.content %></td>
+          <td><%= link_to '詳情', "/dashboard/children/#{dashboard.child_id}/#{dashboard.category}/#{dashboard.id}", class:'btn btn-info' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
-<h1><%= @child.name %>的行程列表</h1>
-<%= link_to "功能列表", dashboard_child_path(@child.id), class: 'btn btn-secondary' %>
+</div>

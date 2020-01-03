@@ -2,8 +2,6 @@ class Teacher::EatController < BabyclassAppliciationController
   before_action :find_student
   before_action :find_eat_dashboard, only:[:edit,:update,:destroy]
 
-
-
   def new
     @meal_dashboard = Dashboard.new
   end
@@ -18,7 +16,6 @@ class Teacher::EatController < BabyclassAppliciationController
   end
 
   def edit
-
   end
 
   def update
@@ -34,7 +31,6 @@ class Teacher::EatController < BabyclassAppliciationController
   end
 
   private
-
   def find_student
     @student = Child.find(params[:child_id])
   end

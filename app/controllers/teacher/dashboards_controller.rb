@@ -10,15 +10,4 @@ class Teacher::DashboardsController < BabyclassAppliciationController
     @pick_ups = @student.pick_ups
     @dashboards = @student.dashboards.medicine
   end
-  
-
-
-  def medicine
-    
-  end
-
-
-  private
-  
-
 end

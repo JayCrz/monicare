@@ -2,7 +2,7 @@
 <h2 class="text-white">吃飯紀錄</h2>
 <table class="table">
   <tbody class="text-white">
-      <% dashboards.order(finished_at: :desc).meal.each do |dashboard| %>
+      <% dashboards.order(finished_at: :desc).eat.each do |dashboard| %>
       <tr>
           <td><%= dashboard.title %></td>
           <td><%= dashboard.finished_at.to_date %></td>

@@ -2,7 +2,6 @@ class MedicineController < ApplicationController
   before_action :find_child, only:[:new,:edit]
   before_action :find_medicine, only:[:edit,:update,:destroy]
   def new
-
   end
 
   def create
@@ -41,6 +40,5 @@ class MedicineController < ApplicationController
 
   def find_child
     @find_child = Child.find(params[:child_id])
-  end
-     
+  end   
 end

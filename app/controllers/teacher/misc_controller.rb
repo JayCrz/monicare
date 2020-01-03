@@ -17,8 +17,6 @@ class Teacher::MiscController < BabyclassAppliciationController
   def edit
   end
 
-
-
   def update
     if @find_misc.update(misc_params)
       redirect_to teacher_dashboard_child_path(params[:child_id]), notice: '更新成功'
@@ -47,5 +45,4 @@ class Teacher::MiscController < BabyclassAppliciationController
   def find_student
     @student = Child.find(params[:child_id])
   end
-
 end

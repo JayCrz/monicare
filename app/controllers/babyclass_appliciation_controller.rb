@@ -6,5 +6,4 @@ class BabyclassAppliciationController < ApplicationController
   def baby_class
     @babyclass = Babyclass.all
   end
-
 end

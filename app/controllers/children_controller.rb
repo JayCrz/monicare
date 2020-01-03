@@ -15,14 +15,14 @@ class ChildrenController < ApplicationController
 
   def overview
     @child = Child.find(params[:child_id])
+    @dashboards = @child.dashboards.where('finished_at IS NOT NULL')
+
   end
     
-  def index
-      
+  def index 
   end
 
   private
-  
   def child_params
     params.require(:child).permit(:name, :babyclass_id, :user_id)
   end

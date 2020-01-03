@@ -46,6 +46,5 @@ class PickUpController < ApplicationController
   def pick_up_params
     params.require(:pick_up)
           .permit(:name, :pick_up_pic, :relationship, :note, :child_id)
-          # .merge({user: current_user})
   end
 end

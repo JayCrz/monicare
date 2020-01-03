@@ -1,7 +1,6 @@
 <%= render 'shared/frontend/navbar' %>
 <div class="container">
   <h1 class="text-warning text-center">修改<%= @pick_up.name %>的資料</h1>
-  
   <%= form_with scope: :pick_up, url: dashboard_child_pick_up_path(:child_id => @child.id, :id => @pick_up.id), method: :put, local: true do |form| %>
     <div class="pick_up_pic mb-3">
       <%= cover_image_tag @pick_up %>

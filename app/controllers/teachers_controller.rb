@@ -14,12 +14,10 @@ class TeachersController < ApplicationController
 
 
   def medicine
-    
   end
 
 
   private
-  
   def baby_class
     @babyclass = Babyclass.all
   end

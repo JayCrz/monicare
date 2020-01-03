@@ -3,7 +3,8 @@
     <tr>
       <th scope="col">照片</th>
       <th scope="col">學生</th>
-      <th scope="col">詳情</th>
+      <th scope="col">行程列表</th>
+      <th scope="col">功能編輯</th>
     </tr>
   </thead>
   <tbody>
@@ -11,9 +12,9 @@
       <tr>
           <td>圖</td>
           <td><%= student.name %></td>
-          <td><%= link_to '點我看更多',teacher_dashboard_child_path(student)  %></td>
+          <td><%= link_to '列表',teacher_dashboard_child_overview_path(student), class:'btn btn-info' %></td>
+          <td><%= link_to '功能',teacher_dashboard_child_path(student), class:'btn btn-info' %></td>
       </tr>
     <% end %>
-
   </tbody>
 </table>

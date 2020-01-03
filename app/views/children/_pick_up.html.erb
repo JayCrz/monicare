@@ -1,7 +1,5 @@
 <div class="container text-center">
   <h2 class="text-white">可接送親屬</h2>
-  
-  
   <div class="row">
     <% child.pick_ups.each do |pick_up| %>
       <%= link_to dashboard_child_pick_up_path(:child_id => child.id, :id => pick_up.id) do %>

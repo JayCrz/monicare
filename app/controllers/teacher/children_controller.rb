@@ -22,8 +22,12 @@ class Teacher::ChildrenController < BabyclassAppliciationController
     @pick_ups = @student.pick_ups
   end
 
-  private
+  def overview
+    @student = Child.find(params[:child_id])
+    @dashboards = @student.dashboards.where('finished_at IS NOT NULL')
+  end
 
+  private
   def child_params
     params.require(:child).permit(:name, 
                                  :user_id, 

@@ -8,10 +8,8 @@
           <td><%= dashboard.finished_at.to_date %></td>
           <td><%= dashboard.content   %></td>
           <td><%= link_to '詳情', dashboard_child_misc_path(child_id: params[:id],id: dashboard.id), class:'btn btn-info' %></td>
-
       </tr>
     <% end %>
   </tbody>
 </table>
-
 </div>
