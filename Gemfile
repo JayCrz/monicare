@@ -32,7 +32,7 @@ gem 'carrierwave', '~> 2.0', '>= 2.0.2'
 gem 'mini_magick', '~> 4.9', '>= 4.9.5'
 gem 'fog-aws', '~> 3.5', '>= 3.5.2'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
-gem 'rails-i18n'
+gem 'rails-i18n', '~> 6.0.0'
 
 
 
