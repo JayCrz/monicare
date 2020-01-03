@@ -1,6 +1,8 @@
 <%= render 'shared/backend/navbar' %>
 
 <div class="container ">
+<%= render 'shared/flash' if notice %>
+
 <h1 class="text-white"><%= @teacher.name %>老師的學生</h1>
 
 <%= render 'shared/backend/students', students: @students %>

@@ -1,11 +1,19 @@
 class Teacher::ChildrenController < BabyclassAppliciationController
 
   def new
-    @student = Child.new
+    @child = Child.new
+    @dashboard = Dashboard.new
   end
 
   def create
-   
+    @child = Child.new(child_params)
+
+    if @child.save 
+      redirect_to teacher_dashboard_path, notice: '新增成功'
+      current_teacher.children << Child.last
+    else
+      render :new
+    end
   end
 
   def show
@@ -14,4 +22,12 @@ class Teacher::ChildrenController < BabyclassAppliciationController
     @pick_ups = @student.pick_ups
   end
 
+  private
+
+  def child_params
+    params.require(:child).permit(:name, 
+                                 :user_id, 
+                                 :babyclass_id
+                                 )
+  end
 end

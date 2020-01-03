@@ -1,15 +1,15 @@
 <div class="container">
+  <div class="w-50 mx-auto border rounded p-5 bg-light">
+  <h3>家長登入</h3>
 
-<h2>家長登入</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field form-group h3">
-    <%= f.label :email %><br />
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field form-group ">
+    <%= f.label :email, '信箱' %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
   </div>
 
-  <div class="field form-group h3">
-    <%= f.label :password %><br />
+  <div class="field form-group ">
+    <%= f.label :password, '密碼' %><br />
     <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
   </div>
 
@@ -19,11 +19,13 @@
       <%= f.label :remember_me %>
     </div>
   <% end %>
-
-  <div class="actions">
-    <%= f.submit "登入",  class:" btn btn-success"%>
+    <div class="">
+      <div class="actions">
+        <%= f.submit "登入",  class:" btn btn-success"%><br>
+        沒有帳號
+      </div>
+    <%= render "users/shared/links" %>
+    </div>
   </div>
-<% end %>
-
-<%= render "users/shared/links" %>
 </div>
+<% end %>
