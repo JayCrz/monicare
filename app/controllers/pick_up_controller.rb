@@ -1,4 +1,4 @@
-class PickUpController < ApplicationController
+class PickUpController < ChildrenlistAppliciationController
   before_action :find_child
   before_action :find_pick_up, only: [:show, :edit, :update, :destroy]
 
