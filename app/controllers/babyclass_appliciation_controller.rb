@@ -4,6 +4,6 @@ class BabyclassAppliciationController < ApplicationController
   
   private
   def baby_class
-    @babyclass = Babyclass.all
+    @babyclass = current_teacher.babyclasses
   end
 end
