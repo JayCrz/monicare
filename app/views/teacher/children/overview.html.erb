@@ -10,11 +10,7 @@
   <tbody class="text-white">
     <% @dashboards.order(finished_at: :desc).each do |dashboard| %>
       <tr>
-          <td><%= link_to dashboard.title, if dashboard.category != 'medicine' 
-                                            "#{dashboard.category}/#{dashboard.id}/edit"
-                                           else
-                                            "#{dashboard.category}/#{dashboard.id}"
-                                           end, class: 'font-weight-bold text-danger' %></td>
+          <td><%= link_to dashboard.title, teacher_redirect_to(dashboard), class: 'font-weight-bold text-danger' %></td>
           <td><%= dashboard.finished_at.to_date %></td>
           <td><%= dashboard.content %></td>
       </tr>
