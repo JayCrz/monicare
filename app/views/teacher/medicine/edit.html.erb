@@ -1,6 +1,4 @@
 <%= render 'shared/backend/navbar'%>
-<%= render 'shared/flash' %>
-
 <div class="container">
   <h1 class="text-warning"><%= @student.name %></h1>
   <table class="table table-hover table-secondary ">
@@ -22,11 +20,15 @@
             <th scope="row">備註</th>
             <td><%= @medicine_dashboard.content %></td>
         </tr>
+
+        <%= form_with model: @medicine_dashboard, url: teacher_dashboard_child_medicine_path, local: true do |form| %>
         <tr>
           <th scope="row">餵藥者簽名</th>
-          <td><%= @medicine_dashboard.admin_sign %></td>
+          <td><%= form.text_field :admin_sign, class:'form-control' %></td>
         </tr>  
     </tbody>
   </table>
   <%= link_to '回到上一頁',teacher_dashboard_child_path(id: params[:child_id]), class:'btn btn-warning' %>
+  <%= form.submit '更新餵藥者', class:'btn btn-warning'%>
+  <% end %>
 </div>
