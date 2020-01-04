@@ -10,18 +10,10 @@
   <tbody class="text-white">
     <% @dashboards.order(finished_at: :desc).each do |dashboard| %>
       <tr>
-          <td><%= link_to dashboard.title, if dashboard.category == 'medicine'
-                                             "/dashboard/children/#{dashboard.child_id}/#{dashboard.category}/#{dashboard.id}/edit"
-                                           else
-                                            "/dashboard/children/#{dashboard.child_id}/#{dashboard.category}/#{dashboard.id}"
-                                           end, class: 'font-weight-bold text-danger' %></td>
+          <td><%= link_to dashboard.title, parent_redirect_to(dashboard), class: 'font-weight-bold text-danger' %></td>
           <td><%= dashboard.finished_at.to_date %></td>
           <td><%= dashboard.content %></td>
-          <td><%= link_to '詳情', if dashboard.category == 'medicine'
-                                   "/dashboard/children/#{dashboard.child_id}/#{dashboard.category}/#{dashboard.id}/edit"
-                                 else
-                                   "/dashboard/children/#{dashboard.child_id}/#{dashboard.category}/#{dashboard.id}"
-                                 end, class: 'btn btn-info' %></td>
+          <td><%= link_to '詳情', parent_redirect_to(dashboard), class: 'btn btn-info' %></td>
       </tr>
     <% end %>
   </tbody>

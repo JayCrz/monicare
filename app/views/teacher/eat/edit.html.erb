@@ -1,6 +1,4 @@
 <%= render 'shared/backend/navbar'%>
-
-
 <div class="container">
   <h1 class="text-warning"><%= @student.name %></h1>
   <%= form_with model:@meal_dashboard, url: teacher_dashboard_child_eat_path, local: true do |form| %>
