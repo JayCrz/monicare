@@ -20,11 +20,24 @@
             <th scope="row">備註</th>
             <td><%= @medicine_dashboard.content %></td>
         </tr>
-
+        <tr>
+          <th scope="row">給藥者簽名</th>
+          <td><%= image_tag @medicine_dashboard.parent_sign.url %></td>
+        </tr>
         <%= form_with model: @medicine_dashboard, url: teacher_dashboard_child_medicine_path, local: true do |form| %>
         <tr>
-          <th scope="row">餵藥者簽名</th>
-          <td><%= form.text_field :admin_sign, class:'form-control' %></td>
+          <th scope="row"><%= form.label :admin_sign, '餵藥者簽名' %></th>
+          <td>
+            <div class="form-group">          
+              <%= form.hidden_field :admin_sign, class: 'form-control' %>
+              <div class="signature-pad-wrapper mb-3">
+                <canvas id="signature-pad" class="signature-pad"></canvas>
+              </div>
+              <div class="btn btn-light" id="draw">簽名</div>
+              <div class="btn btn-light" id="clear">清除</div>
+              <div class="btn btn-light" id="save">儲存簽章</div>
+            </div>
+          </td>
         </tr>  
     </tbody>
   </table>
@@ -32,3 +45,5 @@
   <%= form.submit '更新餵藥者', class:'btn btn-warning'%>
   <% end %>
 </div>
+
+<%= javascript_pack_tag 'signature_pad.js' %>

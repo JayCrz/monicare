@@ -9,6 +9,8 @@ class Teacher::MedicineController < BabyclassAppliciationController
 
   def update
     if @medicine_dashboard.update(medicine_params)
+      image = decode_base64_image(params[:dashboard][:admin_sign])
+      @medicine_dashboard.update_attribute(:admin_sign, image)
       redirect_to teacher_dashboard_child_medicine_path, notice:'更新成功'
     else
       render :edit, notice:'更新失敗，餵藥品者請簽名'
@@ -25,6 +27,15 @@ class Teacher::MedicineController < BabyclassAppliciationController
 
   def find_dashboard
     @medicine_dashboard = @student.dashboards.medicine.find(params[:id])
+  end
+
+  def decode_base64_image(encoded_file)
+    image_source = encoded_file.split(',').last
+    decoded_file = Base64.decode64(image_source)
+    file = Tempfile.new(['image','.png'])
+    file.binmode
+    file.write decoded_file
+    return file
   end
 end
 
