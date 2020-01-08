@@ -22,10 +22,12 @@
         </div>
       </li>
     </ul>
+    <% if request.path === '/teacher/dashboard' %>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜尋</button>
+      <input class="form-control mr-sm-2 search" type="search" placeholder="請輸入學生姓名" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0 search_btn" type="submit">搜尋</button>
     </form>
+    <% end %>
     <div>
       <% if teacher_signed_in? %>
         <%= link_to "#{current_teacher.name}老師", teacher_dashboard_path, class: 'btn' %>

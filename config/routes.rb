@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :teachers
   devise_for :users
-
+  get '/api', to: 'api#search'
+  get '/notification', to: 'api#notification'
   
   root 'homepage#show'
   
