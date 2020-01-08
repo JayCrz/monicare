@@ -7,7 +7,6 @@ require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
 
-
 import 'popper.js'
 import 'bootstrap'
 import '../stylesheet/index'
