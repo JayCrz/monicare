@@ -2,6 +2,15 @@
 <div class="container">
   <h1 class="text-warning text-center"><%= @student.name %></h1>
   <%= form_with model: @find_misc, url: teacher_dashboard_child_misc_path, local: true do |form| %>
+    <div class="misc_pic mb-3">
+      <%= cover_misc_pic_image_tag @find_misc %>
+    </div>
+    <div class="input-group mb-3">
+      <div class="custom-file">
+        <%= form.label :admin_sign, "請上傳照片", class: 'custom-file-label misc_pic_url' %>
+        <%= form.file_field :admin_sign, class: 'custom-file-input' %>
+      </div>
+    </div>
     <div class="form-group">
       <%= form.label :title, '標題', class: 'text-white' %>
       <%= form.text_field :title, class: 'form-control' %>

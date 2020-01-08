@@ -27,12 +27,14 @@ window.onload = function() {
         $('#preview_pick_up_pic').attr('src', picUrl.target.result);
         $('#preview_child_pic').attr('src', picUrl.target.result);
         $('#preview_meal_pic').attr('src', picUrl.target.result);
+        $('#preview_misc_pic').attr('src', picUrl.target.result);
       }
       
       reader.readAsDataURL(uploadPicInput.files[0]);
       $('.pick_up_pic_url').text(uploadPicInput.files[0].name);
       $('.child_pic_url').text(uploadPicInput.files[0].name);
       $('.meal_pic_url').text(uploadPicInput.files[0].name);
+      $('.misc_pic_url').text(uploadPicInput.files[0].name);
     }
   }
   

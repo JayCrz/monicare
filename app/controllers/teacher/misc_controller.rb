@@ -1,8 +1,9 @@
 class Teacher::MiscController < BabyclassAppliciationController
-  before_action :find_misc, only: [:edit,:update,:destroy]
-  before_action :find_student, only: [:new,:edit]
+  before_action :find_misc, only: [:edit, :update, :destroy]
+  before_action :find_student, only: [:new, :edit]
 
   def new
+    @misc_dashboard = Dashboard.new
   end
 
   def create
@@ -35,7 +36,8 @@ class Teacher::MiscController < BabyclassAppliciationController
                                       :content,
                                       :finished_at,
                                       :category,
-                                      :child_id)
+                                      :child_id,
+                                      :admin_sign)
   end
 
   def find_misc
