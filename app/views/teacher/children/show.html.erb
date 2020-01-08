@@ -3,30 +3,30 @@
 
 <div class="container">
     <h1 class="text-center">
-      <%= link_to @student.name, teacher_dashboard_child_overview_path(params[:id]), class:'text-warning' %>
+      <%= link_to @student.name, teacher_dashboard_child_overview_path(params[:id]), class: 'text-warning' %>
     </h1>
     <div class="row">
     <div class="col-4">
       <div class="list-group" >
-        <a class="list-group-item list-group-item-warning active" id="list-medicine-list" data-toggle="list" href="#feed-medicine" >餵藥</a>
-        <a class="list-group-item list-group-item-warning" id="list-meal-list" data-toggle="list" href="#meal"  >吃飯</a>
+        <a class="list-group-item list-group-item-warning active" id="list-medicine-list" data-toggle="list" href="#feed-medicine">餵藥</a>
+        <a class="list-group-item list-group-item-warning" id="list-meal-list" data-toggle="list" href="#meal">吃飯</a>
         <a class="list-group-item list-group-item-warning" id="list-pick-up-list" data-toggle="list" href="#list-pick-up"  >換人接送</a>
-        <a class="list-group-item list-group-item-warning" id="list-misc-list" data-toggle="list" href="#misc"  >其他</a>
+        <a class="list-group-item list-group-item-warning" id="list-misc-list" data-toggle="list" href="#misc">其他</a>
       </div>
     </div>
     <div class="col-8">
       <div class="tab-content" id="nav-tabContent">
         <div class="tab-pane fade show active" id="feed-medicine">
-          <%= render 'feed_medicine', dashboards:@dashboards %>
+          <%= render 'feed_medicine', dashboards: @dashboards %>
         </div>
-        <div class="tab-pane fade" id="meal" >
+        <div class="tab-pane fade" id="meal">
           <%= render 'meal', dashboards:@dashboards %>
         </div>
-        <div class="tab-pane fade" id="list-pick-up" >
+        <div class="tab-pane fade" id="list-pick-up">
           <%= render 'pick_up', pick_ups: @pick_ups, student: @student %>
         </div>
-        <div class="tab-pane fade" id="misc" >
-          <%= render 'misc', dashboards:@dashboards %>
+        <div class="tab-pane fade" id="misc">
+          <%= render 'misc', dashboards: @dashboards %>
         </div>
       </div>
     </div>

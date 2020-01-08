@@ -45,5 +45,5 @@ document.getElementById('save').addEventListener('click', function () {
   signaturePad.off();
   $('#dashboard_parent_sign').attr('value', data);
   $('#dashboard_admin_sign').attr('value', data);
-  alert("已簽署完成");
+  alert("已簽署完成! 請務必按下新增紀錄或更新紀錄的按鈕喔!");
 });

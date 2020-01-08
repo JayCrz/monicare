@@ -30,7 +30,7 @@
 
     <div class="form-group">
     <%= form.submit '更新紀錄', class:'btn btn-warning' %>
-    <%= link_to '回到上一頁', dashboard_child_path(id: params[:child_id]), class:'btn btn-warning' %>
+    <%= link_to '回到上一頁', dashboard_child_path(id: params[:child_id], anchor: 'feed-medicine'), class:'btn btn-warning' %>
     <%= link_to '刪除', dashboard_child_medicine_path(child_id: params[:child_id],id: params[:id]), method: :delete ,data: {confirm:'確定刪除這筆資料？'}, class:'btn btn-danger' %>
     </div>
   <% end %>
