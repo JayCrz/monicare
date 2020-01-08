@@ -2,6 +2,15 @@
 <div class="container">
   <h1 class="text-warning text-center"><%= @student.name %></h1>
   <%= form_with scope: :dashboard, url: teacher_dashboard_child_eat_index_path, local: true do |form| %>
+    <div class="meal_pic mb-3">
+      <%= cover_meal_pic_image_tag @meal_dashboard %>
+    </div>
+    <div class="input-group mb-3">
+      <div class="custom-file">
+        <%= form.label :admin_sign, "請上傳照片", class: 'custom-file-label meal_pic_url' %>
+        <%= form.file_field :admin_sign, class: 'custom-file-input' %>
+      </div>
+    </div>
     <div class="form-group">
       <%= form.label :title, '餐別', class: 'text-white' %>
       <%= form.select(:title, ['早餐','午餐','晚餐','點心'], {}, { :class => 'form-control' }) %>

@@ -1,5 +1,5 @@
 module PickUpHelper
-  def  cover_image_tag(pick_up)
+  def cover_image_tag(pick_up)
     if pick_up.pick_up_pic?
       image_tag pick_up.pick_up_pic.thumb.url, id: 'preview_pick_up_pic'
     else
