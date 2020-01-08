@@ -10,10 +10,10 @@
   <tbody>
     <% students.each do |student| %>
       <tr>
-          <td>圖</td>
-          <td><%= student.name %></td>
-          <td><%= link_to '列表',teacher_dashboard_child_overview_path(student), class:'btn btn-info' %></td>
-          <td><%= link_to '功能',teacher_dashboard_child_path(student), class:'btn btn-info' %></td>
+        <td>圖</td>
+        <td><%= student.name %></td>
+        <td><%= link_to '列表', teacher_dashboard_child_overview_path(student), class: 'btn btn-info' %></td>
+        <td><%= link_to '功能', teacher_dashboard_child_path(student), class: 'btn btn-info' %></td>
       </tr>
     <% end %>
   </tbody>

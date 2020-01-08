@@ -1,17 +1,17 @@
 <div class="container text-center">
-<h2 class="text-white">吃飯紀錄</h2>
-<table class="table">
-  <tbody class="text-white">
+  <h2 class="text-white">吃飯紀錄</h2>
+  <table class="table">
+    <tbody class="text-white">
       <% dashboards.order(finished_at: :desc).eat.each do |dashboard| %>
-      <tr>
+        <tr>
           <td><%= dashboard.title %></td>
           <td><%= dashboard.finished_at.to_date %></td>
-          <td><%= dashboard.content   %></td>
-          <td><%= link_to '編輯', edit_teacher_dashboard_child_eat_path(child_id: params[:id],id: dashboard.id), class:'btn btn-info' %></td>
-          <td><%= link_to '刪除', teacher_dashboard_child_eat_path(child_id: params[:id],id: dashboard.id), method: :delete, data: {confirm:'確定刪除這筆資料？'}, class:'btn btn-danger' %></td>
-      </tr>
+          <td><%= dashboard.content %></td>
+          <td><%= link_to '編輯', edit_teacher_dashboard_child_eat_path(child_id: params[:id], id: dashboard.id), class:'btn btn-info' %></td>
+          <td><%= link_to '刪除', teacher_dashboard_child_eat_path(child_id: params[:id], id: dashboard.id), method: :delete, data: {confirm: '確定刪除這筆資料？'}, class: 'btn btn-danger' %></td>
+        </tr>
       <% end %>
-  </tbody>
-</table>
-<%= link_to '新增吃飯紀錄', new_teacher_dashboard_child_eat_path(child_id: params[:id]),class:'btn btn-warning'%>
+    </tbody>
+  </table>
+  <%= link_to '新增吃飯紀錄', new_teacher_dashboard_child_eat_path(child_id: params[:id]), class: 'btn btn-warning' %>
 </div>

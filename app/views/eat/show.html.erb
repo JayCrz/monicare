@@ -1,21 +1,23 @@
-<%= render 'shared/frontend/navbar'%>
+<%= render 'shared/frontend/navbar' %>
 <div class="container">
   <h1 class="text-warning"><%= @child.name %></h1>
-  <table class="table table-hover table-secondary ">
+  <table class="table table-hover table-secondary">
     <tbody class="text-info">
-        <tr>
-            <th scope="row">餐別</th>
-            <td><%= @meal_dashboards.title %></td>
-        </tr>
-        <tr>
-            <th scope="row">用餐日期</th>
-            <td><%= @meal_dashboards.finished_at.to_date %></td>
-        </tr>
-        <tr>
-            <th scope="row">用餐內容</th>
-            <td><%= @meal_dashboards.content %></td>
-        </tr>
-        <td><%= link_to '回到上一頁', dashboard_child_path(id: params[:child_id], anchor: 'meal'), class:'btn btn-warning' %></td>
+      <tr>
+        <th scope="row">餐別</th>
+        <td><%= @meal_dashboards.title %></td>
+      </tr>
+      <tr>
+        <th scope="row">用餐日期</th>
+        <td><%= @meal_dashboards.finished_at.to_date %></td>
+      </tr>
+      <tr>
+        <th scope="row">用餐內容</th>
+        <td><%= @meal_dashboards.content %></td>
+      </tr>
+      <td>
+        <%= link_to '回到上一頁', dashboard_child_path(id: params[:child_id], anchor: 'meal'), class: 'btn btn-warning' %>
+      </td>
     </tbody>
   </table>
 </div>

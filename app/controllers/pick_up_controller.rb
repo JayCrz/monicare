@@ -9,7 +9,7 @@ class PickUpController < ChildrenlistAppliciationController
   def create
     @pick_up = @child.pick_ups.build(pick_up_params)
     if @pick_up.save
-      redirect_to dashboard_child_path(@child.id, anchor: 'list-pick-up'), notice: "已新增一位可接送的人"
+      redirect_to dashboard_child_path(@child.id, anchor: 'list-pick-up'), notice: '已新增一位可接送的人'
     else
       render :new
     end
@@ -23,7 +23,7 @@ class PickUpController < ChildrenlistAppliciationController
 
   def update
     if @pick_up.update(pick_up_params)
-      redirect_to dashboard_child_path(@child.id, anchor: 'list-pick-up'), notice: "更新成功"
+      redirect_to dashboard_child_path(@child.id, anchor: 'list-pick-up'), notice: '更新成功'
     else
       render :edit
     end

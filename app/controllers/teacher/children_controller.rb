@@ -43,8 +43,7 @@ class Teacher::ChildrenController < BabyclassAppliciationController
 >>>>>>> add teacher view overview (#26)
   def child_params
     params.require(:child).permit(:name, 
-                                 :user_id, 
-                                 :babyclass_id
-                                 )
+                                  :user_id, 
+                                  :babyclass_id)
   end
 end

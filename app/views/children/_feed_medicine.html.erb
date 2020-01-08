@@ -1,16 +1,16 @@
 <div class="container text-center">
-<h2 class="text-white">用藥明細</h2>
-<table class="table">
-  <tbody class="text-white">
-    <% dashboards.order(started_at: :desc).medicine.each do |dashboard| %>
-      <tr>
+  <h2 class="text-white">用藥明細</h2>
+  <table class="table">
+    <tbody class="text-white">
+      <% dashboards.order(started_at: :desc).medicine.each do |dashboard| %>
+        <tr>
           <td><%= dashboard.title %></td>
           <td><%= dashboard.started_at.to_date %></td>
-          <td><%= link_to '編輯', edit_dashboard_child_medicine_path(child_id: params[:id],id: dashboard.id), class:'btn btn-info' %></td>
-          <td><%= link_to '刪除', dashboard_child_medicine_path(child_id: params[:id],id: dashboard.id), method: :delete ,data: {confirm:'確定刪除這筆資料？'}, class:'btn btn-danger' %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<%= link_to '新增餵藥紀錄', new_dashboard_child_medicine_path(child_id: params[:id]),class:'btn btn-warning' %>
+          <td><%= link_to '編輯', edit_dashboard_child_medicine_path(child_id: params[:id], id: dashboard.id), class: 'btn btn-info' %></td>
+          <td><%= link_to '刪除', dashboard_child_medicine_path(child_id: params[:id], id: dashboard.id), method: :delete , data: {confirm:'確定刪除這筆資料？'}, class: 'btn btn-danger' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to '新增餵藥紀錄', new_dashboard_child_medicine_path(child_id: params[:id]), class: 'btn btn-warning' %>
 </div>
