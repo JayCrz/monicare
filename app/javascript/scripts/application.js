@@ -8,13 +8,13 @@ window.onload = function() {
         $('#list-meal-list').click();
         break;
       case '#misc':
-        $('list-misc-list').click();
+        $('#list-misc-list').click();
         break;
       case '#list-pick-up':
         $('#list-pick-up-list').click();
         break;
       case '#feed-medicine':
-        $('list-medicine-list').click();
+        $('#list-medicine-list').click();
         break;
     }
   } 

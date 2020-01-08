@@ -1,6 +1,6 @@
 class Teacher::MedicineController < BabyclassAppliciationController
-  before_action :find_student, only:[:show, :edit, :update]
-  before_action :find_dashboard, only:[:show, :edit, :update]
+  before_action :find_student, only: [:show, :edit, :update]
+  before_action :find_dashboard, only: [:show, :edit, :update]
 
   def show
   end
@@ -11,9 +11,9 @@ class Teacher::MedicineController < BabyclassAppliciationController
     if @medicine_dashboard.update(medicine_params)
       image = decode_base64_image(params[:dashboard][:admin_sign])
       @medicine_dashboard.update_attribute(:admin_sign, image)
-      redirect_to teacher_dashboard_child_medicine_path, notice:'更新成功'
+      redirect_to teacher_dashboard_child_medicine_path, notice: '更新成功'
     else
-      render :edit, notice:'更新失敗，餵藥品者請簽名'
+      render :edit, notice: '更新失敗，餵藥品者請簽名'
     end
   end
   private

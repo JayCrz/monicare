@@ -1,6 +1,6 @@
 class Teacher::MiscController < BabyclassAppliciationController
-  before_action :find_misc, only:[:edit,:update,:destroy]
-  before_action :find_student, only:[:new,:edit]
+  before_action :find_misc, only: [:edit,:update,:destroy]
+  before_action :find_student, only: [:new,:edit]
 
   def new
   end
@@ -8,7 +8,7 @@ class Teacher::MiscController < BabyclassAppliciationController
   def create
     @misc = Dashboard.new(misc_params)
     if @misc.save
-      redirect_to teacher_dashboard_child_path(params[:child_id]), notice: '新增成功'
+      redirect_to teacher_dashboard_child_path(params[:child_id], anchor: 'misc'), notice: '新增成功'
     else
       render :new, notice: '輸入錯誤請，重新輸入'
     end
@@ -19,14 +19,14 @@ class Teacher::MiscController < BabyclassAppliciationController
 
   def update
     if @find_misc.update(misc_params)
-      redirect_to teacher_dashboard_child_path(params[:child_id]), notice: '更新成功'
+      redirect_to teacher_dashboard_child_path(params[:child_id], anchor: 'misc'), notice: '更新成功'
     else
       render :edit, notice: '輸入錯誤請，重新輸入'
     end
   end
 
   def destroy
-    redirect_to teacher_dashboard_child_path(params[:child_id]), notice: '刪除成功' if @find_misc.destroy
+    redirect_to teacher_dashboard_child_path(params[:child_id], anchor: 'misc'), notice: '刪除成功' if @find_misc.destroy
   end
 
   private

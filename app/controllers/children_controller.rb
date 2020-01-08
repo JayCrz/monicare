@@ -1,10 +1,8 @@
 class ChildrenController < ChildrenlistAppliciationController
   def new
-  
   end
 
   def create
-   
   end
   
   def show
@@ -16,7 +14,6 @@ class ChildrenController < ChildrenlistAppliciationController
   def overview
     @child = Child.find(params[:child_id])
     @dashboards = @child.dashboards.where('finished_at IS NOT NULL')
-
   end
     
   def index 
