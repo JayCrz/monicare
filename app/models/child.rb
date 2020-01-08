@@ -5,4 +5,5 @@ class Child < ApplicationRecord
   has_many :teachers, through: :child_teachers
   belongs_to :user
   has_many :dashboards
+  mount_uploader :child_pic, AvatarChildUploader
 end
