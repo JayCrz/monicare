@@ -1,6 +1,9 @@
 <%= render 'shared/frontend/navbar' %>
 <div class="container">
   <h1 class="text-warning"><%= @child.name %></h1>
+  <div class="misc_pic">
+    <%= cover_misc_pic_image_tag @misc_dashboards %>
+  </div>
   <table class="table table-hover table-secondary">
     <tbody class="text-info">
       <tr>
