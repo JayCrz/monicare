@@ -1,6 +1,6 @@
 class Teacher::EatController < BabyclassAppliciationController
   before_action :find_student
-  before_action :find_eat_dashboard, only:[:edit,:update,:destroy]
+  before_action :find_eat_dashboard, only: [:edit, :update, :destroy]
 
   def new
     @meal_dashboard = Dashboard.new
@@ -9,7 +9,7 @@ class Teacher::EatController < BabyclassAppliciationController
   def create
     @meal_dashboard = Dashboard.new(eat_params)
     if @meal_dashboard.save
-      redirect_to teacher_dashboard_child_path(id: params[:child_id]),notice:'新增成功'
+      redirect_to teacher_dashboard_child_path(id: params[:child_id], anchor: 'meal'), notice: '新增成功'
     else  
       render :new, notice:"輸入錯誤，請重新輸入"
     end
@@ -20,14 +20,14 @@ class Teacher::EatController < BabyclassAppliciationController
 
   def update
     if @meal_dashboard.update(eat_params)
-      redirect_to teacher_dashboard_child_path(id: params[:child_id]),notice:'更新成功'
+      redirect_to teacher_dashboard_child_path(id: params[:child_id], anchor: 'meal'), notice: '更新成功'
     else
-      render :edit,notice:"輸入錯誤，請重新輸入"
+      render :edit, notice: "輸入錯誤，請重新輸入"
     end
   end
       
   def destroy
-    redirect_to teacher_dashboard_child_path(id: params[:child_id]), notice: '資料已刪除' if @meal_dashboard.destroy
+    redirect_to teacher_dashboard_child_path(id: params[:child_id], anchor: 'meal'), notice: '資料已刪除' if @meal_dashboard.destroy
   end
 
   private

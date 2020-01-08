@@ -1,36 +1,27 @@
 <%= render 'shared/backend/navbar'%>
-
-
 <div class="container">
   <h1 class="text-warning text-center"><%= @student.name %></h1>
-
   <%= form_with model: @find_misc, url: teacher_dashboard_child_misc_path, local: true do |form| %>
-
     <div class="form-group">
-      <%= form.label :title, '標題', class:'text-white' %>
+      <%= form.label :title, '標題', class: 'text-white' %>
       <%= form.text_field :title, class: 'form-control' %>
     </div>
-
     <div class="form-group">
-    <%= form.label :finished_at, '時間', class:'text-white' %>
-    <%= form.date_field :finished_at, class:'form-control' %>
+      <%= form.label :finished_at, '時間', class: 'text-white' %>
+      <%= form.date_field :finished_at, class: 'form-control' %>
     </div>
-
     <div class="form-group">
-    <%= form.label :content, '內容', class:'text-white' %>
-    <%= form.text_area :content, class:'form-control' %>
+      <%= form.label :content, '內容', class: 'text-white' %>
+      <%= form.text_area :content, class: 'form-control' %>
     </div>
-
     <div class="form-group">
-    <%= form.hidden_field :category, :value => 'misc',  class:'form-control' %>
-    <%= form.hidden_field :child_id, :value => params[:child_id],  class:'form-control' %>
+      <%= form.hidden_field :category, :value => 'misc', class: 'form-control' %>
+      <%= form.hidden_field :child_id, :value => params[:child_id], class: 'form-control' %>
     </div>
-
-
     <div class="form-group">
-    <%= form.submit '更新紀錄', class:'btn btn-warning' %>
-    <%= link_to '回到上一頁',teacher_dashboard_child_path(id: params[:child_id]), class:'btn btn-warning'  %>
-    <%= link_to '刪除', teacher_dashboard_child_misc_path(child_id: params[:child_id],id: params[:id] ), method: :delete, data: {confirm:'確定刪除這筆資料？'}, class: 'btn btn-danger' %>
+      <%= form.submit '更新紀錄', class:'btn btn-warning' %>
+      <%= link_to '回到上一頁',teacher_dashboard_child_path(id: params[:child_id], anchor: 'misc'), class: 'btn btn-warning' %>
+      <%= link_to '刪除', teacher_dashboard_child_misc_path(child_id: params[:child_id],id: params[:id] ), method: :delete, data: {confirm:'確定刪除這筆資料？'}, class: 'btn btn-danger' %>
     </div>
   <% end %>
 </div>
