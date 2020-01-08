@@ -9,7 +9,6 @@ require("channels")
 
 
 import 'popper.js'
-import 'jquery'
 import 'bootstrap'
 import '../stylesheet/index'
 import '../scripts'

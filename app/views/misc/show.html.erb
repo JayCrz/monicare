@@ -15,7 +15,7 @@
             <th scope="row">用餐內容</th>
             <td><%= @misc_dashboards.content %></td>
         </tr>
-        <td><%= link_to '回到上一頁', dashboard_child_path(id: params[:child_id]), class:'btn btn-warning' %></td>
+        <td><%= link_to '回到上一頁', dashboard_child_path(id: params[:child_id], anchor: 'misc'), class:'btn btn-warning' %></td>
     </tbody>
   </table>
 </div>
