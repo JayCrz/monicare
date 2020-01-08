@@ -31,6 +31,7 @@ class Teacher::ChildrenController < BabyclassAppliciationController
   def child_params
     params.require(:child).permit(:name, 
                                   :user_id, 
-                                  :babyclass_id)
+                                  :babyclass_id,
+                                  :child_pic)
   end
 end
