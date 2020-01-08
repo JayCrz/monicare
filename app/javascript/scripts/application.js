@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import './search'
 
 window.onload = function() {
   let anchor = /(#.*)/;
