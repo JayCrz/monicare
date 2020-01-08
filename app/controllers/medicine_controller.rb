@@ -9,7 +9,7 @@ class MedicineController < ChildrenlistAppliciationController
     @medicine = Dashboard.new(medicine_params)
     @medicine.parent_sign = image
 
-    redirect_to dashboard_child_path(params[:child_id]),notice:'新增成功' if	@medicine.save
+    redirect_to dashboard_child_path(params[:child_id], anchor: 'feed-medicine'),notice:'新增成功' if	@medicine.save
   end
 
   def edit
@@ -19,14 +19,14 @@ class MedicineController < ChildrenlistAppliciationController
     if @find_medicine.update(medicine_params)
       image = decode_base64_image(params[:dashboard][:parent_sign])
       @find_medicine.update_attribute(:parent_sign, image)
-      redirect_to dashboard_child_path(params[:child_id]), notice:'更新成功'
+      redirect_to dashboard_child_path(params[:child_id], anchor: 'feed-medicine'), notice:'更新成功'
     else
       render :edit,notice: '更新錯誤,請重新輸入'
     end
   end
 
   def destroy
-    redirect_to dashboard_child_path(params[:child_id]), notice: '資料已刪除' if @find_medicine.destroy
+    redirect_to dashboard_child_path(params[:child_id], anchor: 'feed-medicine'), notice: '資料已刪除' if @find_medicine.destroy
   end 
   
   private
