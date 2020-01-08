@@ -40,7 +40,8 @@ class Teacher::EatController < BabyclassAppliciationController
                                       :content, 
                                       :finished_at,
                                       :category,
-                                      :child_id)
+                                      :child_id,
+                                      :admin_sign)
   end
 
   def find_eat_dashboard

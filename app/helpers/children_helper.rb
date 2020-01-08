@@ -7,7 +7,7 @@ module ChildrenHelper
     end
   end
 
-  def  cover_child_pic_image_tag(child)
+  def cover_child_pic_image_tag(child)
     if child.child_pic?
       image_tag child.child_pic.thumb.url, id: 'preview_child_pic'
     else
