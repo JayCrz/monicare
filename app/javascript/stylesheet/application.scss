@@ -6,8 +6,12 @@
   }
 }
 
-.card-img-top{
+.card-img-top.child_pic {
   height: 253px;
+}
+
+.card-img-top.avatar-relative {
+  height: 333px;
 }
 
 .signature-pad-wrapper {
