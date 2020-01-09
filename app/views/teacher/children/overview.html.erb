@@ -7,7 +7,7 @@
     <%= link_to "功能列表", teacher_dashboard_child_path(@student.id), class: 'btn btn-light' %>
   </h2>
   <table class="table">
-    <tbody class="text-white">
+    <tbody>
       <% @dashboards.order(finished_at: :desc).each do |dashboard| %>
         <tr>
           <td><%= link_to dashboard.title, teacher_redirect_to(dashboard), class: 'font-weight-bold text-danger' %></td>

@@ -1,7 +1,7 @@
 <div class="container text-center">
-  <h2 class="text-white">其他紀錄</h2>
+  <h2>其他紀錄</h2>
   <table class="table">
-    <tbody class="text-white">
+    <tbody>
       <% dashboards.order(finished_at: :desc).misc.each do |dashboard| %>
       <tr>
         <td><%= dashboard.title %></td>
