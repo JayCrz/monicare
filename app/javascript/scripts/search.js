@@ -8,14 +8,24 @@ $(document).ready(()=>{
       event.preventDefault()
       axios.get('http://localhost:3000/search_student',{params:{serach_value: $('.search').val()}})
         .then(function(response){
-          let student_list = response.data.map(student => (
-            `<tr>
-              <td>圖</td>
+          let student_list = response.data.map(student => {
+            if (student.child_pic == null) {
+              return`<tr>
+                      <td><img id="preview_child_pic" src="https://fakeimg.pl/247x247/FFDD55/FFA488/?text=小孩照片&font=noto" alt="小孩圖片"></td>
+                      <td>${student.name}</td>
+                      <td><a href="/teacher/dashboard/children/${student.id}/overview" class="btn btn-info">列表</a></td>
+                      <td><a href="/teacher/dashboard/children/${student.id}" class="btn btn-info">功能</a></td>
+                    </tr>`   
+            }else{
+              return`<tr>
+              <td><img id="preview_child_pic" src="${student.child_pic.url}" alt="小孩圖片"></td>
               <td>${student.name}</td>
               <td><a href="/teacher/dashboard/children/${student.id}/overview" class="btn btn-info">列表</a></td>
               <td><a href="/teacher/dashboard/children/${student.id}" class="btn btn-info">功能</a></td>
-            </tr>`
-        ))
+            </tr>` 
+            }
+
+          })
           let student_area = document.querySelector('.student_list')
           let student_list_str = ''
           for ( let i = 0; i < student_list.length; i++) {
