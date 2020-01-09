@@ -35,12 +35,16 @@ gem 'figaro', '~> 1.1', '>= 1.1.1'
 <<<<<<< HEAD
 <<<<<<< HEAD
 gem 'rails-i18n', '~> 6.0.0'
+<<<<<<< HEAD
 =======
 gem 'rails-i18n'
 >>>>>>> changed regist design
 =======
 gem 'rails-i18n', '~> 6.0.0'
 >>>>>>> fix dashboard_controller and gem rails-i18n
+=======
+gem 'activity_notification', '~> 2.0'
+>>>>>>> finished homepage
 
 
 
