@@ -5,7 +5,21 @@
     width: 300px;
   }
 }
+.babybackgorund{
+  background-image: url(/assets/babycare.jpg);
+  background-size: cover;
 
+}
+.homepagebox{
+  height: 100vh;
+}
+
+.homepageimg{
+  width:500px;
+}
+.homepagepgc{
+  background-color: rgba(255, 185, 176, 0.3);
+}
 .meal_pic {
   img {
     width: 300px;

@@ -1,7 +1,17 @@
-<div class="wrap">
+  <div class="babybackgorund">
   <div class="container">
-    <h1 class="text-center text-warning">Monicare</h1>
-    <%= link_to '我是老師', new_teacher_session_path, class: 'btn btn-primary btn-lg btn-block' %>
-    <%= link_to '我是家長', new_user_session_path, class: 'btn btn-secondary btn-lg btn-block' %>
+      <div class="d-flex justify-content-center homepagebox align-items-center">
+        <div class="homepagepgc p-5 ">   
+         <%= image_tag("monicare.png", class: "homepageimg") %> 
+          <div class="p-2">
+            <p>身為家長的你，把自家小孩交給托嬰中心或幼兒園後，你真的知道孩子發生了什麼事情嗎？</p>
+            <p>有了monicare，讓你一手掌握你家寶貝的最新動態！</p>
+            <div class="d-flex justify-content-around">
+              <%= link_to '我是家長', new_user_session_path, class: 'btn btn-success btn-lg' %>
+              <%= link_to '我是老師', new_teacher_session_path, class: 'btn btn-info btn-lg' %>
+            </div>
+          </div>
+        </div>
+      </div>
   </div>
-</div>
+  </div>
