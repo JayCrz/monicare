@@ -5,28 +5,30 @@
     <tbody class="text-info">
       <tr>
         <th scope="row">用藥名稱</th>
-        <td><%= @medicine_dashboard.title %></td>
+        <td colspan="3"><%= @medicine_dashboard.title %></td>
       </tr>
       <tr>
         <th scope="row">用藥日期</th>
         <td><%= @medicine_dashboard.started_at.to_date %></td>
-      </tr>
-      <tr>
         <th scope="row">用藥時間</th>
-        <td><%= @medicine_dashboard.started_at %></td>
+        <td><%= @medicine_dashboard.started_at.strftime("%H:%M") %></td>
       </tr>
       <tr>
         <th scope="row">備註</th>
-        <td><%= @medicine_dashboard.content %></td>
+        <td colspan="3"><%= @medicine_dashboard.content %></td>
       </tr>
       <tr>
         <th scope="row">給藥者簽名</th>
-        <td><%= image_tag @medicine_dashboard.parent_sign.url %></td>
+        <td colspan="3"><%= image_tag @medicine_dashboard.parent_sign.url %></td>
       </tr>
       <%= form_with model: @medicine_dashboard, url: teacher_dashboard_child_medicine_path, local: true do |form| %>
         <tr>
+          <th><%= form.label :finished_at, '完成時間' %></th>
+          <td colspan="3"><%= form.date_field :finished_at, class:'from-contral todaypickr' %></td>
+        </tr>
+        <tr>
           <th scope="row"><%= form.label :admin_sign, '餵藥者簽名' %></th>
-          <td>
+          <td colspan="3">
             <div class="form-group">          
               <%= form.hidden_field :admin_sign, class: 'form-control' %>
               <div class="signature-pad-wrapper mb-3">

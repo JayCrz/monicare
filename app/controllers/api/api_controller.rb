@@ -1,4 +1,4 @@
-class ApiController < ApplicationController
+class Api::ApiController < ApplicationController
   before_action :serach_value, only:[:search,:search_dashboard]
   def search
     teacher = current_teacher
@@ -9,7 +9,6 @@ class ApiController < ApplicationController
   def search_dashboard
     child = Child.find(params[:child_id])
     dashboards = child.dashboards.where("finished_at IS NOT NULL")
-    # date = dashboards.where("finished_at like '#{Date.parse(serach_value)}'")
     dashboard_resp = []
     dashboards.order(finished_at: :desc).each do |dashboard|
       id = dashboard.id.to_s

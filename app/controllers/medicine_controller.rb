@@ -1,6 +1,6 @@
 class MedicineController < ChildrenlistAppliciationController
-  before_action :find_child, only:[:new,:edit]
-  before_action :find_medicine, only:[:edit,:update,:destroy]
+  before_action :find_child, only:[:new, :edit, :show]
+  before_action :find_medicine, only:[:show, :edit, :update, :destroy]
   def new
   end
 
@@ -10,6 +10,9 @@ class MedicineController < ChildrenlistAppliciationController
     @medicine.parent_sign = image
 
     redirect_to dashboard_child_path(params[:child_id], anchor: 'feed-medicine'),notice: '新增成功' if	@medicine.save
+  end
+
+  def show
   end
 
   def edit

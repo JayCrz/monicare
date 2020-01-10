@@ -16,9 +16,10 @@ class Teacher::MedicineController < BabyclassAppliciationController
       render :edit, notice: '更新失敗，餵藥品者請簽名'
     end
   end
+  
   private
   def medicine_params
-    params.require(:dashboard).permit(:admin_sign)
+    params.require(:dashboard).permit(:admin_sign, :finished_at)
   end
 
   def find_student
