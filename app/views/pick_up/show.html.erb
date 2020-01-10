@@ -1,9 +1,12 @@
 <%= render 'shared/frontend/navbar' %>
-<div class="container">
-  <h1 class="text-warning">可接送<%= @child.name %>的親屬</h1>
-  <%= cover_image_tag @pick_up %>
-  <table class="table table-hover table-secondary">
-    <tbody class="text-info">
+
+<div class="container task-show">
+  <h2 class="text-center font-weight-bold title-color">可接送<%= @child.name %>的親屬</h2>
+  <div class="pick_up_pic mb-3">
+    <%= cover_image_tag @pick_up %>
+  </div>
+  <table class="table table-hover">
+    <tbody>
       <tr>
         <th scope="row">姓名</th>
         <td><%= @pick_up.name %></td>
@@ -18,8 +21,8 @@
       </tr>
       <tr>
         <td>
-          <%= link_to "回到上一頁", dashboard_child_path(@child.id, anchor: 'list-pick-up'), class: 'btn btn-warning' %>
-          <%= link_to "編輯", edit_dashboard_child_pick_up_path(:child_id => @child.id, :id => @pick_up.id), class: 'btn btn-info' %>
+          <%= link_to "回到上一頁", dashboard_child_path(@child.id, anchor: 'list-pick-up'), class: 'btn back-button' %>
+          <%= link_to "編輯", edit_dashboard_child_pick_up_path(:child_id => @child.id, :id => @pick_up.id), class: 'btn edit-button' %>
           <%= link_to "刪除", dashboard_child_pick_up_path(:child_id => @child.id, :id => @pick_up.id), method: 'delete', data: {confirm: '確定刪除嗎?'}, class: 'btn btn-danger' %>
         </td>
         <td></td>
