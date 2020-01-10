@@ -6,7 +6,11 @@
         <tr>
           <td><%= dashboard.title %></td>
           <td><%= dashboard.started_at.to_date %></td>
-          <td><%= link_to '編輯給藥者', edit_teacher_dashboard_child_medicine_path(child_id: params[:id], id: dashboard.id), class: 'btn btn-danger' %></td>
+          <% if dashboard.finished_at === nil %>
+            <td><%= link_to '編輯給藥者', edit_teacher_dashboard_child_medicine_path(child_id: params[:id], id: dashboard.id), class: 'btn btn-danger' %></td>
+          <% else %>
+            <td>已完成餵藥</td>
+          <% end %>
           <td><%= link_to '詳情', teacher_dashboard_child_medicine_path(child_id: params[:id], id: dashboard.id), class: 'btn btn-info' %></td>
         </tr>
       <% end %>

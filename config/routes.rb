@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   devise_for :teachers
   devise_for :users
-  get '/search_student', to: 'api#search'
-  get '/search_dashboard', to: 'api#search_dashboard'
-  get '/notification', to: 'api#notification'
-
+  
+  namespace :api do
+    get '/search_student', to: 'api#search'
+    get '/search_dashboard', to: 'api#search_dashboard'
+    get '/notification', to: 'api#notification'
+  end
   root 'homepage#show'
   
   resource :dashboard, only:[:show] do

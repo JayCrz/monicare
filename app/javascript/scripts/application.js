@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import './search'
+import './flatpickr'
 
 window.onload = function() {
   let anchor = /(#.*)/;
