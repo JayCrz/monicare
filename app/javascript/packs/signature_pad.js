@@ -1,5 +1,6 @@
 import SignaturePad from 'signature_pad';
 import $ from 'jquery';
+import Swal from 'sweetalert2'
 
 let canvas = document.getElementById('signature-pad');
 
@@ -39,11 +40,18 @@ document.getElementById('clear').addEventListener('click', function () {
 
 document.getElementById('save').addEventListener('click', function () {
   if (signaturePad.isEmpty()) {
-    return alert("請務必簽名!");
+    return Swal.fire({
+      title: "請務必簽名!",
+      icon: 'warning'
+    });
   }
   let data = signaturePad.toDataURL();
   signaturePad.off();
   $('#dashboard_parent_sign').attr('value', data);
   $('#dashboard_admin_sign').attr('value', data);
-  alert("已簽署完成! 請務必按下新增紀錄或更新紀錄的按鈕喔!");
+  Swal.fire({
+    title: "已簽署完成",
+    html: '請務必按下<b>新增紀錄</b>或<b>更新紀錄</b>的按鈕喔!',
+    icon: 'success'
+  });
 });
