@@ -1,7 +1,7 @@
 <%= render 'shared/frontend/navbar' %>
 
 <div class="container task-edit">
-  <h2 class="text-center font-weight-bold title-color">新增可接送的親屬</h2>
+  <h2 class="text-center font-weight-bold title-color mb-3">新增可接送的親屬</h2>
   <%= form_with scope: :pick_up, url: dashboard_child_pick_up_index_path, local: true do |form| %>
     <div class="pick_up_pic mb-3">
       <%= cover_image_tag @pick_up %>

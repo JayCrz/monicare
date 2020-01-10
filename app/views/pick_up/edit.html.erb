@@ -1,6 +1,6 @@
 <%= render 'shared/frontend/navbar' %>
 <div class="container task-edit">
-  <h2 class="text-center font-weight-bold title-color">
+  <h2 class="text-center font-weight-bold title-color mb-3">
   修改<%= @pick_up.name %>的資料
   </h2>
   <%= form_with scope: :pick_up, url: dashboard_child_pick_up_path(:child_id => @child.id, :id => @pick_up.id), method: :put, local: true do |form| %>

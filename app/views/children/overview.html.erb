@@ -1,7 +1,7 @@
 <%= render 'shared/frontend/navbar' %>
 
 <div class="container text-center overview">
-  <h2 class="font-weight-bold overview-title">
+  <h2 class="font-weight-bold overview-title mb-3">
     <%= @child.name %>園內生活點滴<br>
     <%= link_to "進入功能列表", dashboard_child_path(@child.id), class: 'btn function-button' %>
   </h2>
