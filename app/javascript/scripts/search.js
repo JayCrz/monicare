@@ -1,5 +1,7 @@
 import $ from 'jquery'
 import axios from 'axios'
+import Swal from 'sweetalert2'
+
 $(document).ready(()=>{
   let search_url = window.location.pathname
   let url_ary = search_url.split('/')
@@ -40,11 +42,18 @@ $(document).ready(()=>{
           if (student_list_str !== '' ) {
             student_area.innerHTML = student_list_str
           } else {
-            alert('沒有符合的搜尋結果')
+            Swal.fire({
+              title: '沒有符合的搜尋結果',
+              text: '請重新輸入',
+              icon: 'info'
+            })
           }
         })
         .catch(function(error){
-          alert(error);
+          Swal.fire({
+            title: '' + error,
+            icon: 'error'
+          });
         })
     })
   }  
@@ -87,14 +96,19 @@ $(document).ready(()=>{
              if (dashboard_list_str !== ''){
               dashboard_area.innerHTML = dashboard_list_str
              }else{
-               alert('找不到相符的結果，請重新輸入，確認輸入日期如 : 2020-01-02 或 2020 或 01-02')
+               Swal.fire({
+                 title: '找不到相符的結果',
+                 html: '<p>請確認輸入日期格式</p><p>如 : <b>2020-01-02</b> 或 <b>2020</b> 或 <b>01-02</b></p>',
+                 icon: 'info'
+                })
              }
            })
            .catch(function(error){
-            alert(error);
+            Swal.fire({
+              title: '' + error,
+              icon: 'error'
+            })
           })
     })
   }
-
-
 })
