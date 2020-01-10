@@ -191,19 +191,83 @@ body.backend {
   }
 }
 
+.task-edit {
+  .title-color {
+    color: #8C512E;
+  }
+
+  .submit-button {
+    background-color: #8C512E;
+    border-color: #8C512E;
+    color: #ffffff;
+  }
+
+  .back-button {
+    background-color: #D99873;
+    border-color: #D99873;
+    color: #ffffff;
+  }
+
+  form {
+    color: #8C512E;
+  
+    .form-control-color {
+      background-color: #F2F2F2;
+      color: #D9653B;
+    }
+  
+    .url-color {
+      background-color: #F2F2F2;
+      color: #D9653B;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+}
+
+.task-show {
+  .title-color {
+    color: #8C512E;
+  }
+
+  .back-button {
+    background-color: #D99873;
+    border-color: #D99873;
+    color: #ffffff;
+  }
+
+  table {
+    background-color: #f2f2f2;
+    color: #8C512E;
+
+    .edit-button {
+      background-color: #D9653B;
+      border-color: #D9653B;
+      color: #ffffff;
+    }
+  }
+}
+
 .pick_up_pic {
+  text-align: center;
+
   img {
     width: 300px;
   }
 }
 
 .meal_pic {
+  text-align: center;
+
   img {
     width: 300px;
   }
 }
 
 .misc_pic {
+  text-align: center;
+  
   img {
     width: 300px;
   }
@@ -246,6 +310,7 @@ body.backend {
 
 .custom-file-label::after {
   content: "瀏覽";
+  color: #8C512E;
 }
 
 td {

@@ -1,31 +1,33 @@
 <%= render 'shared/frontend/navbar' %>
-<div class="container">
-  <h1 class="text-warning text-center">修改<%= @pick_up.name %>的資料</h1>
+<div class="container task-edit">
+  <h2 class="text-center font-weight-bold title-color">
+  修改<%= @pick_up.name %>的資料
+  </h2>
   <%= form_with scope: :pick_up, url: dashboard_child_pick_up_path(:child_id => @child.id, :id => @pick_up.id), method: :put, local: true do |form| %>
     <div class="pick_up_pic mb-3">
       <%= cover_image_tag @pick_up %>
     </div>
     <div class="input-group mb-3">
       <div class="custom-file">
-        <%= form.label :pick_up_pic, @pick_up.pick_up_pic, class: 'custom-file-label' %>
+        <%= form.label :pick_up_pic, @pick_up.pick_up_pic, class: 'custom-file-label url-color' %>
         <%= form.file_field :pick_up_pic, class: 'custom-file-input' %>
       </div>
     </div>
     <div class="form-group">
       <%= form.label :name, "姓名" %>
-      <%= form.text_field :name, class: 'form-control' %>
+      <%= form.text_field :name, class: 'form-control form-control-color' %>
     </div>
 
     <div class="form-group">
       <%= form.label :relationship, "與小朋友的關係" %>
-      <%= form.text_field :relationship, class: 'form-control' %>
+      <%= form.text_field :relationship, class: 'form-control form-control-color' %>
     </div>
   
     <div class="form-group">
       <%= form.label :note, "備註" %>
-      <%= form.text_area :note, class: 'form-control' %>
+      <%= form.text_area :note, class: 'form-control form-control-color' %>
     </div>
   
-    <%= form.submit "更新資料" , class: 'btn btn-warning' %>
+    <%= form.submit "更新資料" , class: 'btn submit-button' %>
   <% end %>
 </div>
