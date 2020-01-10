@@ -1,18 +1,18 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">雙葉幼稚園</a>
+<nav class="navbar navbar-expand-lg navbar-light backend-navbar">
+  <a class="navbar-brand frontend-navbar-brand" href="#">雙葉幼稚園</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item ">
-        <a class="nav-link" href="/teacher/dashboard/children/new">新增小朋友<span class="sr-only">(current)</span></a>
+        <a class="nav-link frontend-link" href="/teacher/dashboard/children/new">新增小朋友<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item ">
-        <a class="nav-link" href="#">通知<span class="sr-only">(current)</span></a>
+        <a class="nav-link frontend-link" href="#">通知<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle frontend-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         班級
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -30,8 +30,8 @@
     <% end %>
     <div>
       <% if teacher_signed_in? %>
-        <%= link_to "#{current_teacher.name}老師", teacher_dashboard_path, class: 'btn' %>
-        <%= link_to "登出", destroy_teacher_session_path, method: 'delete', class: 'btn' %>
+        <%= link_to "#{current_teacher.name}老師", teacher_dashboard_path, class: 'btn user-name' %>
+        <%= link_to "登出", destroy_teacher_session_path, method: 'delete', class: 'btn sign-out' %>
       <% else %>
         <%= link_to "註冊", new_teacher_registration_path, class: 'btn'	%>
         <%= link_to "登入", new_teacher_session_path, class: 'btn' %>
