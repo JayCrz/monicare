@@ -1,10 +1,10 @@
 <%= render 'shared/frontend/navbar' %>
 <%= render 'shared/flash' if notice %>
 <div class="container text-center dashboard">
-  <h2 class="font-weight-bold dashboard-title">我的小孩</h2>
+  <h2 class="font-weight-bold dashboard-title mb-3">我的小孩</h2>
   <div class="row">
     <% @children.each do |child| %>
-      <%= link_to dashboard_child_overview_path(child.id), class: 'col-lg-3 col-md-6 col-sm-12' do %>
+      <%= link_to dashboard_child_overview_path(child.id), class: 'col-lg-3 col-md-6 col-sm-12 mb-3' do %>
         <div class="card">
           <img src="<%= show_child_pic_image child %>" class="card-img-top child_pic" alt="<%= child.name %>的照片">
           <div class="card-body">
