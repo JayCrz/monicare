@@ -1,16 +1,15 @@
 <%= render 'shared/backend/navbar' %>
-<div class="text-center">
-</div>
-<div class="container text-center">
-  <h2 class="text-warning">
-    <%= @student.name %>的行程列表
-    <%= link_to "功能列表", teacher_dashboard_child_path(@student.id), class: 'btn btn-light' %>
+
+<div class="container text-center overview">
+  <h2 class="font-weight-bold overview-title">
+    <%= @student.name %>園內生活點滴<br>
+    <%= link_to "進入功能列表", teacher_dashboard_child_path(@student.id), class: 'btn function-button' %>
   </h2>
   <table class="table">
     <tbody>
       <% @dashboards.order(finished_at: :desc).each do |dashboard| %>
         <tr>
-          <td><%= link_to dashboard.title, teacher_redirect_to(dashboard), class: 'font-weight-bold text-danger' %></td>
+          <td><%= link_to dashboard.title, teacher_redirect_to(dashboard), class: 'font-weight-bold link-button' %></td>
           <td><%= dashboard.finished_at.to_date %></td>
           <td><%= dashboard.content %></td>
         </tr>

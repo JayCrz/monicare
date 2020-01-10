@@ -1,7 +1,7 @@
 <%= render 'shared/backend/navbar' %>
 
-<div class="container ">
+<div class="container text-center dashboard">
   <%= render 'shared/flash' if notice %>
-  <h1><%= @teacher.name %>老師的學生</h1>
+  <h2 class="font-weight-bold dashboard-title"><%= @teacher.name %>老師的學生</h2>
   <%= render 'shared/backend/students', students: @students %>
 </div>
