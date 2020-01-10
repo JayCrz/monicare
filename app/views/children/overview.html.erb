@@ -10,10 +10,10 @@
   <tbody class="dashboard_list">
     <% @dashboards.order(finished_at: :desc).each do |dashboard| %>
       <tr>
-          <td><%= link_to dashboard.title, parent_redirect_to(dashboard), class: 'font-weight-bold text-danger' %></td>
+          <td><%= link_to dashboard.title, "/dashboard/children/#{dashboard.child_id}/#{dashboard.category}/#{dashboard.id}", class: 'font-weight-bold text-danger' %></td>
           <td><%= dashboard.finished_at.to_date %></td>
           <td><%= dashboard.content %></td>
-          <td><%= link_to '詳情', parent_redirect_to(dashboard), class: 'btn btn-info' %></td>
+          <td><%= link_to '詳情', "/dashboard/children/#{dashboard.child_id}/#{dashboard.category}/#{dashboard.id}", class: 'btn btn-info' %></td>
       </tr>
     <% end %>
   </tbody>
