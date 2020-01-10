@@ -15,31 +15,26 @@ body.backend {
 .babybackgorund {
   background-image: linear-gradient( rgba(240, 178, 107, 0.3)), url(/assets/babycare.jpg);
   background-size: cover;
-
   .homepage_box {
     height: 100vh;
   }
-  
   .homepageimg {
     height: 30vh;
     display: inline-block;
     margin: 0 auto;
   }
-  
   .homepage_background_color {
     background-color: rgba(250, 227, 217, 0.6);
     width: 70%;
     max-height: 90vh;
     text-align: center;
   }
-
   .parent-sign-in-button {
     background-color: #f06966;
     border-color: #f06966;
     color: #ffffff;
     font-weight: bold;
   }
-  
   .teacher-sign-in-button {
     background-color: #D99873;
     border-color: #D99873;
@@ -50,29 +45,23 @@ body.backend {
 
 .frontend-navbar {
   background-color: transparent;
-  
   .frontend-navbar-brand {
     color: rgba(255, 255, 255, 1);
   }
-
   a.nav-link.frontend-link {
     color: rgba(255, 255, 255, 1);
   }
-
   .btn.sign-out {
     color: rgba(255, 255, 255, 1);
   }
-
   .btn.user-name {
     color: rgba(255, 255, 255, 1);
   }
-
   .dropdown.show {
     .nav-link {
       color: #8C512E;
       font-weight: bold;
     }
-    
     .dropdown-item {
       color: #D9653B;
       font-weight: bold;
@@ -82,35 +71,28 @@ body.backend {
 
 .backend-navbar {
   background-color: transparent;
-
   .frontend-navbar-brand {
     color: rgba(255, 255, 255, 1);
   }
-
   a.nav-link.frontend-link {
     color: rgba(255, 255, 255, 1);
   }
-
   .btn.sign-out {
     color: rgba(255, 255, 255, 1);
   }
-
   .btn.user-name {
     color: rgba(255, 255, 255, 1);
   }
-
   .search_btn {
     background-color: #8C512E;
     border-color: #8C512E;
     color: #ffffff;
   }
-
   .dropdown.show {
     .nav-link {
       color: #8C512E;
       font-weight: bold;
     }
-    
     .dropdown-item {
       color: #D9653B;
       font-weight: bold;
@@ -122,7 +104,6 @@ body.backend {
   .dashboard-title {
     color: #8C512E;
   }
-
   .child-name {
     color: #8C512E;
   }
@@ -130,17 +111,17 @@ body.backend {
     .card-img-top.child_pic {
       width: 100%;
     }
+    .card-body {
+      background-color: #f2f2f2;
+    }
   }
-
   table {
     color: #8C512E;
-
     .function-button {
       background-color: #D9653B;
       border-color: #D9653B;
       color: #ffffff;
     }
-
     .more-button {
       background-color: #F2884B;
       border-color: #F2884B;
@@ -153,40 +134,106 @@ body.backend {
   .overview-title {
     color: #8C512E;
   }
-
   .function-button {
     background-color: #D9653B;
     border-color: #D9653B;
     color: #ffffff;
   }
-
   .search_btn {
     background-color: #8C512E;
     border-color: #8C512E;
     color: #ffffff;
   }
-
   .searching-form {
     display: block;
-
     .form-control {
       width: auto;
       display: inline-block;
     }
   }
-  
   table {
     color: #8C512E;
-
     .more-button {
       background-color: #D99873;
       border-color: #D99873;
       color: #ffffff;
     }
-
     .link-button {
       color: #D9653B;
       text-decoration: none;
+    }
+  }
+}
+
+.function-page {
+  .function-page-title {
+    a {
+      color: #8C512E;
+      font-size: 40px;
+    }
+  }
+  .function-list-group-item {
+    background-color:transparent;
+    border-color: #D9653B;
+    color: #D9653B;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 20px;
+  }
+  .function-list-group-item.active {
+    background-color: #f06966;
+    color: #F2F2F2;
+    font-size: 22px;
+    border-color: #f06966;
+  }
+  .teacher-function-list-group-item {
+    background-color:transparent;
+    border-color: #D9653B;
+    color: #D9653B;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 20px;
+  }
+  .teacher-function-list-group-item.active {
+    background-color: #dd9966;
+    color: #F2F2F2;
+    border-color: #dd9966;
+    font-size: 22px;
+  }
+  .function-subtitle {
+    font-size: 32px;
+    color: #8C512E;
+  }
+  .create-button {
+    background-color: #8C512E;
+    border-color: #8C512E;
+    color: #ffffff;
+  }
+  table {
+    color: #8C512E;
+    font-size: 20px;
+    .edit-button {
+      background-color: #D9653B;
+      border-color: #D9653B;
+      color: #ffffff;
+    }
+    .more-button {
+      background-color: #F2884B;
+      border-color: #F2884B;
+      color: #ffffff;
+    }
+  }
+  .card {
+    .card-img-top.avatar-relative {
+      width: 100%;
+      color: #8C512E;
+    }
+    .relative-name {
+      color: #8C512E;
+      font-size: 22px;
+    }
+    .card-body {
+      background-color: #f2f2f2;
     }
   }
 }
@@ -195,27 +242,22 @@ body.backend {
   .title-color {
     color: #8C512E;
   }
-
   .submit-button {
     background-color: #8C512E;
     border-color: #8C512E;
     color: #ffffff;
   }
-
   .back-button {
     background-color: #D99873;
     border-color: #D99873;
     color: #ffffff;
   }
-
   form {
     color: #8C512E;
-  
     .form-control-color {
       background-color: #F2F2F2;
       color: #D9653B;
     }
-  
     .url-color {
       background-color: #F2F2F2;
       color: #D9653B;
@@ -230,13 +272,11 @@ body.backend {
   .title-color {
     color: #8C512E;
   }
-
   .back-button {
     background-color: #D99873;
     border-color: #D99873;
     color: #ffffff;
   }
-
   table {
     background-color: #f2f2f2;
     color: #8C512E;
@@ -251,7 +291,6 @@ body.backend {
 
 .pick_up_pic {
   text-align: center;
-
   img {
     width: 300px;
   }
@@ -259,7 +298,6 @@ body.backend {
 
 .meal_pic {
   text-align: center;
-
   img {
     width: 300px;
   }
@@ -267,14 +305,9 @@ body.backend {
 
 .misc_pic {
   text-align: center;
-  
   img {
     width: 300px;
   }
-}
-
-.card-img-top.avatar-relative {
-  height: 333px;
 }
 
 .signature-pad-wrapper {
@@ -331,24 +364,39 @@ td {
 
 @media screen and (min-width: 768px){
   .card {
-    .card-img-top.child_pic {
+    img.child_pic {
       height: 328px;
+    }
+  }
+  .function-page {
+    img.avatar-relative {
+      height: 418px;
     }
   }
 }
 
 @media screen and (min-width: 992px){
   .card {
-    .card-img-top.child_pic {
+    img.child_pic {
       height: 208px;
+    }
+  }
+  .function-page {
+    img.avatar-relative {
+      height: 273px;
     }
   }
 }
 
 @media screen and (min-width: 1200px){
   .card {
-    .card-img-top.child_pic {
+    img.child_pic {
       height: 253px;
+    }
+  }
+  .function-page {
+    img.avatar-relative {
+      height: 333px;
     }
   }
 }

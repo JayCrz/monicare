@@ -1,5 +1,5 @@
 <div class="container text-center">
-  <h2>其他紀錄</h2>
+  <h3 class="function-subtitle font-weight-bold mb-3">生活紀錄</h3>
   <table class="table">
     <tbody>
       <% dashboards.order(finished_at: :desc).misc.each do |dashboard| %>
@@ -7,11 +7,11 @@
         <td><%= dashboard.title %></td>
         <td><%= dashboard.finished_at.to_date %></td>
         <td><%= dashboard.content %></td>
-        <td><%= link_to '編輯', edit_teacher_dashboard_child_misc_path(child_id: params[:id], id: dashboard.id), class: 'btn btn-info' %></td>
+        <td><%= link_to '編輯', edit_teacher_dashboard_child_misc_path(child_id: params[:id], id: dashboard.id), class: 'btn edit-button' %></td>
         <td><%= link_to '刪除', teacher_dashboard_child_misc_path(child_id: params[:id], id: dashboard.id), method: :delete, data: {confirm: '確定刪除這筆資料？'}, class: 'btn btn-danger' %></td>
       </tr>
       <% end %>
     </tbody>
   </table>
-  <%= link_to '新增其他紀錄', new_teacher_dashboard_child_misc_path(child_id: params[:id]),class:'btn btn-warning'%>
+  <%= link_to '新增生活紀錄', new_teacher_dashboard_child_misc_path(child_id: params[:id]),class:'btn create-button'%>
 </div>

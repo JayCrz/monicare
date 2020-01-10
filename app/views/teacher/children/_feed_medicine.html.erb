@@ -1,5 +1,5 @@
 <div class="container text-center">
-  <h2>用藥明細</h2>
+  <h3 class="function-subtitle font-weight-bold mb-3">用藥明細</h3>
   <table class="table">
     <tbody>
       <% dashboards.order(started_at: :desc).medicine.each do |dashboard| %>
@@ -7,11 +7,11 @@
           <td><%= dashboard.title %></td>
           <td><%= dashboard.started_at.to_date %></td>
           <% if dashboard.finished_at === nil %>
-            <td><%= link_to '編輯給藥者', edit_teacher_dashboard_child_medicine_path(child_id: params[:id], id: dashboard.id), class: 'btn btn-danger' %></td>
+            <td><%= link_to '編輯給藥者', edit_teacher_dashboard_child_medicine_path(child_id: params[:id], id: dashboard.id), class: 'btn edit-button' %></td>
           <% else %>
             <td>已完成餵藥</td>
           <% end %>
-          <td><%= link_to '詳情', teacher_dashboard_child_medicine_path(child_id: params[:id], id: dashboard.id), class: 'btn btn-info' %></td>
+          <td><%= link_to '詳情', teacher_dashboard_child_medicine_path(child_id: params[:id], id: dashboard.id), class: 'btn more-button' %></td>
         </tr>
       <% end %>
     </tbody>
