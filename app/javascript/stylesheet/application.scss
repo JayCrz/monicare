@@ -1,25 +1,202 @@
 @import 'bootstrap';
 
+body.frontend {
+  background-image: linear-gradient(180deg,rgba(240, 105, 102, 1) 0%, rgba(241, 172, 157, 1) 50%, rgba(242, 242, 242, 1) 100%);
+  height: 100vh;
+  background-repeat: repeat-x;
+}
+
+body.backend {
+  background-image: linear-gradient(180deg,rgba(217, 152, 115, 1) 0%, rgba(242, 242, 242, 1) 100%);
+  height: 100vh;
+  background-repeat: no-repeat;
+}
+
+.babybackgorund {
+  background-image: linear-gradient( rgba(240, 178, 107, 0.3)), url(/assets/babycare.jpg);
+  background-size: cover;
+
+  .homepage_box {
+    height: 100vh;
+  }
+  
+  .homepageimg {
+    height: 30vh;
+    display: inline-block;
+    margin: 0 auto;
+  }
+  
+  .homepage_background_color {
+    background-color: rgba(250, 227, 217, 0.6);
+    width: 70%;
+    max-height: 90vh;
+    text-align: center;
+  }
+
+  .parent-sign-in-button {
+    background-color: #f06966;
+    border-color: #f06966;
+    color: #ffffff;
+    font-weight: bold;
+  }
+  
+  .teacher-sign-in-button {
+    background-color: #D99873;
+    border-color: #D99873;
+    color: #ffffff;
+    font-weight: bold;
+  }
+}
+
+.frontend-navbar {
+  background-color: transparent;
+  
+  .frontend-navbar-brand {
+    color: rgba(255, 255, 255, 1);
+  }
+
+  a.nav-link.frontend-link {
+    color: rgba(255, 255, 255, 1);
+  }
+
+  .btn.sign-out {
+    color: rgba(255, 255, 255, 1);
+  }
+
+  .btn.user-name {
+    color: rgba(255, 255, 255, 1);
+  }
+
+  .dropdown.show {
+    .nav-link {
+      color: #8C512E;
+      font-weight: bold;
+    }
+    
+    .dropdown-item {
+      color: #D9653B;
+      font-weight: bold;
+    }
+  }
+}
+
+.backend-navbar {
+  background-color: transparent;
+
+  .frontend-navbar-brand {
+    color: rgba(255, 255, 255, 1);
+  }
+
+  a.nav-link.frontend-link {
+    color: rgba(255, 255, 255, 1);
+  }
+
+  .btn.sign-out {
+    color: rgba(255, 255, 255, 1);
+  }
+
+  .btn.user-name {
+    color: rgba(255, 255, 255, 1);
+  }
+
+  .search_btn {
+    background-color: #8C512E;
+    border-color: #8C512E;
+    color: #ffffff;
+  }
+
+  .dropdown.show {
+    .nav-link {
+      color: #8C512E;
+      font-weight: bold;
+    }
+    
+    .dropdown-item {
+      color: #D9653B;
+      font-weight: bold;
+    }
+  }
+}
+
+.dashboard {
+  .dashboard-title {
+    color: #8C512E;
+  }
+
+  .child-name {
+    color: #8C512E;
+  }
+  .card {
+    .card-img-top.child_pic {
+      width: 100%;
+    }
+  }
+
+  table {
+    color: #8C512E;
+
+    .function-button {
+      background-color: #D9653B;
+      border-color: #D9653B;
+      color: #ffffff;
+    }
+
+    .more-button {
+      background-color: #F2884B;
+      border-color: #F2884B;
+      color: #ffffff;
+    }
+  }
+}
+
+.overview {
+  .overview-title {
+    color: #8C512E;
+  }
+
+  .function-button {
+    background-color: #D9653B;
+    border-color: #D9653B;
+    color: #ffffff;
+  }
+
+  .search_btn {
+    background-color: #8C512E;
+    border-color: #8C512E;
+    color: #ffffff;
+  }
+
+  .searching-form {
+    display: block;
+
+    .form-control {
+      width: auto;
+      display: inline-block;
+    }
+  }
+  
+  table {
+    color: #8C512E;
+
+    .more-button {
+      background-color: #D99873;
+      border-color: #D99873;
+      color: #ffffff;
+    }
+
+    .link-button {
+      color: #D9653B;
+      text-decoration: none;
+    }
+  }
+}
+
 .pick_up_pic {
   img {
     width: 300px;
   }
 }
-.babybackgorund{
-  background-image: url(/assets/babycare.jpg);
-  background-size: cover;
 
-}
-.homepage_box{
-  height: 100vh;
-}
-
-.homepageimg{
-  width:500px;
-}
-.homepage_background_color{
-  background-color: rgba(255, 185, 176, 0.3);
-}
 .meal_pic {
   img {
     width: 300px;
@@ -30,10 +207,6 @@
   img {
     width: 300px;
   }
-}
-
-.card-img-top.child_pic {
-  height: 253px;
 }
 
 .card-img-top.avatar-relative {
@@ -79,5 +252,38 @@ td {
   #preview_child_pic {
     height: 100px;
     width: 100px;
+  }
+}
+
+@media screen and (max-width: 767px){
+  .babybackgorund {
+    .homepageimg {
+      width: 100%;
+      height: 10%;
+    }
+  }
+}
+
+@media screen and (min-width: 768px){
+  .card {
+    .card-img-top.child_pic {
+      height: 328px;
+    }
+  }
+}
+
+@media screen and (min-width: 992px){
+  .card {
+    .card-img-top.child_pic {
+      height: 208px;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px){
+  .card {
+    .card-img-top.child_pic {
+      height: 253px;
+    }
   }
 }

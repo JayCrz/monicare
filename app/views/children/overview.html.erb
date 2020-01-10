@@ -1,22 +1,26 @@
 <%= render 'shared/frontend/navbar' %>
-<div class="text-center">
-</div>
-<div class="container text-center">
-<h2 class="text-warning">
-  <%= @child.name %>的行程列表
-  <%= link_to "功能列表", dashboard_child_path(@child.id), class: 'btn btn-light' %>
-</h2>
-<table class="table">
-  <tbody class="dashboard_list">
-    <% @dashboards.order(finished_at: :desc).each do |dashboard| %>
-      <tr>
-          <td><%= link_to dashboard.title, "/dashboard/children/#{dashboard.child_id}/#{dashboard.category}/#{dashboard.id}", class: 'font-weight-bold text-danger' %></td>
+
+<div class="container text-center overview">
+  <h2 class="font-weight-bold overview-title">
+    <%= @child.name %>園內生活點滴<br>
+    <%= link_to "進入功能列表", dashboard_child_path(@child.id), class: 'btn function-button' %>
+  </h2>
+  <% if request.path === "/dashboard/children/#{params[:child_id]}/overview" %>
+    <form class="form-inline my-2 searching-form">
+      <input class="form-control mr-sm-2 search" type="search" placeholder="請輸入查詢日" aria-label="Search">
+      <button class="btn btn-danger my-2 my-sm-0 search_btn" type="submit">搜尋</button>
+    </form>
+  <% end %>
+  <table class="table">
+    <tbody class="dashboard_list">
+      <% @dashboards.order(finished_at: :desc).each do |dashboard| %>
+        <tr>
+          <td><%= link_to dashboard.title, "/dashboard/children/#{dashboard.child_id}/#{dashboard.category}/#{dashboard.id}", class: 'font-weight-bold link-button' %></td>
           <td><%= dashboard.finished_at.to_date %></td>
           <td><%= dashboard.content %></td>
-          <td><%= link_to '詳情', "/dashboard/children/#{dashboard.child_id}/#{dashboard.category}/#{dashboard.id}", class: 'btn btn-info' %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+          <td><%= link_to '詳情', "/dashboard/children/#{dashboard.child_id}/#{dashboard.category}/#{dashboard.id}", class: 'btn more-button' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
