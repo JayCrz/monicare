@@ -1,33 +1,33 @@
-<div class="babybackgorund">
-<div class="container homepage_box d-flex justify-content-center align-items-center">
-  <div class=" p-5 homepage_background_color ">
-  <h3>家長登入</h3>
-
+<div class="babybackgorund task-edit">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field form-group ">
-    <%= f.label :email, '信箱' %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
-  </div>
+    <div class="container homepage_box d-flex justify-content-center align-items-center">
+      <div class=" p-5 homepage_background_color">
+        <h3 class="font-weight-bold">家長登入</h3>
+        <div class="field form-group">
+          <%= f.label :email, '信箱' %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-control-color" %>
+        </div>
 
-  <div class="field form-group ">
-    <%= f.label :password, '密碼' %><br />
-    <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
-  </div>
+        <div class="field form-group">
+          <%= f.label :password, '密碼' %><br />
+          <%= f.password_field :password, autocomplete: "current-password", class: "form-control form-control-color" %>
+        </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+        <% if devise_mapping.rememberable? %>
+          <div class="field">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end %>
+        
+        <div>
+          <div class="actions">
+            <%= f.submit "登入",  class:" btn sign-in-button" %><br>
+            沒有帳號
+          </div>
+          <%= render "users/shared/links" %>
+        </div>
+      </div>
     </div>
   <% end %>
-    <div class="">
-      <div class="actions">
-        <%= f.submit "登入",  class:" btn btn-success"%><br>
-        沒有帳號
-      </div>
-    <%= render "users/shared/links" %>
-    </div>
-  </div>
-</div>
-<% end %>
 </div>
