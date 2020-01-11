@@ -2,7 +2,8 @@
 
 <div class="container text-center overview">
   <h2 class="font-weight-bold overview-title">
-    <%= @student.name %>園內生活點滴<br>
+    <%= @student.name %><br>
+    園內生活點滴<br>
     <%= link_to "進入功能列表", teacher_dashboard_child_path(@student.id), class: 'btn function-button' %>
   </h2>
   <table class="table">

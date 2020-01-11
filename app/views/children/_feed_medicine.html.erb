@@ -4,7 +4,7 @@
     <tbody>
       <% dashboards.order(started_at: :desc).medicine.each do |dashboard| %>
         <tr>
-          <td><%= link_to dashboard.title, dashboard_child_medicine_path(child_id: params[:id], id: dashboard.id), class: 'text-dark' %></td>
+          <td><%= link_to dashboard.title, dashboard_child_medicine_path(child_id: params[:id], id: dashboard.id), class: 'font-weight-bold link-button' %></td>
           <td><%= dashboard.started_at.to_date %></td>
           <% if dashboard.finished_at == nil %>
             <td><%= link_to '編輯', edit_dashboard_child_medicine_path(child_id: params[:id], id: dashboard.id), class: 'btn edit-button' %></td>
