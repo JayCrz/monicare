@@ -22,7 +22,7 @@
       </div>
       <div class="form-group">
         <%= form.label :finished_at, '時間' %>
-        <%= form.date_field :finished_at, class: 'form-control form-control-color' %>
+        <%= form.date_field :finished_at, class: 'form-control form-control-color three_day_scope' %>
       </div>
       <div class="form-group">
         <%= form.label :content, '內容' %>
@@ -35,7 +35,7 @@
       <div class="form-group">
         <%= form.submit '更新紀錄', class:'btn submit-button' %>
         <%= link_to '返回功能列表',teacher_dashboard_child_path(id: params[:child_id], anchor: 'misc'), class: 'btn back-button' %>
-        <%= link_to '刪除', teacher_dashboard_child_misc_path(child_id: params[:child_id],id: params[:id] ), method: :delete, data: {confirm:'確定刪除這筆資料？'}, class: 'btn btn-danger' %>
+        <%= link_to '刪除', teacher_dashboard_child_misc_path(child_id: params[:child_id],id: params[:id] ), method: :delete, class: 'btn btn-danger confirm_delete' %>
       </div>
     <% end %>
   </div>

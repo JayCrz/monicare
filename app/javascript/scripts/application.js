@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import './search'
 import './flatpickr'
+import './delete_alert'
 
 window.onload = function() {
   let anchor = /(#.*)/;

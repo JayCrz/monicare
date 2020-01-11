@@ -8,7 +8,7 @@
           <td><%= dashboard.finished_at.to_date %></td>
           <td><%= dashboard.content %></td>
           <td><%= link_to '編輯', edit_teacher_dashboard_child_eat_path(child_id: params[:id], id: dashboard.id), class:'btn edit-button' %></td>
-          <td><%= link_to '刪除', teacher_dashboard_child_eat_path(child_id: params[:id], id: dashboard.id), method: :delete, data: {confirm: '確定刪除這筆資料？'}, class: 'btn btn-danger' %></td>
+          <td><%= link_to '刪除', teacher_dashboard_child_eat_path(child_id: params[:id], id: dashboard.id), method: :delete, class: 'btn btn-danger confirm_delete' %></td>
         </tr>
       <% end %>
     </tbody>
