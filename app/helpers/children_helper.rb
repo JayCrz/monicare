@@ -17,6 +17,6 @@ module ChildrenHelper
 
   private
   def child_fake_image
-    "https://fakeimg.pl/247x247/FFDD55/FFA488/?text=小孩照片&font=noto"
+    "https://fakeimg.pl/247x247/FFA488/D2D2D2/?text=小孩照片&font=noto"
   end
 end

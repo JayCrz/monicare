@@ -197,7 +197,8 @@ body.backend {
       color: rgba(140, 81, 46, 1);
     }
   }
-  .function-list-group-item {
+  .function-list-group-item,
+  .teacher-function-list-group-item {
     background-color:transparent;
     border-color: #D9653B;
     color: #D9653B;
@@ -210,14 +211,6 @@ body.backend {
     color: #F2F2F2;
     font-size: 22px;
     border-color: #f06966;
-  }
-  .teacher-function-list-group-item {
-    background-color:transparent;
-    border-color: #D9653B;
-    color: #D9653B;
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 20px;
   }
   .teacher-function-list-group-item.active {
     background-color: #dd9966;
@@ -383,7 +376,6 @@ body.backend {
     box-shadow: 0 0 0 0.2rem rgba(217, 152, 115, .5);
   }
 }
-
 .flatpickr-calendar {
   background: #f2f2f2;
   .flatpickr-months {
@@ -566,6 +558,11 @@ body.backend {
     width: 80%;
     height: 80%;
   }
+  img#preview_pick_up_pic,
+  img#preview_meal_pic,
+  img#preview_misc_pic {
+    width: 260px;
+  }
 }
 .child_pic_url {
   white-space: nowrap;
@@ -576,7 +573,7 @@ body.backend {
   content: "瀏覽";
   color: #8C512E;
 }
-td {
+.student_list {
   #preview_child_pic {
     height: 100px;
     width: 100px;
@@ -585,9 +582,15 @@ td {
 
 @media screen and (max-width: 767px){
   .babybackgorund {
+    background-image: linear-gradient( rgba(240, 178, 107, 0.3)), url(/assets/babycare2.jpg);
     .homepageimg {
       width: 100%;
       height: 10%;
+    }
+  }
+  .function-page {
+    td {
+      padding: 5px;
     }
   }
 }

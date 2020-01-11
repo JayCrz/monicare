@@ -6,7 +6,7 @@
     <%= link_to @child.name, dashboard_child_overview_path(params[:id]) %>
   </h2>
   <div class="row">
-    <div class="col-md-4 col-sm-12 mb-3">
+    <div class="col-md-4 col-sm-12 col-12 mb-3">
       <div class="list-group">
         <a class="list-group-item active function-list-group-item" id="list-medicine-list" data-toggle="list" href="#feed-medicine">餵藥</a>
         <a class="list-group-item function-list-group-item" id="list-meal-list" data-toggle="list" href="#meal">用餐紀錄</a>
@@ -14,7 +14,7 @@
         <a class="list-group-item function-list-group-item" id="list-misc-list" data-toggle="list" href="#misc">生活紀錄</a>
       </div>
     </div>
-    <div class="col-md-8 col-sm-12">
+    <div class="col-md-8 col-sm-12 col-12">
       <div class="tab-content" id="nav-tabContent">
         <div class="tab-pane fade show active" id="feed-medicine">
           <%= render 'feed_medicine', dashboards: @dashboards %>
