@@ -3,7 +3,7 @@ module Teacher::MiscHelper
     if dashboard.admin_sign?
       image_tag dashboard.admin_sign.thumb.url, id: 'preview_misc_pic'
     else
-      image_tag fake_image, id: 'preview_misc_pic', class: 'preview_misc_pic_new'
+      image_tag fake_misc_image, id: 'preview_misc_pic', class: 'preview_misc_pic_new'
     end
   end
 
@@ -11,11 +11,11 @@ module Teacher::MiscHelper
     if dashboard.admin_sign?
       dashboard.admin_sign
     else
-      fake_image
+      fake_misc_image
     end
   end
   private
-  def fake_image
-    "https://fakeimg.pl/300x300/FFDD55/FFA488/?text=圖片&font=noto"
+  def fake_misc_image
+    "https://fakeimg.pl/300x300/FFA488/D2D2D2/?text=圖片&font=noto"
   end
 end
