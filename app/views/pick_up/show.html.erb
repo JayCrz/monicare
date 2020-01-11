@@ -21,7 +21,7 @@
       </tr>
       <tr>
         <td>
-          <%= link_to "回到上一頁", dashboard_child_path(@child.id, anchor: 'list-pick-up'), class: 'btn back-button' %>
+          <%= link_to "返回功能列表", dashboard_child_path(@child.id, anchor: 'list-pick-up'), class: 'btn back-button' %>
           <%= link_to "編輯", edit_dashboard_child_pick_up_path(:child_id => @child.id, :id => @pick_up.id), class: 'btn edit-button' %>
           <%= link_to "刪除", dashboard_child_pick_up_path(:child_id => @child.id, :id => @pick_up.id), method: 'delete', data: {confirm: '確定刪除嗎?'}, class: 'btn btn-danger' %>
         </td>
