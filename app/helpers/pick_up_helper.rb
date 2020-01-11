@@ -3,7 +3,7 @@ module PickUpHelper
     if pick_up.pick_up_pic?
       image_tag pick_up.pick_up_pic.thumb.url, id: 'preview_pick_up_pic'
     else
-      image_tag fake_image, id: 'preview_pick_up_pic'
+      image_tag fake_image, id: 'preview_pick_up_pic', class: 'preview_pick_up_pic_new'
     end
   end
 

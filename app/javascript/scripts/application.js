@@ -19,7 +19,7 @@ window.onload = function() {
         $('#list-medicine-list').click();
         break;
     }
-  } 
+  }
 
   function readURL(uploadPicInput) {
     if (uploadPicInput.files && uploadPicInput.files[0]) {
@@ -30,6 +30,10 @@ window.onload = function() {
         $('#preview_child_pic').attr('src', picUrl.target.result);
         $('#preview_meal_pic').attr('src', picUrl.target.result);
         $('#preview_misc_pic').attr('src', picUrl.target.result);
+        $('#preview_pick_up_pic').show();
+        $('#preview_child_pic').show();
+        $('#preview_meal_pic').show();
+        $('#preview_misc_pic').show();
       }
       
       reader.readAsDataURL(uploadPicInput.files[0]);

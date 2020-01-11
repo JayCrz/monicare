@@ -2,9 +2,9 @@
 <%= render 'shared/flash' if notice %>
 
 <div class="container text-center function-page">
-  <h1 class="font-weight-bold function-page-title mb-3">
+  <h2 class="font-weight-bold function-page-title mb-3">
     <%= link_to @student.name, teacher_dashboard_child_overview_path(params[:id]) %>
-  </h1>
+  </h2>
   <div class="row">
     <div class="col-md-4 col-sm-12 mb-3">
       <div class="list-group" >

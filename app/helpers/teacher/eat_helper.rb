@@ -3,7 +3,7 @@ module Teacher::EatHelper
     if dashboard.admin_sign?
       image_tag dashboard.admin_sign.thumb.url, id: 'preview_meal_pic'
     else
-      image_tag fake_image, id: 'preview_meal_pic'
+      image_tag fake_image, id: 'preview_meal_pic', class: 'preview_meal_pic_new'
     end
   end
 
