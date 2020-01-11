@@ -189,7 +189,7 @@ body.backend {
 .function-page {
   .function-page-title {
     a {
-      color: rgba(140, 81, 46, 0.9);
+      color: rgba(140, 81, 46, 0.8);
       font-size: 40px;
       text-decoration: none;
     }
@@ -206,12 +206,14 @@ body.backend {
     text-decoration: none;
     font-size: 20px;
   }
+  .function-list-group-item:hover,
   .function-list-group-item.active {
     background-color: #f06966;
     color: #F2F2F2;
     font-size: 22px;
     border-color: #f06966;
   }
+  .teacher-function-list-group-item:hover,
   .teacher-function-list-group-item.active {
     background-color: #dd9966;
     color: #F2F2F2;
@@ -274,12 +276,12 @@ body.backend {
   .title-color {
     color: rgba(140, 81, 46, 0.9);
   }
-  .submit-button {
+  .submit-button, .sign-in-button {
     background-color: #8C512E;
     border-color: #8C512E;
     color: #ffffff;
   }
-  .back-button {
+  .back-button, .sign-up-button {
     background-color: #D99873;
     border-color: #D99873;
     color: #ffffff;
