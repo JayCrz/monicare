@@ -1,42 +1,45 @@
 <%= render 'shared/frontend/navbar' %>
-<div class="container task-edit">
-  <h2 class="text-center font-weight-bold title-color mb-3">
-    <%= @find_child.name %><br>
-    修改給藥通知
-  </h2>
-  <%= form_with model: @find_medicine, url: dashboard_child_medicine_path	, local: true do |form| %>
-    <div class="form-group">
-      <%= form.label :title, '用藥名稱' %>
-      <%= form.text_field :title, class: 'form-control form-control-color'  %>
-    </div>
 
-    <div class="form-group">
-      <%= form.label :started_at, '用藥時間(僅開放七日內給藥需求)' %>
-      <%= form.date_field :started_at, class: 'form-control form-control-color datetimepickr' %>
-    </div>
-
-    <div class="form-group">
-      <%= form.label :content, '備註' %>
-      <%= form.text_area :content, class: 'form-control form-control-color' %>
-    </div>
-
-    <div class="form-group">
-      <%= form.label :parent_sign, '給藥者簽名(為求慎重，編輯後皆須重新簽章)' %>
-      <%= form.hidden_field :parent_sign, class: 'form-control form-control-color' %>
-      <div class="signature-pad-wrapper mb-3">
-        <canvas id="signature-pad" class="signature-pad"></canvas>
+<div class="container">
+  <div class="col-sm-10 col-md-8 col-lg-6 mx-auto task-edit">
+    <h2 class="text-center font-weight-bold title-color mb-3">
+      <%= @find_child.name %><br>
+      修改給藥通知
+    </h2>
+    <%= form_with model: @find_medicine, url: dashboard_child_medicine_path	, local: true do |form| %>
+      <div class="form-group">
+        <%= form.label :title, '用藥名稱' %>
+        <%= form.text_field :title, class: 'form-control form-control-color'  %>
       </div>
-      <div class="btn signature-button" id="draw">簽名</div>
-      <div class="btn signature-button" id="clear">清除</div>
-      <div class="btn signature-save-button" id="save">儲存簽章</div>
-    </div>
-
-    <div class="form-group">
-      <%= form.submit '更新紀錄', class: 'btn submit-button' %>
-      <%= link_to '返回功能列表', dashboard_child_path(id: params[:child_id], anchor: 'feed-medicine'), class: 'btn back-button' %>
-      <%= link_to '刪除', dashboard_child_medicine_path(child_id: params[:child_id], id: params[:id]), method: :delete , data: {confirm:'確定刪除這筆資料？'}, class: 'btn btn-danger' %>
-    </div>
-  <% end %>
+  
+      <div class="form-group">
+        <%= form.label :started_at, '用藥時間(僅開放七日內給藥需求)' %>
+        <%= form.date_field :started_at, class: 'form-control form-control-color datetimepickr' %>
+      </div>
+  
+      <div class="form-group">
+        <%= form.label :content, '備註' %>
+        <%= form.text_area :content, class: 'form-control form-control-color' %>
+      </div>
+  
+      <div class="form-group">
+        <%= form.label :parent_sign, '給藥者簽名(為求慎重，編輯後皆須重新簽章)' %>
+        <%= form.hidden_field :parent_sign, class: 'form-control form-control-color' %>
+        <div class="signature-pad-wrapper mb-3">
+          <canvas id="signature-pad" class="signature-pad"></canvas>
+        </div>
+        <div class="btn signature-button" id="draw">簽名</div>
+        <div class="btn signature-button" id="clear">清除</div>
+        <div class="btn signature-save-button" id="save">儲存簽章</div>
+      </div>
+  
+      <div class="form-group">
+        <%= form.submit '更新紀錄', class: 'btn submit-button' %>
+        <%= link_to '返回功能列表', dashboard_child_path(id: params[:child_id], anchor: 'feed-medicine'), class: 'btn back-button' %>
+        <%= link_to '刪除', dashboard_child_medicine_path(child_id: params[:child_id], id: params[:id]), method: :delete , data: {confirm:'確定刪除這筆資料？'}, class: 'btn btn-danger' %>
+      </div>
+    <% end %>
+  </div>
 </div>
 
 <%= javascript_pack_tag 'signature_pad.js' %>
