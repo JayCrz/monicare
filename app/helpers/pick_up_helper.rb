@@ -16,6 +16,6 @@ module PickUpHelper
   end
   private
   def fake_pick_up_image
-    "https://fakeimg.pl/300x300/FFA488/D2D2D2/?text=請上傳圖&font=noto"
+    "https://fakeimg.pl/300x300/?text=請上傳圖&font=noto"
   end
 end
