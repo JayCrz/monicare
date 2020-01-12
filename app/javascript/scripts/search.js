@@ -20,17 +20,17 @@ $(document).ready(()=>{
           let student_list = result.map(student => {
             if (student.child_pic.url == null) {
               return`<tr>
-                      <td><img id="preview_child_pic" src="https://fakeimg.pl/247x247/FFDD55/FFA488/?text=小孩照片&font=noto" alt="小孩圖片"></td>
+                      <td><img id="preview_child_pic" src="https://fakeimg.pl/FFA488/?text=小孩照片&font=noto" alt="小孩圖片"></td>
                       <td>${student.name}</td>
-                      <td><a href="/teacher/dashboard/children/${student.id}/overview" class="btn btn-info">列表</a></td>
-                      <td><a href="/teacher/dashboard/children/${student.id}" class="btn btn-info">功能</a></td>
+                      <td><a href="/teacher/dashboard/children/${student.id}/overview" class="btn more-button">列表</a></td>
+                      <td><a href="/teacher/dashboard/children/${student.id}" class="btn function-button">功能</a></td>
                     </tr>`   
             } else {
               return`<tr>
               <td><img id="preview_child_pic" src="${student.child_pic.url}" alt="小孩圖片"></td>
               <td>${student.name}</td>
-              <td><a href="/teacher/dashboard/children/${student.id}/overview" class="btn btn-info">列表</a></td>
-              <td><a href="/teacher/dashboard/children/${student.id}" class="btn btn-info">功能</a></td>
+              <td><a href="/teacher/dashboard/children/${student.id}/overview" class="btn more-button">列表</a></td>
+              <td><a href="/teacher/dashboard/children/${student.id}" class="btn function-button">功能</a></td>
             </tr>` 
             }
           })
@@ -74,17 +74,17 @@ $(document).ready(()=>{
              let dashboard_list = result.map(dashboard => { 
                if(dashboard[4] !== 'medicine') {
                 return`<tr>
-                        <td><a href="/dashboard/children/${dashboard[5]}/${dashboard[4]}/${dashboard[3]}" class="font-weight-bold text-danger">${dashboard[0]}</a></td>
+                        <td><a href="/dashboard/children/${dashboard[5]}/${dashboard[4]}/${dashboard[3]}" class="font-weight-bold link-button">${dashboard[0]}</a></td>
                         <td>${dashboard[1]}</td>
                         <td>${dashboard[2]}</td>
-                        <td><a href="/dashboard/children/${dashboard[5]}/${dashboard[4]}/${dashboard[3]}" class="btn btn-info">詳情</a></td>
+                        <td><a href="/dashboard/children/${dashboard[5]}/${dashboard[4]}/${dashboard[3]}" class="btn more-button">詳情</a></td>
                       </tr>`
                } else {
                 return`<tr>
-                        <td><a href="/dashboard/children/${dashboard[5]}/${dashboard[4]}/${dashboard[3]}/edit" class="font-weight-bold text-danger">${dashboard[0]}</a></td>
+                        <td><a href="/dashboard/children/${dashboard[5]}/${dashboard[4]}/${dashboard[3]}/edit" class="font-weight-bold link-button">${dashboard[0]}</a></td>
                         <td>${dashboard[1]}</td>
                         <td>${dashboard[2]}</td>
-                        <td><a href="/dashboard/children/${dashboard[5]}/${dashboard[4]}/${dashboard[3]}/edit" class="btn btn-info">詳情</a></td>
+                        <td><a href="/dashboard/children/${dashboard[5]}/${dashboard[4]}/${dashboard[3]}/edit" class="btn more-button">詳情</a></td>
                       </tr>`                    
                }             
               })
