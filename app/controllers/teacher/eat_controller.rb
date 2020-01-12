@@ -27,7 +27,7 @@ class Teacher::EatController < BabyclassAppliciationController
   end
       
   def destroy
-    redirect_to teacher_dashboard_child_path(id: params[:child_id], anchor: 'meal'), notice: '資料已刪除' if @meal_dashboard.destroy
+    redirect_to teacher_dashboard_child_path(id: params[:child_id], anchor: 'meal') if @meal_dashboard.destroy
   end
 
   private

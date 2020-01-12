@@ -27,7 +27,7 @@ class Teacher::MiscController < BabyclassAppliciationController
   end
 
   def destroy
-    redirect_to teacher_dashboard_child_path(params[:child_id], anchor: 'misc'), notice: '刪除成功' if @find_misc.destroy
+    redirect_to teacher_dashboard_child_path(params[:child_id], anchor: 'misc') if @find_misc.destroy
   end
 
   private
