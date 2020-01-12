@@ -37,8 +37,8 @@
     </ul>
     <div> 
       <% if user_signed_in? %>
-        <%= link_to current_user.name, dashboard_path, class:'btn user-name' %>
-        <%= link_to "登出", destroy_user_session_path, method: 'delete', class: 'btn sign-out' %>
+        <%= link_to current_user.name, dashboard_path, class:'user-name-button' %>
+        <%= link_to "登出", destroy_user_session_path, method: 'delete', class: 'sign-out-button' %>
       <% else %>
         <%= link_to "註冊", new_user_registration_path, class: 'btn' %>
         <%= link_to "登入", new_user_session_path, class: 'btn' %>
