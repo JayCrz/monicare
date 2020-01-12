@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light backend-navbar mb-3">
-  <a class="navbar-brand navbar-brand" href="#">雙葉幼稚園</a>
+  <a class="navbar-brand navbar-brand" href="/teacher/dashboard">雙葉幼稚園</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -46,8 +46,8 @@
     <% end %>
     <div>
       <% if teacher_signed_in? %>
-        <%= link_to "#{current_teacher.name}老師", teacher_dashboard_path, class: 'btn user-name' %>
-        <%= link_to "登出", destroy_teacher_session_path, method: 'delete', class: 'btn sign-out' %>
+        <%= link_to "#{current_teacher.name}老師", teacher_dashboard_path, class: 'user-name-button' %>
+        <%= link_to "登出", destroy_teacher_session_path, method: 'delete', class: 'sign-out-button' %>
       <% else %>
         <%= link_to "註冊", new_teacher_registration_path, class: 'btn'	%>
         <%= link_to "登入", new_teacher_session_path, class: 'btn' %>

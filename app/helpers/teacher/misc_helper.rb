@@ -16,6 +16,6 @@ module Teacher::MiscHelper
   end
   private
   def fake_misc_image
-    "https://fakeimg.pl/300x300/FFA488/D2D2D2/?text=圖片&font=noto"
+    "https://fakeimg.pl/300x300/?text=圖片&font=noto"
   end
 end

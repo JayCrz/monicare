@@ -12,8 +12,8 @@ $(document).ready(() => {
       icon: 'warning',
       showCancelButton: true,
       cancelButtonText: '取消',
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
+      confirmButtonColor: '#8C512E',
+      cancelButtonColor: '#dc3545',
       confirmButtonText: '確認刪除'
     }).then(reslut => {
       if (reslut.value) {
