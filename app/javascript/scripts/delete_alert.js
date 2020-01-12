@@ -29,7 +29,7 @@ $(document).ready(() => {
         setTimeout(() => {
           self.click();
           console.log('執行刪除')
-        }, 1180);
+        }, 1900);
       }
       
     })
