@@ -31,7 +31,7 @@ class PickUpController < ChildrenlistAppliciationController
 
   def destroy
     @pick_up.destroy
-    redirect_to dashboard_child_path(@child.id, anchor: 'list-pick-up'), notice: '刪除成功'
+    redirect_to dashboard_child_path(@child.id, anchor: 'list-pick-up')
   end
 
   private

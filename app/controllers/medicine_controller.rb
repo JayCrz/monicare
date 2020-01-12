@@ -29,7 +29,7 @@ class MedicineController < ChildrenlistAppliciationController
   end
 
   def destroy
-    redirect_to dashboard_child_path(params[:child_id], anchor: 'feed-medicine'), notice: '資料已刪除' if @find_medicine.destroy
+    redirect_to dashboard_child_path(params[:child_id], anchor: 'feed-medicine') if @find_medicine.destroy
   end 
   
   private
