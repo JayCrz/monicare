@@ -10,6 +10,10 @@ body.backend {
   height: 100vh;
   background-repeat: no-repeat;
 }
+
+.signin-box, .signup-box{
+  width:400px;
+}
 .babybackgorund {
   background-image: linear-gradient( rgba(240, 178, 107, 0.3)), url(/assets/babycare.jpg);
   background-size: cover;
