@@ -32,22 +32,13 @@ gem 'carrierwave', '~> 2.0', '>= 2.0.2'
 gem 'mini_magick', '~> 4.9', '>= 4.9.5'
 gem 'fog-aws', '~> 3.5', '>= 3.5.2'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 gem 'rails-i18n', '~> 6.0.0'
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-gem 'rails-i18n'
->>>>>>> changed regist design
-=======
-gem 'rails-i18n', '~> 6.0.0'
->>>>>>> fix dashboard_controller and gem rails-i18n
-=======
-gem 'activity_notification', '~> 2.0'
->>>>>>> finished homepage
-=======
->>>>>>> del  activity notifications
+
+gem 'omniauth', '~> 1.6'
+gem 'omniauth-google-oauth2', '~> 0.8.0'
+gem 'omniauth-facebook', '~> 4.0'
+
 
 
 
