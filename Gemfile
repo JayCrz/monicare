@@ -33,6 +33,9 @@ gem 'mini_magick', '~> 4.9', '>= 4.9.5'
 gem 'fog-aws', '~> 3.5', '>= 3.5.2'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'rails-i18n', '~> 6.0.0'
+gem 'omniauth', '~> 1.6'
+gem 'omniauth-google-oauth2', '~> 0.8.0'
+gem 'omniauth-facebook', '~> 4.0'
 
 
 

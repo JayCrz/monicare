@@ -4,8 +4,8 @@ class Teacher < ApplicationRecord
   devise :database_authenticatable,
          :registerable,
          :recoverable, 
-        :rememberable,
-        :validatable
+         :rememberable,
+         :validatable
   has_many :class_teachers
   has_many :babyclasses, through: :class_teachers
   has_many :child_teachers
