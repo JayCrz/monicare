@@ -2,6 +2,7 @@
 
 <div class="container">
   <div class="col-sm-10 col-md-8 col-lg-6 mx-auto task-edit">
+    <%= render 'shared/flash' %>
     <% if @find_medicine.errors.any? %>
       <div class="alert alert-info alert-dismissible fade show" role="alert"> 
         <% @find_medicine.errors.full_messages.each do |msg| %>
