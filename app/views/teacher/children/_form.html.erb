@@ -1,7 +1,16 @@
 <div class="container new-child task-edit">
   <div class="col-sm-10 col-md-8 col-lg-6 mx-auto rounded new-child-backgroud">
+    <% if child.errors.any? %>
+      <div class="alert alert-info alert-dismissible fade show" role="alert"> 
+        <% child.errors.full_messages.each do |msg| %>
+          <p>＊<%= msg %></p>
+        <% end %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </div >
+    <% end %>
     <h3 class="new-child-title text-center font-weight-bold mb-3">新增小朋友</h3>
-    <%= form_with(model: [:teacher, dashboard, child], local: true) do |form| %>
+    <%= form_with scope: :child, url: teacher_dashboard_children_path, local: true do |form| %>
       <div class="child_pic mb-3">
         <%= cover_child_pic_image_tag child %>
       </div>
