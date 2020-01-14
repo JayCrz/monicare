@@ -4,6 +4,7 @@ class Teacher::MedicineController < BabyclassAppliciationController
 
   def show
   end
+
   def edit
   end
 
@@ -14,7 +15,7 @@ class Teacher::MedicineController < BabyclassAppliciationController
       Notification.where(dashboard_id: params[:id], teacher_id: current_teacher.id).update(teacher_read: true)
       redirect_to teacher_dashboard_child_medicine_path, notice: '更新成功'
     else
-      render :edit, notice: '更新失敗，餵藥品者請簽名'
+      render :edit
     end
   end
   

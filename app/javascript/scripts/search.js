@@ -20,7 +20,7 @@ $(document).ready(()=>{
           let student_list = result.map(student => {
             if (student.child_pic.url == null) {
               return`<tr>
-                      <td><img id="preview_child_pic" src="https://fakeimg.pl/FFA488/?text=小孩照片&font=noto" alt="小孩圖片"></td>
+                      <td><img id="preview_child_pic" src="https://fakeimg.pl/247x247/?text=小孩照片&font=noto" alt="小孩圖片"></td>
                       <td>${student.name}</td>
                       <td><a href="/teacher/dashboard/children/${student.id}/overview" class="btn more-button">列表</a></td>
                       <td><a href="/teacher/dashboard/children/${student.id}" class="btn function-button">功能</a></td>
