@@ -2,6 +2,7 @@ class MedicineController < ChildrenlistAppliciationController
   before_action :find_child, only:[:new, :edit, :show, :create]
   before_action :find_medicine, only:[:show, :edit, :update, :destroy]
   def new
+    @medicine = Dashboard.new
   end
 
   def create
@@ -15,7 +16,10 @@ class MedicineController < ChildrenlistAppliciationController
       teacher_ids.each do |teacher|
         Notification.create(title: '有新的用藥通知', teacher_id: teacher, user_id: current_user.id, dashboard_id: dashboard_id, teacher_read: false, user_read: false, child_id: params[:child_id])
       end 
-      redirect_to dashboard_child_path(params[:child_id], anchor: 'feed-medicine'),notice: '新增成功' 
+      redirect_to dashboard_child_path(params[:child_id], anchor: 'feed-medicine'),notice: '新增成功'
+    else
+      find_child
+      render :new
     end
 
   end
@@ -28,12 +32,15 @@ class MedicineController < ChildrenlistAppliciationController
   end
 
   def update
-    if @find_medicine.update(medicine_params)
+    if params[:dashboard][:parent_sign].split('/').last != @find_medicine[:parent_sign]
+      @find_medicine.update(medicine_params)
       image = decode_base64_image(params[:dashboard][:parent_sign])
       @find_medicine.update_attribute(:parent_sign, image)
       redirect_to dashboard_child_path(params[:child_id], anchor: 'feed-medicine'), notice: '更新成功'
     else
-      render :edit,notice: '更新錯誤,請重新輸入'
+      find_child
+      flash.now[:error] = "輸入錯誤"
+      render :edit
     end
   end
 
@@ -61,10 +68,13 @@ class MedicineController < ChildrenlistAppliciationController
 
   def decode_base64_image(encoded_file)
     image_source = encoded_file.split(',').last
-    decoded_file = Base64.decode64(image_source)
-    file = Tempfile.new(['image','.png'])
-    file.binmode
-    file.write decoded_file
-    return file
+    if image_source
+      decoded_file = Base64.decode64(image_source)
+      file = Tempfile.new(['image','.png'])
+      file.binmode
+      file.write decoded_file
+      return file
+    else
+    end
   end
 end
