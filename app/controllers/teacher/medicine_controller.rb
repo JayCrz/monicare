@@ -9,11 +9,12 @@ class Teacher::MedicineController < BabyclassAppliciationController
   end
 
   def update
-    if @medicine_dashboard.update(medicine_params)
-      image = decode_base64_image(params[:dashboard][:admin_sign])
-      @medicine_dashboard.update_attribute(:admin_sign, image)
+    image = decode_base64_image(medicine_params[:admin_sign])
+    @medicine_dashboard.assign_attributes( medicine_params.merge(admin_sign: image, want_to_check_admin_sign: true) )
+    if @medicine_dashboard.save
       redirect_to teacher_dashboard_child_medicine_path, notice: '更新成功'
     else
+      flash.now[:alert] = "餵藥完成請簽署"
       render :edit
     end
   end
@@ -33,11 +34,14 @@ class Teacher::MedicineController < BabyclassAppliciationController
 
   def decode_base64_image(encoded_file)
     image_source = encoded_file.split(',').last
-    decoded_file = Base64.decode64(image_source)
-    file = Tempfile.new(['image','.png'])
-    file.binmode
-    file.write decoded_file
-    return file
+    if image_source
+      decoded_file = Base64.decode64(image_source)
+      file = Tempfile.new(['image','.png'])
+      file.binmode
+      file.write decoded_file
+      return file
+    else
+    end
   end
 end
 

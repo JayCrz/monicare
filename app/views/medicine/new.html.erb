@@ -15,7 +15,7 @@
       <%= @find_child.name %><br>
       新增給藥通知
     </h2>
-    <%= form_with scope: :dashboard, url: dashboard_child_medicine_index_path, local: true do |form| %>
+    <%= form_with model: @medicine, scope: :dashboard, url: dashboard_child_medicine_index_path, local: true do |form| %>
       <div class="form-group">
         <%= form.label :title, '用藥名稱' %>
         <%= form.text_field :title, class: 'form-control form-control-color'  %>

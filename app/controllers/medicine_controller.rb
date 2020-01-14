@@ -32,7 +32,7 @@ class MedicineController < ChildrenlistAppliciationController
       redirect_to dashboard_child_path(params[:child_id], anchor: 'feed-medicine'), notice: '更新成功'
     else
       find_child
-      flash.now[:error] = "輸入錯誤"
+      flash.now[:alert] = "請重新簽署"
       render :edit
     end
   end
