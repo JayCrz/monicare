@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
   devise_for :teachers
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+
   
   namespace :api do
     get '/search_student', to: 'api#search'
     get '/search_dashboard', to: 'api#search_dashboard'
-    get '/notification', to: 'api#notification'
+    post '/notification', to: 'api#notification'
+  
   end
   root 'homepage#show'
   

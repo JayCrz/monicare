@@ -27,10 +27,24 @@ class Api::ApiController < ApplicationController
   end
 
   def notification
+    teacher_ids = params['notification']['teacher_id'].split(' ').map(&:to_i)
+    dashboard_id = Dashboard.last.id + 1
+    teacher_ids.each do |teacher|
+      Notification.create(title: params['notification']['title'], teacher_id: teacher, user_id: params['notification']['user_id'], child_id: params['notification']['child_id'], dashboard_id: dashboard_id )
+    end
   end 
 
   private
   def serach_value
     serach_value = params[:serach_value]
+  end
+
+  def notification_params
+    params.require(:notification).permit(:title,
+                                         :teacher_id,
+                                         :user_id,
+                                         :read,
+                                         :child_id,
+                                         :dashboard_id)
   end
 end  
