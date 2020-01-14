@@ -2,13 +2,12 @@ class Teacher::ChildrenController < BabyclassAppliciationController
 
   def new
     @child = Child.new
-    @dashboard = Dashboard.new
   end
 
   def create
     @child = Child.new(child_params)
 
-    if @child.save 
+    if @child.save
       redirect_to teacher_dashboard_path, notice: '新增成功'
       current_teacher.children << Child.last
     else
