@@ -96,23 +96,6 @@ ActiveRecord::Schema.define(version: 2020_01_14_095328) do
     t.index ["child_id"], name: "index_pick_ups_on_child_id"
   end
 
-  create_table "room_messages", force: :cascade do |t|
-    t.bigint "room_id", null: false
-    t.bigint "user_id", null: false
-    t.text "message"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["room_id"], name: "index_room_messages_on_room_id"
-    t.index ["user_id"], name: "index_room_messages_on_user_id"
-  end
-
-  create_table "rooms", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["name"], name: "index_rooms_on_name", unique: true
-  end
-
   create_table "teachers", force: :cascade do |t|
     t.string "name"
     t.string "teacher_pic"
@@ -157,7 +140,5 @@ ActiveRecord::Schema.define(version: 2020_01_14_095328) do
   add_foreign_key "notifications", "teachers"
   add_foreign_key "notifications", "users"
   add_foreign_key "pick_ups", "children"
-  add_foreign_key "room_messages", "rooms"
-  add_foreign_key "room_messages", "users"
   add_foreign_key "users", "children"
 end
