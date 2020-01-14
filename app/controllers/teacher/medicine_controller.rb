@@ -4,6 +4,7 @@ class Teacher::MedicineController < BabyclassAppliciationController
 
   def show
   end
+
   def edit
   end
 
@@ -13,7 +14,7 @@ class Teacher::MedicineController < BabyclassAppliciationController
       @medicine_dashboard.update_attribute(:admin_sign, image)
       redirect_to teacher_dashboard_child_medicine_path, notice: '更新成功'
     else
-      render :edit, notice: '更新失敗，餵藥品者請簽名'
+      render :edit
     end
   end
   

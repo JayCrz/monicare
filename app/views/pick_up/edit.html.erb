@@ -2,6 +2,15 @@
 
 <div class="container">
   <div class="col-sm-10 col-md-8 col-lg-6 mx-auto task-edit">
+    <% if @pick_up.errors.any? %>
+      <div class="alert alert-info alert-dismissible fade show" role="alert"> 
+        <% @pick_up.errors.full_messages.each do |msg| %>
+          <p>＊<%= msg %></p>
+        <% end %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </div >
+    <% end %>
     <h2 class="text-center font-weight-bold title-color mb-3">
     修改<%= @pick_up.name %>的資料
     </h2>
