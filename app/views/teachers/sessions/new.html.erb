@@ -4,12 +4,12 @@
       <div class="p-5 homepage_background_color">
         <h3 class="font-weight-bold">老師登入</h3>
         <%= render 'layouts/messages' %>
-        <div class="field form-group signin-box">
+        <div class="field form-group">
           <%= f.label :email, '信箱' %><br />
           <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-control-color" %>
         </div>
 
-        <div class="field form-group signin-box">
+        <div class="field form-group">
           <%= f.label :password, '密碼' %><br />
           <%= f.password_field :password, autocomplete: "current-password", class: "form-control form-control-color" %>
         </div>
