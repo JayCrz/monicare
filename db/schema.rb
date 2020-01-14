@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_29_080426) do
+ActiveRecord::Schema.define(version: 2020_01_14_095328) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,21 @@ ActiveRecord::Schema.define(version: 2019_12_29_080426) do
     t.index ["child_id"], name: "index_dashboards_on_child_id"
   end
 
+  create_table "notifications", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "teacher_id", null: false
+    t.string "title"
+    t.text "content"
+    t.boolean "teacher_read", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.boolean "user_read", default: false
+    t.integer "child_id"
+    t.integer "dashboard_id"
+    t.index ["teacher_id"], name: "index_notifications_on_teacher_id"
+    t.index ["user_id"], name: "index_notifications_on_user_id"
+  end
+
   create_table "pick_ups", force: :cascade do |t|
     t.string "name"
     t.string "pick_up_pic"
@@ -79,6 +94,23 @@ ActiveRecord::Schema.define(version: 2019_12_29_080426) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["child_id"], name: "index_pick_ups_on_child_id"
+  end
+
+  create_table "room_messages", force: :cascade do |t|
+    t.bigint "room_id", null: false
+    t.bigint "user_id", null: false
+    t.text "message"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["room_id"], name: "index_room_messages_on_room_id"
+    t.index ["user_id"], name: "index_room_messages_on_user_id"
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_rooms_on_name", unique: true
   end
 
   create_table "teachers", force: :cascade do |t|
@@ -120,6 +152,10 @@ ActiveRecord::Schema.define(version: 2019_12_29_080426) do
   add_foreign_key "children", "users"
   add_foreign_key "class_teachers", "babyclasses"
   add_foreign_key "class_teachers", "teachers"
+  add_foreign_key "notifications", "teachers"
+  add_foreign_key "notifications", "users"
   add_foreign_key "pick_ups", "children"
+  add_foreign_key "room_messages", "rooms"
+  add_foreign_key "room_messages", "users"
   add_foreign_key "users", "children"
 end

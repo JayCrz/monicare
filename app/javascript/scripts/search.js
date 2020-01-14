@@ -99,7 +99,7 @@ $(document).ready(()=>{
                Swal.fire({
                  title: '找不到相符的結果',
                  html: '<p>請確認輸入日期格式</p><p>如 : <b>2020-01-02</b> 或 <b>2020</b> 或 <b>01-02</b></p>',
-                 icon: 'info'
+                 icon: 'warning'
                 })
              }
            })
