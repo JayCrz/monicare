@@ -19,6 +19,10 @@ body{
 .signin-box, .signup-box{
   width:400px;
 }
+.logoimg{
+  width:30px;
+}
+
 .babybackgorund {
   background-image: linear-gradient( rgba(240, 178, 107, 0.3)), url(https://monicare.s3-ap-northeast-1.amazonaws.com/photo-1551934262-db2d7dd517f4.jpg);
   height: 100%;
@@ -73,10 +77,10 @@ body{
   }
 }
 .frontend-navbar {
-  background-color: transparent;
+  background-color: #76D1C5;
   .navbar-brand,
   a.nav-link.frontend-link {
-    color: rgba(255, 255, 255, 1);
+    color: black;
   }
   .navbar-brand:hover,
   a.nav-link.frontend-link:hover {
@@ -114,10 +118,10 @@ body{
   }
 }
 .backend-navbar {
-  background-color: transparent;
+  background-color: #76D1C5;
   .navbar-brand,
   a.nav-link.frontend-link {
-    color: rgba(255, 255, 255, 1);
+    color: black;
   }
   .navbar-brand:hover,
   a.nav-link.frontend-link:hover {
@@ -259,7 +263,6 @@ body{
   .searching-form {
     display: block;
     .form-control {
-      width: auto;
       display: inline-block;
     }
     .form-control:hover, .form-control:focus {
