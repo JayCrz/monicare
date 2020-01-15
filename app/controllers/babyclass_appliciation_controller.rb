@@ -11,6 +11,6 @@ class BabyclassAppliciationController < ApplicationController
   end
 
   def notification 
-    @notification = Notification.where(teacher_read: false, user_read: false, user_id: current_teacher.id)
+    @notification = Notification.where(teacher_read: false, user_read: false, teacher_id: current_teacher.id)
   end
 end

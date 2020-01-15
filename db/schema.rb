@@ -96,21 +96,22 @@ ActiveRecord::Schema.define(version: 2020_01_14_095328) do
     t.index ["child_id"], name: "index_pick_ups_on_child_id"
   end
 
-  create_table "room_messages", force: :cascade do |t|
-    t.bigint "room_id", null: false
-    t.bigint "user_id", null: false
-    t.text "message"
+  create_table "subscriptions", force: :cascade do |t|
+    t.string "target_type", null: false
+    t.bigint "target_id", null: false
+    t.string "key", null: false
+    t.boolean "subscribing", default: true, null: false
+    t.boolean "subscribing_to_email", default: true, null: false
+    t.datetime "subscribed_at"
+    t.datetime "unsubscribed_at"
+    t.datetime "subscribed_to_email_at"
+    t.datetime "unsubscribed_to_email_at"
+    t.text "optional_targets"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["room_id"], name: "index_room_messages_on_room_id"
-    t.index ["user_id"], name: "index_room_messages_on_user_id"
-  end
-
-  create_table "rooms", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["name"], name: "index_rooms_on_name", unique: true
+    t.index ["key"], name: "index_subscriptions_on_key"
+    t.index ["target_type", "target_id", "key"], name: "index_subscriptions_on_target_type_and_target_id_and_key", unique: true
+    t.index ["target_type", "target_id"], name: "index_subscriptions_on_target_type_and_target_id"
   end
 
   create_table "teachers", force: :cascade do |t|
@@ -157,7 +158,5 @@ ActiveRecord::Schema.define(version: 2020_01_14_095328) do
   add_foreign_key "notifications", "teachers"
   add_foreign_key "notifications", "users"
   add_foreign_key "pick_ups", "children"
-  add_foreign_key "room_messages", "rooms"
-  add_foreign_key "room_messages", "users"
   add_foreign_key "users", "children"
 end

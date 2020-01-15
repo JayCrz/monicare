@@ -1,5 +1,7 @@
 class PickUp < ApplicationRecord
+  # validations
+  validates :name, :pick_up_pic, :relationship, presence: true
+  # relationship
   belongs_to :child
-  validates :name, presence: true
   mount_uploader :pick_up_pic, AvatarRelativeUploader
 end

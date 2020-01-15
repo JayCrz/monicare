@@ -1,4 +1,7 @@
 class Child < ApplicationRecord
+  # validations
+  validates :name, :child_pic, presence: true
+  # relationship
   belongs_to :babyclass
   has_many :child_teachers
   has_many :pick_ups

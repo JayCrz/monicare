@@ -1,5 +1,5 @@
 <div class="container text-center">
-  <h3 class="function-subtitle font-weight-bold mb-3">吃飯紀錄</h3>
+  <h3 class="function-subtitle font-weight-bold mb-3">用餐紀錄</h3>
   <table class="table">
     <tbody>
       <% dashboards.order(finished_at: :desc).eat.each do |dashboard| %>
@@ -13,5 +13,5 @@
       <% end %>
     </tbody>
   </table>
-  <%= link_to '新增吃飯紀錄', new_teacher_dashboard_child_eat_path(child_id: params[:id]), class: 'btn create-button' %>
+  <%= link_to '新增用餐紀錄', new_teacher_dashboard_child_eat_path(child_id: params[:id]), class: 'btn create-button' %>
 </div>

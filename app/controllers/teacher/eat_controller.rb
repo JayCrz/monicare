@@ -11,7 +11,7 @@ class Teacher::EatController < BabyclassAppliciationController
     if @meal_dashboard.save
       redirect_to teacher_dashboard_child_path(id: params[:child_id], anchor: 'meal'), notice: '新增成功'
     else  
-      render :new, notice:"輸入錯誤，請重新輸入"
+      render :new
     end
   end
 
@@ -22,7 +22,7 @@ class Teacher::EatController < BabyclassAppliciationController
     if @meal_dashboard.update(eat_params)
       redirect_to teacher_dashboard_child_path(id: params[:child_id], anchor: 'meal'), notice: '更新成功'
     else
-      render :edit, notice: "輸入錯誤，請重新輸入"
+      render :edit
     end
   end
       
