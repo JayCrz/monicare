@@ -2,19 +2,36 @@
 <%= render 'shared/flash' if notice %>
 
 <div class="container text-center function-page">
-  <h4 class="font-weight-bold function-page-title mb-3">
-    <%= link_to @student.name, teacher_dashboard_child_overview_path(params[:id]) %>
-  </h4>
   <div class="row">
-    <div class="col-md-4 col-sm-12 mb-3">
-      <div class="list-group" >
-        <a class="list-group-item teacher-function-list-group-item active" id="list-medicine-list" data-toggle="list" href="#feed-medicine">餵藥</a>
-        <a class="list-group-item teacher-function-list-group-item" id="list-meal-list" data-toggle="list" href="#meal">用餐紀錄</a>
-        <a class="list-group-item teacher-function-list-group-item" id="list-pick-up-list" data-toggle="list" href="#list-pick-up">換人接送</a>
-        <a class="list-group-item teacher-function-list-group-item" id="list-misc-list" data-toggle="list" href="#misc">生活紀錄</a>
+    <div class="col-10 col-md-8 col-lg-6 mx-auto mb-4 d-flex align-items-center">
+      <div class="col-6 pr-0 avatar-child">
+        <%= link_to teacher_dashboard_child_overview_path(params[:id]) do %>
+          <img src="<%= show_child_pic_image @student %>" class="card-img-top child_pic" alt="<%= @student.name %>的照片">
+        <% end %>
+      </div>
+      <div class="col-6 text-left function-page-title pl-0">
+          <%= link_to @student.name, teacher_dashboard_child_overview_path(params[:id]) %>
       </div>
     </div>
-    <div class="col-md-8 col-sm-12 col-12">
+    <div class="list-group col-12 mb-3 mx-auto d-flex flex-row p-0">
+      <a class="list-group-item active function-item-medicine col-3" id="list-medicine-list" data-toggle="list" href="#feed-medicine">
+        <i class="fas fa-capsules mb-1"></i><br>
+        <span>餵藥紀錄</span>
+      </a>
+      <a class="list-group-item function-item-meal col-3" id="list-meal-list" data-toggle="list" href="#meal">
+        <i class="fas fa-utensils mb-1"></i><br>
+        <span>用餐紀錄</span>
+      </a>
+      <a class="list-group-item function-item-pick-up col-3" id="list-pick-up-list" data-toggle="list" href="#list-pick-up">
+        <i class="fas fa-user-check mb-1"></i><br>
+        <span>換人接送</span>
+      </a>
+      <a class="list-group-item function-item-misc col-3" id="list-misc-list" data-toggle="list" href="#misc">
+        <i class="fas fa-pencil-alt mb-1"></i><br>
+        <span>生活紀錄</span>
+      </a>
+    </div>
+    <div class="col-12 mx-auto">
       <div class="tab-content" id="nav-tabContent">
         <div class="tab-pane fade show active text-center" id="feed-medicine">
           <%= render 'feed_medicine', dashboards: @dashboards %>
