@@ -18,17 +18,50 @@
     </div>
   </div>
 
-  <table class="table">
-    <tbody class="dashboard_list">
-      <% @dashboards.order(finished_at: :desc).each do |dashboard| %>
-        <tr>
-          <td><%= link_to dashboard.title, "/dashboard/children/#{dashboard.child_id}/#{dashboard.category}/#{dashboard.id}", class: 'font-weight-bold link-button' %></td>
-          <td><%= dashboard.finished_at.to_date %></td>
-          <td><%= dashboard.content %></td>
-          <td><%= link_to '詳情', "/dashboard/children/#{dashboard.child_id}/#{dashboard.category}/#{dashboard.id}", class: 'btn more-button' %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <div class="dashboard_list">
+      <table class="table">
+        <caption><%= @date.first %></caption>
+        <tbody class="list">
+          <% @dashboards.each do |dashboard| %>
+            <% if dashboard.finished_at.strftime("%Y-%m-%d") == @date.first %>
+              <tr>
+                <td><%= link_to dashboard.title, "/dashboard/children/#{dashboard.child_id}/#{dashboard.category}/#{dashboard.id}", class: 'font-weight-bold link-button' %></td>
+                <td><%= dashboard.content %></td>
+                <td><%= link_to '詳情', "/dashboard/children/#{dashboard.child_id}/#{dashboard.category}/#{dashboard.id}", class: 'btn more-button' %></td>
+              </tr>
+            <% end %>        
+          <% end %>
+        </tbody>
+      </table>
+      <table class="table">
+        <caption><%= @date.second %></caption>
+        <tbody class="list">
+          <% @dashboards.each do |dashboard| %>
+            <% if dashboard.finished_at.strftime("%Y-%m-%d") == @date.second %>
+              <tr>
+                <td><%= link_to dashboard.title, "/dashboard/children/#{dashboard.child_id}/#{dashboard.category}/#{dashboard.id}", class: 'font-weight-bold link-button' %></td>
+                <td><%= dashboard.content %></td>
+                <td><%= link_to '詳情', "/dashboard/children/#{dashboard.child_id}/#{dashboard.category}/#{dashboard.id}", class: 'btn more-button' %></td>
+              </tr>
+            <% end %>        
+          <% end %>
+         </tbody>
+      </table>
+      <table class="table">
+        <caption><%= @date.third %></caption>
+        <tbody class="list">
+          <% @dashboards.each do |dashboard| %>
+            <% if dashboard.finished_at.strftime("%Y-%m-%d") == @date.third %>
+              <tr>
+                <td><%= link_to dashboard.title, "/dashboard/children/#{dashboard.child_id}/#{dashboard.category}/#{dashboard.id}", class: 'font-weight-bold link-button' %></td>
+                <td><%= dashboard.content %></td>
+                <td><%= link_to '詳情', "/dashboard/children/#{dashboard.child_id}/#{dashboard.category}/#{dashboard.id}", class: 'btn more-button' %></td>
+              </tr>
+            <% end %>        
+          <% end %>
+        </tbody>
+      </table>
+  </div>  
+
 </div>
 

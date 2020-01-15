@@ -2,7 +2,7 @@
   <h4 class="function-subtitle font-weight-bold mb-3">生活紀錄</h4>
   <table class="table">
     <tbody>
-      <% dashboards.order(finished_at: :desc).misc.each do |dashboard| %>
+      <% dashboards.each do |dashboard| %>
         <tr>
           <td><%= dashboard.title %></td>
           <td><%= dashboard.finished_at.to_date %></td>
