@@ -8,12 +8,19 @@ class ChildrenController < ChildrenlistAppliciationController
   def show
     @child = Child.find(params[:id])
     @pick_ups = @child.pick_ups
-    @dashboards = @child.dashboards
+    @dashboards_medicine = @child.dashboards.order(started_at: :desc).medicine
+    @dashboards_meal = @child.dashboards.order(finished_at: :desc).eat
+    @dashboards_misc = @child.dashboards.order(finished_at: :desc).misc
   end
 
   def overview
     @child = Child.find(params[:child_id])
-    @dashboards = @child.dashboards.where('finished_at IS NOT NULL')
+    @dashboards = @child.dashboards.where('finished_at IS NOT NULL').order(finished_at: :desc)
+    date = []
+    @dashboards.each do |dashboard|
+      date << dashboard.finished_at.strftime("%Y-%m-%d").to_s
+    end
+    @date = date.uniq
   end
     
   def index 
