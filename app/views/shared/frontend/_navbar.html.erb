@@ -27,10 +27,14 @@
           <i class="fas fa-baby"></i>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <%  @children_list.each do |childlist| %>
-            <%= link_to childlist.name, dashboard_child_overview_path(childlist), class:'dropdown-item' %>
+          <% if @children_list.empty? %>
+            請聯繫老師新增小孩
+          <% else %>
+            <%  @children_list.each do |childlist| %>
+              <%= link_to childlist.name, dashboard_child_overview_path(childlist), class:'dropdown-item' %>
+            <% end %>
           <% end %>
-        </div>
+          </div>
       </li>
        <div> 
       <li class="nav-item dropdown">
