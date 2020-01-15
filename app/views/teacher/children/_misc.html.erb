@@ -5,17 +5,20 @@
       <i class="fas fa-plus-circle"></i>
     <% end %>
   </h4>
-  <table class="table">
-    <tbody>
-      <% dashboards.order(finished_at: :desc).misc.each do |dashboard| %>
-      <tr>
-        <td><%= dashboard.title %></td>
-        <td><%= dashboard.finished_at.to_date %></td>
-        <td><%= dashboard.content %></td>
-        <td><%= link_to '編輯', edit_teacher_dashboard_child_misc_path(child_id: params[:id], id: dashboard.id), class: 'btn edit-button' %></td>
-        <td><%= link_to '刪除', teacher_dashboard_child_misc_path(child_id: params[:id], id: dashboard.id), method: :delete, class: 'btn btn-danger confirm_delete' %></td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <% dashboards.each do |date,dashboard| %>
+    <table class="table">
+      <caption><%= date.to_date %></caption>
+      <tbody>
+        <% dashboard.each do |d| %>
+        <tr>
+          <td><%= d.title %></td>
+          <td><%= d.finished_at.to_date %></td>
+          <td><%= d.content %></td>
+          <td><%= link_to '編輯', edit_teacher_dashboard_child_misc_path(child_id: d.child_id, id: d.id), class: 'btn edit-button' %></td>
+          <td><%= link_to '刪除', teacher_dashboard_child_misc_path(child_id: d.child_id, id: d.id), method: :delete, class: 'btn btn-danger confirm_delete' %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
 </div>

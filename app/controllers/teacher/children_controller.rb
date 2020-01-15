@@ -17,7 +17,24 @@ class Teacher::ChildrenController < BabyclassAppliciationController
 
   def show
     @student = Child.find(params[:id])
-    @dashboards = @student.dashboards
+    @dashboards_medicine = @student.dashboards.order(started_at: :desc).medicine.reduce({}) do |rs,dm|
+      date = dm.started_at.strftime("%Y-%m-%d")
+      rs[date] ||= []
+      rs[date] << dm
+      rs
+    end
+    @dashboards_meal = @student.dashboards.order(finished_at: :desc).eat.reduce({}) do |rs,dm|
+      date = dm.finished_at.strftime("%Y-%m-%d")
+      rs[date] ||= []
+      rs[date] << dm
+      rs
+    end
+    @dashboards_misc = @student.dashboards.order(finished_at: :desc).misc.reduce({}) do |rs,dm|
+      date = dm.finished_at.strftime("%Y-%m-%d")
+      rs[date] ||= []
+      rs[date] << dm
+      rs
+    end
     @pick_ups = @student.pick_ups
   end
 
@@ -27,7 +44,12 @@ class Teacher::ChildrenController < BabyclassAppliciationController
 >>>>>>> add teacher view overview (#26)
   def overview
     @student = Child.find(params[:child_id])
-    @dashboards = @student.dashboards.where('finished_at IS NOT NULL')
+    @dashboards = @student.dashboards.where('finished_at IS NOT NULL').order(finished_at: :desc).reduce({}) do |rs, dm|
+      date = dm.finished_at.strftime("%Y-%m-%d")
+      rs[date] ||= []
+      rs[date] << dm
+      rs
+    end
   end
 <<<<<<< HEAD
 
