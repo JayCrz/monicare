@@ -1,15 +1,15 @@
 <div class="babybackgorund">
   <div class="container">
     <div class="d-flex justify-content-center homepage_box align-items-center">
-      <div class="homepage_background_color p-3">   
+      <div class="col-12 col-md-10 col-lg-8 homepage_background_color p-3">   
 
         <%= image_tag("monicare.png", class: "homepageimg") %> 
-        <div class="homepage-text p-2">
-          <p>身為家長的你，把自家小孩交給托嬰中心或幼兒園後，你真的知道孩子發生了什麼事情嗎？</p>
-          <p>有了monicare，讓你一手掌握你家寶貝的最新動態！</p>
-          <div class="d-flex justify-content-around">
-            <%= link_to '我是家長', new_user_session_path, class: 'btn btn-lg parent-sign-in-button' %>
-            <%= link_to '我是老師', new_teacher_session_path, class: 'btn btn-lg teacher-sign-in-button' %>
+        <div class="p-2 mb-3">
+          <h1 class="homepage-title">家庭聯絡簿平台</h1>
+          <span class="homepage-text">記錄小朋友在幼兒園的成長過程，提供家長與園方間的溝通管道</span>
+          <div class="d-flex justify-content-around mt-4">
+            <%= link_to '我是家長', new_user_session_path, class: 'btn parent-sign-in-button' %>
+            <%= link_to '我是老師', new_teacher_session_path, class: 'btn teacher-sign-in-button' %>
           </div>
         </div>
       </div>
