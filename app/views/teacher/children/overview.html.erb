@@ -1,11 +1,17 @@
 <%= render 'shared/backend/navbar' %>
 
-<div class="container text-center overview">
-  <h2 class="font-weight-bold overview-title">
-    <%= @student.name %><br>
-    園內生活點滴<br>
-    <%= link_to "進入功能列表", teacher_dashboard_child_path(@student.id), class: 'btn function-button' %>
-  </h2>
+<div class="container overview">
+  <div class="row no-gutters bg-light position-relative shadow-lg">
+      <div class="col-md-4 col-4 mb-md-0 p-md-4 p-2">
+        <img src="<%= show_child_pic_image Child.find(params[:child_id]) %>" class="card-img-top child_pic w-100 alt=">
+      </div>
+      <div class="col-md-7 col-7 position-static p-sm-4 px-1">
+      <h4><%= @student.name %></h4>
+          <h5 class="mt-0">園內生活點滴</h5>
+          <%= link_to "進入功能列表", dashboard_child_path(@student.id), class: 'btn function-button' %>
+      </div>
+    </div>
+  </div>
   <table class="table">
     <tbody>
       <% @dashboards.order(finished_at: :desc).each do |dashboard| %>

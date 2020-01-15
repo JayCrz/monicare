@@ -1,10 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-light frontend-navbar mb-3">
-  <a class="navbar-brand navbar-brand" href="/dashboard">雙葉幼稚園</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+<nav class="nav navbar-expand-lg navbar-light frontend-navbar mb-3">
+  <a class="navbar-brand px-1" href="/dashboard" class="p-1">
+    <img src="/assets/monicare.png" width="80px" alt="">
+  </a>
+    <ul class="nav ml-auto p-2">
       <li class="nav-item dropdown">
         <% if @notification.empty? %>
           <a class="nav-link frontend-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -26,7 +24,7 @@
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link frontend-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        小孩
+          <i class="fas fa-baby"></i>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <%  @children_list.each do |childlist| %>
@@ -34,15 +32,23 @@
           <% end %>
         </div>
       </li>
+       <div> 
+      <li class="nav-item dropdown">
+        <a class="nav-link frontend-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i></a>
+        <div class="dropdown-menu">
+          <% if user_signed_in? %>
+            <%= link_to current_user.name, dashboard_path, class:'btn user-name' %><br>
+            <%= link_to "登出", destroy_user_session_path, method: 'delete', class: 'btn sign-out' %>
+          <% else %>
+            <%= link_to "註冊", new_user_registration_path, class: 'btn' %>
+            <%= link_to "登入", new_user_session_path, class: 'btn' %>
+          <% end %>
+        </div>
+      </li>
     </ul>
-    <div> 
-      <% if user_signed_in? %>
-        <%= link_to current_user.name, dashboard_path, class:'user-name-button' %>
-        <%= link_to "登出", destroy_user_session_path, method: 'delete', class: 'sign-out-button' %>
-      <% else %>
-        <%= link_to "註冊", new_user_registration_path, class: 'btn' %>
-        <%= link_to "登入", new_user_session_path, class: 'btn' %>
-      <% end %>
-    </div>
-  </div>
+  
+    
+    
+    
+  
 </nav>
