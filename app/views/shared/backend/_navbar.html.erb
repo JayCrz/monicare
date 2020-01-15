@@ -21,8 +21,8 @@
             <i class="fas fa-bell"></i>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <% @notification.each do |notification| %>
-              <div><%= link_to notification.user.children.find(notification.child_id).name + notification.title, "/teacher/dashboard/children/#{notification.child_id}/#{notification.user.children.find(notification.child_id).dashboards.find(notification.dashboard_id).category}/#{notification.dashboard_id}", class:'btn' %></div>
+            <% @notification.where(teacher_id: current_teacher.id).each do |notification| %>
+              <div><%= link_to notification.user.children.find(notification.child_id).name + notification.title, notification_read_url(notification), class:'btn' %></div>
             <% end %>
           </div>
         <% end %>
