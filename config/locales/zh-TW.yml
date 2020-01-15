@@ -12,7 +12,7 @@ zh-TW:
         title: 標題
         content: 內容
         finished_at: 時間
-        started_at: 用藥時間
+        started_at: 餵藥時間
         parent_sign: 簽名
     errors:
       messages:

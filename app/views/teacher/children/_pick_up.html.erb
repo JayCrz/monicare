@@ -1,17 +1,19 @@
 <div class="container text-center">
-  <h4 class="function-subtitle font-weight-bold mb-3">可接送親屬</h4>
+  <h4 class="function-subtitle function-subtitle-pick-up mb-3 mt-2">可接送親屬</h4>
   <div class="row">
-    <% pick_ups.each do |pick_up| %>
-      <div class="col-lg-6 col-md-12 col-sm-12 mb-3">
-        <%= link_to teacher_dashboard_child_pick_up_path(:child_id => student.id, :id => pick_up.id) do %>
-          <div class="card">
-            <img src="<%= show_image pick_up %>" class="card-img-top avatar-relative" alt="可接送親屬<%= pick_up.name %>的照片">
-            <div class="card-body">
-              <h5 class="card-title font-weight-bold relative-name"><%= pick_up.name %></h5>
+    <div class="col-12 col-sm-12 col-md-10 col-lg-8 mx-auto d-flex flex-wrap">
+      <% pick_ups.each do |pick_up| %>
+        <div class="col-6 mb-3">
+          <%= link_to teacher_dashboard_child_pick_up_path(:child_id => student.id, :id => pick_up.id) do %>
+            <div class="card">
+              <img src="<%= show_image pick_up %>" class="card-img-top avatar-relative" alt="可接送親屬<%= pick_up.name %>的照片">
+              <div class="card-body">
+                <h5 class="card-title font-weight-bold relative-name"><%= pick_up.name %></h5>
+              </div>
             </div>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
