@@ -53,6 +53,7 @@ body{
       letter-spacing: .1rem;
     }
   }
+}
   .parent-sign-in-button {
     background-color: rgba(240, 105, 102, .8);
     border-color: transparent;
@@ -75,7 +76,8 @@ body{
     border-color: rgba(217, 152, 115, .5);
     box-shadow: 0 0 0 0.2rem rgba(217, 152, 115, .5);
   }
-}
+  
+
 .frontend-navbar {
   background-color: #76D1C5;
   .navbar-brand,
