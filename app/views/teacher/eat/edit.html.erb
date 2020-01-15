@@ -11,10 +11,10 @@
         <span aria-hidden="true">&times;</span>
       </div >
     <% end %>
-    <h2 class="text-center font-weight-bold title-color">
+    <h4 class="text-center font-weight-bold title-color">
       <%= @student.name %><br>
       編輯用餐紀錄
-    </h2>
+    </h4>
     <%= form_with model: @meal_dashboard, url: teacher_dashboard_child_eat_path, local: true do |form| %>
       <div class="meal_pic mb-3">
         <%= cover_meal_pic_image_tag @meal_dashboard %>
