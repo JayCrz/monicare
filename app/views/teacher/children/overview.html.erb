@@ -6,21 +6,24 @@
         <img src="<%= show_child_pic_image Child.find(params[:child_id]) %>" class="card-img-top child_pic w-100 alt=">
       </div>
       <div class="col-md-7 col-7 position-static p-sm-4 px-1">
-      <h4><%= @student.name %></h4>
-          <h5 class="mt-0">園內生活點滴</h5>
-          <%= link_to "進入功能列表", dashboard_child_path(@student.id), class: 'btn function-button' %>
+        <h4><%= @student.name %></h4>
+        <h5 class="mt-0">園內生活點滴</h5>
+        <%= link_to "進入功能列表", dashboard_child_path(@student.id), class: 'btn function-button' %>
       </div>
     </div>
   </div>
-  <table class="table">
-    <tbody>
-      <% @dashboards.order(finished_at: :desc).each do |dashboard| %>
-        <tr>
-          <td><%= link_to dashboard.title, teacher_redirect_to(dashboard), class: 'font-weight-bold link-button' %></td>
-          <td><%= dashboard.finished_at.to_date %></td>
-          <td><%= dashboard.content %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <% @dashboards.each do |date,dashboard| %>
+    <table class="table">
+      <caption><%= date.to_date %></caption>
+      <tbody>
+        <% dashboard.each do |d| %>
+          <tr>
+            <td><%= link_to d.title, teacher_redirect_to(d), class: 'font-weight-bold link-button' %></td>
+            <td><%= d.finished_at.to_date %></td>
+            <td><%= d.content %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
 </div>
