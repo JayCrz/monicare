@@ -11,6 +11,7 @@ class Teacher::MedicineController < BabyclassAppliciationController
     if @medicine_dashboard.update(medicine_params)
       image = decode_base64_image(params[:dashboard][:admin_sign])
       @medicine_dashboard.update_attribute(:admin_sign, image)
+      Notification.where(dashboard_id: params[:id], teacher_id: current_teacher.id).update(teacher_read: true)
       redirect_to teacher_dashboard_child_medicine_path, notice: '更新成功'
     else
       render :edit, notice: '更新失敗，餵藥品者請簽名'
