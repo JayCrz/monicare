@@ -4,7 +4,7 @@ class ChildrenlistAppliciationController < ApplicationController
 
   private
   def children_list
-    @children_list = User.first.children
+    @children_list = current_user.children
   end
 
   def notification
