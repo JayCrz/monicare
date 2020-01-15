@@ -37,20 +37,9 @@
         <%= form.hidden_field :category, :value => 'medicine',  class: 'form-control form-control-color' %>
         <%= form.hidden_field :child_id, :value => params[:child_id],  class: 'form-control form-control-color' %>
       </div>
-  
       <div class="form-group">
         <%= form.submit '新增紀錄', class: 'btn submit-button btn_new' %>
       </div>
-    <% end %>
-  </div>
-
-  <div class="notification">
-    <%= form_with scope: :notification, url: api_notification_path, local: true do |form|	 %>
-      <%= form.text_field :title, :value => '有新的用藥通知' %>
-      <%= form.text_field :teacher_id, value: @find_child.teachers.ids %>
-      <%= form.text_field :user_id, :value => current_user.id %>
-      <%= form.text_field :child_id, :value => params[:child_id] %>
-      <%= form.submit '新增通知', class: 'btn_notification' %>
     <% end %>
   </div>
 </div>
