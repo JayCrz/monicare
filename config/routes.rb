@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   namespace :api do
     get '/search_student', to: 'api#search'
     get '/search_dashboard', to: 'api#search_dashboard'
-    post '/notification', to: 'api#notification'
   end
   root 'homepage#show'
   
