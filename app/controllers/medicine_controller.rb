@@ -1,18 +1,27 @@
 class MedicineController < ChildrenlistAppliciationController
-  before_action :find_child, only:[:new, :edit, :show]
+  before_action :find_child, only:[:new, :edit, :show, :create]
   before_action :find_medicine, only:[:show, :edit, :update, :destroy]
   def new
   end
 
   def create
     image = decode_base64_image(params[:dashboard][:parent_sign])
+  
     @medicine = Dashboard.new(medicine_params)
     @medicine.parent_sign = image
+    if @medicine.save
+      teacher_ids =  @find_child.teachers.ids
+      dashboard_id = Dashboard.last.id
+      teacher_ids.each do |teacher|
+        Notification.create(title: '有新的用藥通知', teacher_id: teacher, user_id: current_user.id, dashboard_id: dashboard_id, teacher_read: false, user_read: false, child_id: params[:child_id])
+      end 
+      redirect_to dashboard_child_path(params[:child_id], anchor: 'feed-medicine'),notice: '新增成功' 
+    end
 
-    redirect_to dashboard_child_path(params[:child_id], anchor: 'feed-medicine'),notice: '新增成功' if	@medicine.save
   end
 
   def show
+    Notification.where(dashboard_id: params[:id]).update(user_read: true) if Notification.where(dashboard_id: params[:id], teacher_read: true, user_read: true).empty?
   end
 
   def edit
