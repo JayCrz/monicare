@@ -15,14 +15,14 @@
         <%= link_to dashboard_child_path(@child.id), class: 'btn function-button mt-2' do %>
           <i class="fas fa-lightbulb"></i>
           <span>功能</span>
-      <% end %>
+        <% end %>
         <% if request.path === "/dashboard/children/#{params[:child_id]}/overview" %>
-        <form class="form-inline my-2 searching-form">
-          <input class="form-control mr-sm-2 search" type="search" placeholder="請輸入查詢日" aria-label="Search">
-          <button class="btn my-2 my-sm-0 search_btn" type="submit">
-            <i class="fas fa-search"></i>
-          </button>
-        </form>
+          <form class="form-inline my-2 searching-form">
+            <input class="form-control mr-sm-2 search" type="search" placeholder="請輸入查詢日" aria-label="Search">
+            <button class="btn my-2 my-sm-0 search_btn" type="submit">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
         <% end %>
     </div>
   </div>
