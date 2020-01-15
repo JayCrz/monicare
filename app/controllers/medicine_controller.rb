@@ -10,7 +10,7 @@ class MedicineController < ChildrenlistAppliciationController
   
     @medicine = Dashboard.new(medicine_params)
     @medicine.parent_sign = image
-    if @medicine.save
+    if @medicine.save(context: :parent)
       teacher_ids =  @find_child.teachers.ids
       dashboard_id = Dashboard.last.id
       teacher_ids.each do |teacher|
