@@ -73,19 +73,23 @@ $(document).ready(()=>{
            .then(result =>{
              let dashboard_list = result.map(dashboard => { 
                if(dashboard[4] !== 'medicine') {
-                return`<tr>
-                        <td><a href="/dashboard/children/${dashboard[5]}/${dashboard[4]}/${dashboard[3]}" class="font-weight-bold link-button">${dashboard[0]}</a></td>
-                        <td>${dashboard[1]}</td>
-                        <td>${dashboard[2]}</td>
-                        <td><a href="/dashboard/children/${dashboard[5]}/${dashboard[4]}/${dashboard[3]}" class="btn more-button">詳情</a></td>
-                      </tr>`
+                return`<table class="table">
+                        <tr>
+                          <td><a href="/dashboard/children/${dashboard[5]}/${dashboard[4]}/${dashboard[3]}" class="font-weight-bold link-button">${dashboard[0]}</a></td>
+                          <td>${dashboard[1]}</td>
+                          <td>${dashboard[2]}</td>
+                          <td><a href="/dashboard/children/${dashboard[5]}/${dashboard[4]}/${dashboard[3]}" class="btn more-button">詳情</a></td>
+                        </tr>
+                       </table>`
                } else {
-                return`<tr>
-                        <td><a href="/dashboard/children/${dashboard[5]}/${dashboard[4]}/${dashboard[3]}/edit" class="font-weight-bold link-button">${dashboard[0]}</a></td>
-                        <td>${dashboard[1]}</td>
-                        <td>${dashboard[2]}</td>
-                        <td><a href="/dashboard/children/${dashboard[5]}/${dashboard[4]}/${dashboard[3]}/edit" class="btn more-button">詳情</a></td>
-                      </tr>`                    
+                return`<table class="table">
+                        <tr>
+                          <td><a href="/dashboard/children/${dashboard[5]}/${dashboard[4]}/${dashboard[3]}/edit" class="font-weight-bold link-button">${dashboard[0]}</a></td>
+                          <td>${dashboard[1]}</td>
+                          <td>${dashboard[2]}</td>
+                          <td><a href="/dashboard/children/${dashboard[5]}/${dashboard[4]}/${dashboard[3]}/edit" class="btn more-button">詳情</a></td>
+                        </tr>
+                       </table>`                    
                }             
               })
              let dashboard_area = document.querySelector('.dashboard_list')
