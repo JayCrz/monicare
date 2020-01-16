@@ -30,12 +30,12 @@ class ChildrenController < ChildrenlistAppliciationController
 
   def overview
     @child = Child.find(params[:child_id])
-    @dashboards = @child.dashboards.where('finished_at IS NOT NULL').order(finished_at: :desc)
-    date = []
-    @dashboards.each do |dashboard|
-      date << dashboard.finished_at.strftime("%Y-%m-%d").to_s
+    @dashboards = @child.dashboards.where('finished_at IS NOT NULL').order(finished_at: :desc).reduce({}) do |rs,dm|
+      date = dm.finished_at.strftime('%Y-%m-%d')
+      rs[date] ||= []
+      rs[date] << dm
+      rs
     end
-    @date = date.uniq
   end
     
   def index 
