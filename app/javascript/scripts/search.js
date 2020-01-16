@@ -7,8 +7,9 @@ $(document).ready(()=>{
   let url_ary = search_url.split('/')
   if(search_url === '/teacher/dashboard'){
     $('.search_btn').on('click',function(){
+      console.log($('.search_value').val())
       event.preventDefault()
-      axios.get('http://localhost:3000/api/search_student',{params:{serach_value: $('.search').val()}})
+      axios.get('http://localhost:3000/api/search_student',{params:{serach_value: $('.search_value').val()}})
         .then(function(response){
           if (response.status === 200) {
             return response.data
@@ -17,21 +18,30 @@ $(document).ready(()=>{
           }
         })
         .then(function(result){
+          console.log(result)
           let student_list = result.map(student => {
             if (student.child_pic.url == null) {
-              return`<tr>
-                      <td><img id="preview_child_pic" src="https://fakeimg.pl/247x247/?text=小孩照片&font=noto" alt="小孩圖片"></td>
-                      <td>${student.name}</td>
-                      <td><a href="/teacher/dashboard/children/${student.id}/overview" class="btn more-button">列表</a></td>
-                      <td><a href="/teacher/dashboard/children/${student.id}" class="btn function-button">功能</a></td>
-                    </tr>`   
+              return`<a href="/teacher/dashboard/children/${student.id}/overview" class="col-6 mb-3">
+              <div class="card">
+                <div class="card-image">
+                  <img src="https://fakeimg.pl/247x247/?text=小孩照片&font=noto" class="card-img-top child_pic" alt="${student.name}的照片">
+                </div>
+                <div class="card-body align-items-center pt-3 pb-3">
+                  <h5 class="child-name font-weight-bold">${student.name}</h5>
+                </div>
+              </div>
+            </a>` 
             } else {
-              return`<tr>
-              <td><img id="preview_child_pic" src="${student.child_pic.url}" alt="小孩圖片"></td>
-              <td>${student.name}</td>
-              <td><a href="/teacher/dashboard/children/${student.id}/overview" class="btn more-button">列表</a></td>
-              <td><a href="/teacher/dashboard/children/${student.id}" class="btn function-button">功能</a></td>
-            </tr>` 
+              return`<a href="/teacher/dashboard/children/${student.id}/overview" class="col-6 mb-3">
+              <div class="card">
+                <div class="card-image">
+                  <img src="${student.child_pic.url}" class="card-img-top child_pic" alt="${student.name}的照片">
+                </div>
+                <div class="card-body align-items-center pt-3 pb-3">
+                  <h5 class="child-name font-weight-bold">${student.name}</h5>
+                </div>
+              </div>
+            </a>`
             }
           })
           let student_area = document.querySelector('.student_list')
