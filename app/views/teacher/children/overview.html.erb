@@ -8,7 +8,7 @@
       <div class="col-md-7 col-7 position-static p-sm-4 px-1">
         <h4><%= @student.name %></h4>
         <h5 class="mt-0">園內生活點滴</h5>
-        <%= link_to "進入功能列表", dashboard_child_path(@student.id), class: 'btn function-button' %>
+        <%= link_to "進入功能列表", teacher_dashboard_child_path(@student.id), class: 'btn function-button' %>
       </div>
     </div>
   </div>
