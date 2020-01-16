@@ -11,7 +11,7 @@ body{
   background-size:cover;
 }
 .backend {
-  backgroung-color: #ffffff;
+  background-color: #ffffff;
   height: 100%;
   min-height: 100vh;
   background-size:cover;
@@ -64,6 +64,7 @@ body{
     background-color: rgba(240, 105, 102, .9);
     border-color: rgba(240, 105, 102, .5);
     box-shadow: 0 0 0 0.2rem rgba(240, 105, 102, .5);
+    color: #ffffff;
   }
   .teacher-sign-in-button {
     background-color: rgba(217, 152, 115, .8);
@@ -75,6 +76,7 @@ body{
     background-color: rgba(217, 152, 115, .9);
     border-color: rgba(217, 152, 115, .5);
     box-shadow: 0 0 0 0.2rem rgba(217, 152, 115, .5);
+    color: #ffffff;
   }
   
 
@@ -120,7 +122,7 @@ body{
   }
 }
 .backend-navbar {
-  background-color: #76D1C5;
+  background-color: #F9CE00;
   .navbar-brand,
   a.nav-link.frontend-link {
     color: black;
@@ -225,15 +227,6 @@ body{
   }
   .overview-title-child-name{
     font-size: 1rem;
-  }
-  .avatar-child {
-    overflow: hidden;
-    img {
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-      border-radius: 50%;
-    }
   }
   .function-button {
     background-color: #ff585d;
@@ -342,19 +335,23 @@ body{
     border: transparent;
   }
   .function-item-medicine,
-  .function-subtitle-medicine {
+  .function-subtitle-medicine,
+  .create-button-medicine {
     color: #2cacf7;
   }
   .function-item-meal,
-  .function-subtitle-meal {
+  .function-subtitle-meal,
+  .create-button-meal {
     color: #f171af;
   }
   .function-item-pick-up,
-  .function-subtitle-pick-up {
+  .function-subtitle-pick-up,
+  .create-button-pick-up {
     color: #808af8;
   }
   .function-item-misc,
-  .function-subtitle-misc {
+  .function-subtitle-misc,
+  .create-button-misc {
     color: #41cfcf;
   }
   .list-group-item:hover,
@@ -367,14 +364,24 @@ body{
     border-color: #dfdfdf;
   }
   .function-subtitle {
-    font-size: 2rem;
+    font-size: 1.8rem;
     letter-spacing: .2rem;
   }
-  .create-button {
-    color: #808af8;
-  }
-  .create-button:hover {
+  .create-button-pick-up:hover,
+  .create-button-pick-up:focus {
     color: #807ad8;
+  }
+  .create-button-medicine:hover,
+  .create-button-medicine:focus {
+    color: #2cacc5;
+  }
+  .create-button-meal:hover,
+  .create-button-meal:focus {
+    color: #c971af;
+  }
+  .create-button-misc:hover,
+  .create-button-misc-focus {
+    color: #41bfbf;
   }
   table {
     color: #8C512E;
@@ -565,23 +572,25 @@ body{
     }
   }
   .form-control-color.todaypickr {
-    color: rgba(240, 105, 102, 1);
+    color: rgba(140, 81, 46, 1);
     background-color: rgba(217, 101, 59, 0.3);
-    border: 0.1px solid rgba(147, 74, 73, .1);
+    border: 1px solid rgba(147, 74, 73, .1);
     text-align: center;
     font-size: 16px;
+    border-radius: 3px;
   }
   .form-control-color.todaypickr.active {
     background-color: rgba(217, 101, 59, 0.3);
     color: #f2f2f2;
     border: transparent;
     font-size: 16px;
-    box-shadow: 0 0 0.2rem rgba(240, 105, 102, 0.7);
+    box-shadow: none;
     outline: none;
   }
   .form-control-color:hover, .form-control-color:focus {
     border-color: rgba(217, 152, 115, .7);
-    box-shadow: 0 0 0 0.2rem rgba(217, 152, 115, .5);
+    box-shadow: none;
+    cursor: pointer;
   }
 }
 .flatpickr-calendar {
@@ -731,8 +740,8 @@ body{
 }
 .signature-pad-wrapper {
   position: relative;
-  width: 400px;
-  height: 200px;
+  width: 300px;
+  height: 150px;
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
@@ -741,22 +750,22 @@ body{
     position: absolute;
     left: 0;
     top: 0;
-    width:400px;
-    height:200px;
+    width:300px;
+    height:150px;
   }
 }
 .signature-button {
-  background-color: rgba(230, 230, 230, 1);
+  background-color: rgba(150, 150, 150, 1);
   border-color: transparent;
-  color: #8C512E;
+  color: #ffffff;
 }
 .signature-button:hover {
-  background-color: rgba(215, 215, 215, 1);
-  border-color: rgba(200, 200, 200, .9);
-  color: #F2F2F2;
+  background-color: rgba(150, 150, 150, 1);
+  border-color: rgba(150, 150, 150, .9);
+  color: #ffffff;
 }
 .signature-button:focus {
-  box-shadow: 0 0 0 0.2rem rgba(150, 150, 150, 1);
+  box-shadow: none;
 }
 .signature-save-button {
   background-color: rgba(240, 105, 102, 0.7);
@@ -781,6 +790,22 @@ body{
     border-color: rgba(140, 81, 46, .5);
     box-shadow: 0 0 0 0.2rem rgba(217, 152, 115, .5);
   }
+}
+.avatar-child {
+  overflow: hidden;
+  img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
+.avatar-child-title {
+  color: rgba(140, 81, 46, .8); 
+  font-size: 1.2rem;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: .1rem;
 }
 .pick_up_pic, .meal_pic, .misc_pic, .child_pic {
   text-align: center;
