@@ -22,8 +22,8 @@ window.onresize = resizeCanvas;
 resizeCanvas();
 
 let signaturePad = new SignaturePad(canvas, {
-  backgroundColor: 'rgb(0, 0, 0)',
-  penColor: 'rgb(255, 255, 255)'
+  backgroundColor: 'rgb(255, 255, 255)',
+  penColor: 'rgb(30, 30, 30)'
 });
 
 document.getElementById('draw').addEventListener('click', function () {

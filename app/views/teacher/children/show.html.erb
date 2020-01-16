@@ -3,14 +3,12 @@
 
 <div class="container text-center function-page">
   <div class="row">
-    <div class="col-10 col-md-8 col-lg-6 mx-auto mb-4 d-flex align-items-center">
-      <div class="col-6 pr-0 avatar-child avatar-child">
+    <div class="col-10 col-md-8 col-lg-6 mb-2 d-flex align-items-center">
+      <div class="pl-0 pr-0 m-0 avatar-child">
         <%= link_to teacher_dashboard_child_overview_path(params[:id]) do %>
           <img src="<%= show_child_pic_image @student %>" class="card-img-top child_pic" alt="<%= @student.name %>的照片">
+          <%= @student.name %>
         <% end %>
-      </div>
-      <div class="col-6 text-left function-page-title pl-0">
-          <%= link_to @student.name, teacher_dashboard_child_overview_path(params[:id]) %>
       </div>
     </div>
     <div class="list-group col-12 mb-3 mx-auto d-flex flex-row p-0">
