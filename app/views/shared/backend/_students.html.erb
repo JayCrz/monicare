@@ -1,20 +1,30 @@
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">照片</th>
-      <th scope="col">學生</th>
-      <th scope="col">行程列表</th>
-      <th scope="col">功能編輯</th>
-    </tr>
-  </thead>
-  <tbody class="student_list">
-    <% students.each do |student| %>
-      <tr>
-        <td><%= cover_child_pic_image_tag student %></td>
-        <td><%= student.name %></td>
-        <td><%= link_to '列表', teacher_dashboard_child_overview_path(student), class: 'btn more-button' %></td>
-        <td><%= link_to '功能', teacher_dashboard_child_path(student), class: 'btn function-button' %></td>
-      </tr>
+<div class="row">
+  <div class="col-12 col-sm-12 col-md-10 col-lg-8 mx-auto d-flex flex-wrap">
+    <% if request.path === '/teacher/dashboard' %>
+      <form class="col-12 d-flex mb-4">
+        <div class="col-10 pr-1">
+          <input class="form-control search" type="search" placeholder="請輸入學生姓名" aria-label="Search">
+        </div>
+        <div class="search-btn-col col-2 ml-0 pl-0">
+          <button class="btn search_btn" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </form>
     <% end %>
-  </tbody>
-</table>
+    <% @students.each do |student| %>
+      <%= link_to teacher_dashboard_child_overview_path(student), class: 'col-6 mb-3' do %>
+        <div class="card">
+          <div class="card-image">
+            <img src="<%= show_child_pic_image student %>" class="card-img-top child_pic" alt="<%= student.name %>的照片">
+          </div>
+          <div class="card-body align-items-center pt-3 pb-3">
+            <h5 class="child-name font-weight-bold"><%= student.name %></h5>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+
