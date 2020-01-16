@@ -35,6 +35,7 @@ class PickUpController < ChildrenlistAppliciationController
   end
 
   def destroy
+    Notification.find_by(pick_up_id: params[:id]).destroy
     @pick_up.destroy
     redirect_to dashboard_child_path(@child.id, anchor: 'list-pick-up')
   end
