@@ -55,5 +55,8 @@ window.onload = function() {
   $("#dashboard_admin_sign").change(function() {
     readURL(this);
   });
+  $('.searching-form-show').click(function () {
+    $('.searching-form-hide').toggle();
+  });
 };
 
