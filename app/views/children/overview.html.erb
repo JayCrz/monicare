@@ -1,47 +1,73 @@
 <%= render 'shared/frontend/navbar' %>
 
 <div class="container overview">
-  <div class="row no-gutters bg-light position-relative shadow-lg">
+  <div class="row no-gutters bg-light position-relative shadow-sm mb-3 pb-2">
     <div class="col-md-4 col-4 mb-md-0 p-md-4 p-2 avatar-child text-right">
-      <img src="<%= show_child_pic_image @child %>" class="card-img-top child_pic" alt="<%= @child.name %>的照片">
+      <%= link_to dashboard_child_overview_path do %>
+        <img src="<%= show_child_pic_image @child %>" class="card-img-top child_pic" alt="<%= @child.name %>的照片">
+      <% end %>
     </div>
     <div class="col-md-7 col-7 position-static p-sm-4 px-1">
+      <%= link_to dashboard_child_overview_path, class: 'link-button font-weight-bold' do %>
         <span class="overview-title-child-name">
-          <%= @child.name %><br>
+            <%= @child.name %><br>
         </span>
-        <span class="font-weight-bold overview-title">
-          園內生活點滴
-        </span><br>
-        <%= link_to dashboard_child_path(@child.id), class: 'btn function-button mt-2' do %>
-          <i class="fas fa-lightbulb"></i>
-          <span>功能</span>
-        <% end %>
-        <% if request.path === "/dashboard/children/#{params[:child_id]}/overview" %>
-          <form class="form-inline my-2 searching-form">
-            <input class="form-control mr-sm-2 search" type="search" placeholder="請輸入查詢日" aria-label="Search">
-            <button class="btn my-2 my-sm-0 search_btn" type="submit">
-              <i class="fas fa-search"></i>
-            </button>
-          </form>
-        <% end %>
+      <% end %>
+      <span class="font-weight-bold overview-title">
+        園內生活點滴
+      </span><br>
+      <%= link_to dashboard_child_path(@child.id), class: 'btn function-button mt-2' do %>
+        <i class="fas fa-lightbulb"></i>
+        <span>功能</span>
+      <% end %>
+      <button class="btn searching-form-show search_btn mt-2">
+        <i class="fas fa-search"></i>
+        搜尋日期
+      </button>
     </div>
   </div>
-
-  <div class="dashboard_list">
-    <% @dashboards.each do |date,dashboard| %>
+  <div class="searching-form-hide col-12">
+    <form class="d-flex mb-4">
+      <div class="col-10 pr-1">
+        <input class="form-control mr-sm-2 search" type="search" placeholder="請輸入查詢日" aria-label="Search">
+      </div>
+      <div class="col-2 ml-0 pl-0">
+        <button class="btn search_btn" type="submit">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </form>
+  </div>
+  <% @dashboards.each do |date,dashboard| %>
+    <div class="dashboard_list mt-2 mb-3">
       <table class="table">
         <caption><%= date.to_date %></caption>
+        <% dashboard.each do |d| %>
         <tbody class="list">
-          <% dashboard.each do |d| %>
-              <tr>
-                <td><%= link_to d.title, "/dashboard/children/#{d.child_id}/#{d.category}/#{d.id}", class: 'font-weight-bold link-button' %></td>
-                <td><%= d.content %></td>
-                <td><%= link_to '詳情', "/dashboard/children/#{d.child_id}/#{d.category}/#{d.id}", class: 'btn more-button' %></td>
-              </tr>       
-          <% end %>
-        </tbody>
+          <tr>
+            <th class="font-weight-bold text-dark">
+              <% if d.category == 'eat' %>
+                <i class="fas fa-utensils mb-1"></i>
+              <% elsif d.category == 'medicine' %>
+                <i class="fas fa-capsules mb-1"></i>
+              <% elsif d.category == 'misc' %>
+                <i class="fas fa-pencil-alt mb-1"></i>
+              <% end %>
+              <%= link_to d.title, "/dashboard/children/#{d.child_id}/#{d.category}/#{d.id}", class: 'mb-1 mt-1 text-dark link-button' %>
+            </th>
+          </tr>
+          <tr>
+            <% if d.content.present? %>
+              <td><%= d.content %></td>
+            <% else %>
+              <td>無內容</td>
+            <% end %>
+          </tr>
+        </tbody>  
+      <% end %>
       </table>
-    <% end %>
-  </div>  
+    </div>
+  <% end %>
 </div>
 
+          

@@ -1,18 +1,20 @@
 <div class="container text-center">
   <h4 class="function-subtitle function-subtitle-meal mb-3 mt-2">用餐紀錄</h4>
   <% dashboards.each do |date,dashboard| %>
-    <table class="table">
-      <tbody>
+    <div class="table-list mt-2 mb-3">
+      <table class="table">
         <caption><%= date.to_date %></caption>
-        <% dashboard.each do |d| %>
-          <tr>
-            <td><%= d.title %></td>
-            <td><%= d.finished_at.to_date %></td>
-            <td><%= d.content %></td>
-            <td><%= link_to '詳情', dashboard_child_eat_path(child_id: d.child_id, id: d.id), class: 'btn more-button' %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+        <tbody>
+          <% dashboard.each do |d| %>
+            <tr>
+              <th>
+                <%= link_to d.title, dashboard_child_eat_path(child_id: d.child_id, id: d.id), class: 'text-dark' %>
+              </th>
+              <td><%= d.content %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   <% end %>
 </div>
