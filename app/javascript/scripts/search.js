@@ -21,27 +21,27 @@ $(document).ready(()=>{
           console.log(result)
           let student_list = result.map(student => {
             if (student.child_pic.url == null) {
-              return`<a href="/teacher/dashboard/children/${student.id}/overview" class="col-6 mb-3">
-              <div class="card">
-                <div class="card-image">
-                  <img src="https://fakeimg.pl/247x247/?text=小孩照片&font=noto" class="card-img-top child_pic" alt="${student.name}的照片">
-                </div>
-                <div class="card-body align-items-center pt-3 pb-3">
-                  <h5 class="child-name font-weight-bold">${student.name}</h5>
-                </div>
-              </div>
-            </a>` 
+              return` <a href="/teacher/dashboard/children/${student.id}/overview" class="col-6 mb-3">
+                        <div class="card">
+                          <div class="card-image">
+                            <img src="https://fakeimg.pl/247x247/?text=小孩照片&font=noto" class="card-img-top child_pic" alt="${student.name}的照片">
+                          </div>
+                          <div class="card-body align-items-center pt-3 pb-3">
+                            <h5 class="child-name font-weight-bold">${student.name}</h5>
+                          </div>
+                         </div>
+                       </a> ` 
             } else {
-              return`<a href="/teacher/dashboard/children/${student.id}/overview" class="col-6 mb-3">
-              <div class="card">
-                <div class="card-image">
-                  <img src="${student.child_pic.url}" class="card-img-top child_pic" alt="${student.name}的照片">
-                </div>
-                <div class="card-body align-items-center pt-3 pb-3">
-                  <h5 class="child-name font-weight-bold">${student.name}</h5>
-                </div>
-              </div>
-            </a>`
+              return` <a href="/teacher/dashboard/children/${student.id}/overview" class="col-6 mb-3">
+                        <div class="card">
+                          <div class="card-image">
+                            <img src="${student.child_pic.url}" class="card-img-top child_pic" alt="${student.name}的照片">
+                          </div>
+                          <div class="card-body align-items-center pt-3 pb-3">
+                            <h5 class="child-name font-weight-bold">${student.name}</h5>
+                          </div>
+                        </div>
+                      </a>`
             }
           })
           let student_area = document.querySelector('.student_list')
