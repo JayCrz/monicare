@@ -1,9 +1,9 @@
 <%= render 'shared/backend/navbar'%>
+<%= render 'shared/flash' %>
 
 <div class="container task-show">
-  <%= render 'shared/flash' %>
+  <%= render 'shared/backend/child_avatar', student: @student %>
   <h4 class="text-center font-weight-bold title-color mb-3">
-    <%= @student.name %><br>
     餵藥紀錄
   </h4>
   <table class="table table-hover">
@@ -33,12 +33,16 @@
         <td colspan="3"><%= @medicine_dashboard.content %></td>
       </tr>
       <tr>
-        <th scope="row">給藥者簽名</th>
-        <td colspan="3"><%= image_tag @medicine_dashboard.parent_sign.url %></td>
+        <th colspan="4">
+          給藥者簽名<br><br>
+          <%= image_tag @medicine_dashboard.parent_sign.url %>
+        </th>
       </tr>
-      <tr>
-        <th scope="row">餵藥者簽名</th>
-        <td colspan="3"><%= show_admin_sign %></td>
+      <tr>  
+        <th colspan="3">
+          餵藥者簽名<br><br>
+          <%= show_admin_sign %>
+        </th>
       </tr>
       <tr>
         <td colspan="4">
