@@ -1,6 +1,7 @@
 <%= render 'shared/backend/navbar'%>
 
 <div class="container">
+  <%= render 'shared/backend/child_avatar', student: @student %>
   <div class="col-sm-10 col-md-8 col-lg-6 mx-auto task-edit">
     <% if @misc_dashboard.errors.any? %>
       <div class="alert alert-info alert-dismissible fade show" role="alert"> 
@@ -12,7 +13,6 @@
       </div >
     <% end %>
     <h4 class="text-center font-weight-bold title-color mb-3">
-      <%= @student.name %><br>
       編輯生活紀錄
     </h4>
     <%= form_with model: @misc_dashboard, url: teacher_dashboard_child_misc_path, local: true do |form| %>
