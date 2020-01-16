@@ -1,5 +1,10 @@
 <div class="container text-center">
-  <h4 class="function-subtitle function-subtitle-misc mb-3 mt-2">生活紀錄</h4>
+  <h4 class="function-subtitle function-subtitle-misc mb-3 mt-2">
+    生活紀錄
+    <%= link_to new_teacher_dashboard_child_misc_path(child_id: params[:id]),class:'create-button-misc' do %>
+      <i class="fas fa-plus-circle"></i>
+    <% end %>
+  </h4>
   <table class="table">
     <tbody>
       <% dashboards.order(finished_at: :desc).misc.each do |dashboard| %>
@@ -13,5 +18,4 @@
       <% end %>
     </tbody>
   </table>
-  <%= link_to '新增生活紀錄', new_teacher_dashboard_child_misc_path(child_id: params[:id]),class:'btn create-button'%>
 </div>

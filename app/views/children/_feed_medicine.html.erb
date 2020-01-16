@@ -1,5 +1,10 @@
 <div class="container text-center">
-  <h3 class="function-subtitle function-subtitle-medicine mb-3 mt-2">餵藥紀錄</h3>
+  <h4 class="function-subtitle function-subtitle-medicine mb-3 mt-2">
+    餵藥紀錄
+    <%= link_to new_dashboard_child_medicine_path(child_id: params[:id]), class: 'create-button-medicine' do %>
+      <i class="fas fa-plus-circle"></i>
+    <% end %>
+  </h4>
   <table class="table">
     <tbody>
       <% dashboards.order(started_at: :desc).medicine.each do |dashboard| %>
@@ -16,5 +21,4 @@
       <% end %>
     </tbody>
   </table>
-  <%= link_to '新增餵藥紀錄', new_dashboard_child_medicine_path(child_id: params[:id]), class: 'btn create-button' %>
 </div>
