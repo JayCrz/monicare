@@ -33,17 +33,23 @@
           <% end %>
         </div>
       </li>
-    <li class="nav-item dropdown">
-    <a class="nav-link frontend-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i></a>
-    <div class="dropdown-menu">
-       <% if teacher_signed_in? %>
-        <%= link_to "#{current_teacher.name}老師", teacher_dashboard_path, class: 'btn user-name' %><br>
-        <%= link_to "登出", destroy_teacher_session_path, method: 'delete', class: 'btn sign-out' %>
-      <% else %>
-        <%= link_to "註冊", new_teacher_registration_path, class: 'btn'	%>
-        <%= link_to "登入", new_teacher_session_path, class: 'btn' %>
+      <li class="nav-item dropdown">
+        <a class="nav-link frontend-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i></a>
+        <div class="dropdown-menu">
+          <% if teacher_signed_in? %>
+            <%= link_to "#{current_teacher.name}老師", teacher_dashboard_path, class: 'btn user-name' %><br>
+            <%= link_to "登出", destroy_teacher_session_path, method: 'delete', class: 'btn sign-out' %>
+          <% else %>
+            <%= link_to "註冊", new_teacher_registration_path, class: 'btn'	%>
+            <%= link_to "登入", new_teacher_session_path, class: 'btn' %>
+          <% end %>
+        </div>
+      </li>
+      <% if request.path === '/teacher/dashboard' %>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2 search" type="search" placeholder="請輸入學生姓名" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0 search_btn" type="submit">搜尋</button>
+      </form>
       <% end %>
-    </div>
-  </li>
-   </ul>
+    </ul>
 </nav>
