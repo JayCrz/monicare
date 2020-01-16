@@ -123,7 +123,7 @@ $(document).ready(()=>{
             })
       }else{
         Swal.fire({
-          title: '請輸入愈查詢日期',
+          title: '請輸入欲查詢日期',
           html: '<p>請確認輸入日期格式如 :</p><p> <b>2020-01-02</b> 或 <b>2020</b> 或 <b>01-02</b></p>',
           icon: 'warning'
           })
@@ -186,7 +186,7 @@ $(document).ready(()=>{
             })
       }else{
         Swal.fire({
-          title: '請輸入愈查詢日期',
+          title: '請輸入欲查詢日期',
           html: '<p>日期格式如 :</p><p> <b>2020-01-02</b> 或 <b>2020</b> 或 <b>01-02</b></p>',
           icon: 'warning'
         })
