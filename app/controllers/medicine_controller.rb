@@ -45,6 +45,7 @@ class MedicineController < ChildrenlistAppliciationController
   end
 
   def destroy
+    Notification.find_by(dashboard_id: params[:id]).destroy
     redirect_to dashboard_child_path(params[:child_id], anchor: 'feed-medicine') if @find_medicine.destroy
   end 
   
