@@ -1,7 +1,7 @@
 module Teacher::EatHelper
   def cover_meal_pic_image_tag(dashboard)
     if dashboard.admin_sign?
-      image_tag dashboard.admin_sign.thumb.url, id: 'preview_meal_pic'
+      image_tag dashboard.admin_sign.url, id: 'preview_meal_pic'
     else
       image_tag fake_meal_image, id: 'preview_meal_pic', class: 'preview_meal_pic_new'
     end
