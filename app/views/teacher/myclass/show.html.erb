@@ -5,19 +5,19 @@
     <%= @myclass.nursery_class %>的學生
   </h4>
   <div class="row">
-    <div class="col-12 col-sm-12 col-md-10 col-lg-8 mx-auto d-flex flex-wrap">
-      <% if request.path === '/teacher/dashboard' %>
-        <form class="col-12 d-flex mb-4">
-          <div class="col-10 pr-1">
-            <input class="form-control search" type="search" placeholder="請輸入學生姓名" aria-label="Search">
-          </div>
-          <div class="search-btn-col col-2 ml-0 pl-0">
-            <button class="btn search_btn" type="submit">
-              <i class="fas fa-search"></i>
-            </button>
-          </div>
-        </form>
-      <% end %>
+  <% if request.path.split('/')[3] === 'myclass' %>
+    <form class="col-12 d-flex mb-4">
+      <div class="col-10 pr-1">
+        <input class="form-control search_value" type="search" placeholder="請輸入學生姓名" aria-label="Search">
+      </div>
+      <div class="search-btn-col col-2 ml-0 pl-0">
+        <button class="btn search_btn" type="submit">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </form>
+  <% end %>
+    <div class="col-12 col-sm-12 col-md-10 col-lg-8 mx-auto d-flex flex-wrap student_list">
       <% @students.each do |student| %>
         <%= link_to teacher_dashboard_child_overview_path(student), class: 'col-6 mb-3' do %>
           <div class="card">
