@@ -12,25 +12,33 @@
         <span class="font-weight-bold overview-title">
           園內生活點滴
         </span><br>
-          <%= link_to teacher_dashboard_child_path(@student.id), class: 'btn function-button mt-2 mb-3' do %>
-            <i class="fas fa-lightbulb"></i>
-            <span>功能</span>
-          <% end %>
+        <%= link_to teacher_dashboard_child_path(@student.id), class: 'btn function-button mt-2 mb-3' do %>
+          <i class="fas fa-lightbulb"></i>
+          <span>功能</span>
+        <% end %>
+        <% if request.path === "/teacher/dashboard/children/#{params[:child_id]}/overview" %>
+          <form class="form-inline my-2 searching-form">
+            <input class="form-control mr-sm-2 search" type="search" placeholder="請輸入查詢日" aria-label="Search">
+            <button class="btn btn-danger my-2 my-sm-0 search_btn" type="submit">搜尋</button>
+          </form>
+        <% end %>
       </div>
     </div>
   </div>
-  <% @dashboards.each do |date,dashboard| %>
-    <table class="table">
-      <caption><%= date.to_date %></caption>
-      <tbody>
-        <% dashboard.each do |d| %>
-          <tr>
-            <td><%= link_to d.title, teacher_redirect_to(d), class: 'font-weight-bold link-button' %></td>
-            <td><%= d.finished_at.to_date %></td>
-            <td><%= d.content %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  <% end %>
+  <div class="dashboard_list">
+    <% @dashboards.each do |date,dashboard| %>
+      <table class="table">
+        <caption><%= date.to_date %></caption>
+        <tbody>
+          <% dashboard.each do |d| %>
+            <tr>
+              <td><%= link_to d.title, teacher_redirect_to(d), class: 'font-weight-bold link-button' %></td>
+              <td><%= d.finished_at.to_date %></td>
+              <td><%= d.content %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
+  </div>
 </div>

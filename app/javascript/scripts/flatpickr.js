@@ -18,12 +18,8 @@ document.addEventListener('DOMContentLoaded',function(){
   })
 
   flatpickr(".three_day_scope", {
-    minDate:new Date().fp_incr(-3),
-
-    maxDate: new Date().fp_incr(3)
-
-    // defaultDate: "today",
-    // minDate: "today",
-    // maxDate: "today"
+    defaultDate: "today",
+    minDate: "today",
+    maxDate: "today"
   })
 })
