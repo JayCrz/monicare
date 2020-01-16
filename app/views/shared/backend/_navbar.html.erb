@@ -33,17 +33,18 @@
           <% end %>
         </div>
       </li>
-    <li class="nav-item dropdown">
-    <a class="nav-link frontend-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i></a>
-    <div class="dropdown-menu">
-       <% if teacher_signed_in? %>
-        <%= link_to "#{current_teacher.name}老師", teacher_dashboard_path, class: 'btn user-name' %><br>
-        <%= link_to "登出", destroy_teacher_session_path, method: 'delete', class: 'btn sign-out' %>
-      <% else %>
-        <%= link_to "註冊", new_teacher_registration_path, class: 'btn'	%>
-        <%= link_to "登入", new_teacher_session_path, class: 'btn' %>
-      <% end %>
-    </div>
-  </li>
-   </ul>
+      <li class="nav-item dropdown">
+        <a class="nav-link frontend-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i></a>
+        <div class="dropdown-menu">
+          <% if teacher_signed_in? %>
+            <%= link_to "#{current_teacher.name}老師", teacher_dashboard_path, class: 'btn user-name' %><br>
+            <%= link_to "登出", destroy_teacher_session_path, method: 'delete', class: 'btn sign-out' %>
+          <% else %>
+            <%= link_to "註冊", new_teacher_registration_path, class: 'btn'	%>
+            <%= link_to "登入", new_teacher_session_path, class: 'btn' %>
+          <% end %>
+        </div>
+      </li>
+
+    </ul>
 </nav>

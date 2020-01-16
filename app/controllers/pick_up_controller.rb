@@ -9,6 +9,11 @@ class PickUpController < ChildrenlistAppliciationController
   def create
     @pick_up = @child.pick_ups.build(pick_up_params)
     if @pick_up.save
+      teacher_ids =  @child.teachers.ids
+      pick_up_id = PickUp.last.id
+      teacher_ids.each do |teacher|
+        Notification.create(title: '有新的接送親友', teacher_id: teacher, user_id: current_user.id, pick_up_id: pick_up_id, child_id: params[:child_id])
+      end
       redirect_to dashboard_child_path(@child.id, anchor: 'list-pick-up'), notice: '已新增一位可接送的人'
     else
       render :new

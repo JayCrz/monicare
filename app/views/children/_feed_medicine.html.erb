@@ -5,20 +5,23 @@
       <i class="fas fa-plus-circle"></i>
     <% end %>
   </h4>
-  <table class="table">
-    <tbody>
-      <% dashboards.order(started_at: :desc).medicine.each do |dashboard| %>
-        <tr>
-          <td><%= link_to dashboard.title, dashboard_child_medicine_path(child_id: params[:id], id: dashboard.id), class: 'font-weight-bold link-button' %></td>
-          <td><%= dashboard.started_at.to_date %></td>
-          <% if dashboard.finished_at == nil %>
-            <td><%= link_to '編輯', edit_dashboard_child_medicine_path(child_id: params[:id], id: dashboard.id), class: 'btn edit-button' %></td>
-            <td><%= link_to '刪除', dashboard_child_medicine_path(child_id: params[:id], id: dashboard.id), method: :delete , class: 'btn btn-danger confirm_delete' %></td>
-          <% else %>
-            <td colspan="2">老師已完成餵藥</td>
+  <% dashboards.each do |date,dashboard| %>
+    <table class="table">
+      <caption><%= date %></caption>
+      <tbody>
+          <% dashboard.each do |d| %>
+          <tr>
+            <td><%= link_to d.title, dashboard_child_medicine_path(child_id: d.child_id, id: d.id), class: 'font-weight-bold link-button' %></td>
+            <td><%= d.started_at.to_date %></td>
+            <% if d.finished_at == nil %>
+              <td><%= link_to '編輯', edit_dashboard_child_medicine_path(child_id: d.child_id, id: d.id), class: 'btn edit-button' %></td>
+              <td><%= link_to '刪除', dashboard_child_medicine_path(child_id: d.child_id, id: d.id), method: :delete , class: 'btn btn-danger confirm_delete' %></td>
+            <% else %>
+              <td colspan="2">老師已完成餵藥</td>
+            <% end %>
+          </tr>
           <% end %>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </tbody>
+    </table>
+  <% end %>
 </div>

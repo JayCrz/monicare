@@ -15,29 +15,33 @@
         <%= link_to dashboard_child_path(@child.id), class: 'btn function-button mt-2' do %>
           <i class="fas fa-lightbulb"></i>
           <span>功能</span>
-      <% end %>
+        <% end %>
         <% if request.path === "/dashboard/children/#{params[:child_id]}/overview" %>
-        <form class="form-inline my-2 searching-form">
-          <input class="form-control mr-sm-2 search" type="search" placeholder="請輸入查詢日" aria-label="Search">
-          <button class="btn my-2 my-sm-0 search_btn" type="submit">
-            <i class="fas fa-search"></i>
-          </button>
-        </form>
+          <form class="form-inline my-2 searching-form">
+            <input class="form-control mr-sm-2 search" type="search" placeholder="請輸入查詢日" aria-label="Search">
+            <button class="btn my-2 my-sm-0 search_btn" type="submit">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
         <% end %>
     </div>
   </div>
 
-  <table class="table">
-    <tbody class="dashboard_list">
-      <% @dashboards.order(finished_at: :desc).each do |dashboard| %>
-        <tr>
-          <td><%= link_to dashboard.title, "/dashboard/children/#{dashboard.child_id}/#{dashboard.category}/#{dashboard.id}", class: 'font-weight-bold link-button' %></td>
-          <td><%= dashboard.finished_at.to_date %></td>
-          <td><%= dashboard.content %></td>
-          <td><%= link_to '詳情', "/dashboard/children/#{dashboard.child_id}/#{dashboard.category}/#{dashboard.id}", class: 'btn more-button' %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <div class="dashboard_list">
+    <% @dashboards.each do |date,dashboard| %>
+      <table class="table">
+        <caption><%= date.to_date %></caption>
+        <tbody class="list">
+          <% dashboard.each do |d| %>
+              <tr>
+                <td><%= link_to d.title, "/dashboard/children/#{d.child_id}/#{d.category}/#{d.id}", class: 'font-weight-bold link-button' %></td>
+                <td><%= d.content %></td>
+                <td><%= link_to '詳情', "/dashboard/children/#{d.child_id}/#{d.category}/#{d.id}", class: 'btn more-button' %></td>
+              </tr>       
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
+  </div>  
 </div>
 
