@@ -41,11 +41,12 @@
         <a class="nav-link frontend-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i></a>
         <div class="dropdown-menu">
           <% if user_signed_in? %>
-            <%= link_to current_user.name, dashboard_path, class:'btn user-name' %><br>
-            <%= link_to "登出", destroy_user_session_path, method: 'delete', class: 'btn sign-out' %>
+            <div><%= link_to "current_user.name", dashboard_path, class:'btn user-name' %></div>
+            <div><%= link_to('修改密碼', edit_registration_path(:user), class:'btn user-name' )  %></div>
+            <div><%= link_to "登出", destroy_user_session_path, method: 'delete', class: 'btn sign-out' %></div>
           <% else %>
-            <%= link_to "註冊", new_user_registration_path, class: 'btn' %>
-            <%= link_to "登入", new_user_session_path, class: 'btn' %>
+            <div><%= link_to "註冊", new_user_registration_path, class: 'btn' %></div>
+            <div><%= link_to "登入", new_user_session_path, class: 'btn' %></div>
           <% end %>
         </div>
       </li>
