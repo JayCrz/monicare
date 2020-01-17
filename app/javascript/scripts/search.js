@@ -81,34 +81,63 @@ $(document).ready(()=>{
             })
             .then(result =>{
               let dashboard_list = result.map(dashboard => { 
-                if(dashboard[4] !== 'medicine') {
+                if(dashboard[4] === 'eat') {
                   let content = dashboard[2]
                   if (dashboard[2] === '') {
-                    content = '無內容'
+                    content = '無紀錄詳細內容'
                   }
                   return` <tr>
-                            <th class="font-weight-bold text-dark">
-                              <i class="fas fa-capsules mb-1"></i>
-                              <a href="/dashboard/children/${dashboard[5]}/${dashboard[4]}/${dashboard[3]}/edit" class="font-weight-bold link-button">${dashboard[0]}</a>
-                            </th>
+                            <th class="font-weight-bold text-dark overview-icon" rowspan="2">
+                              <span class="icon-meal">
+                                <i class="fas fa-utensils mb-1"></i><br>
+                                用餐紀錄
+                              </span>
+                              </th>
+                              <th class="pl-0 pr-0 pb-0">
+                                <a href="/dashboard/children/${dashboard[5]}/${dashboard[4]}/${dashboard[3]}" class="font-weight-bold link-button">${dashboard[0]}</a>
+                              </th>
                             </tr>
                             <tr>
-                              <td>${content}</td>
+                              <td class="pl-0 pr-0">${content}</td>
                             </tr>`
-                } else {
+                } else if (dashboard[4] === 'medicine') {
                   let content = dashboard[2]
                   if (dashboard[2] === '') {
-                    content = '無內容'
+                    content = '無紀錄詳細內容'
                   }
                   return` <tr>
-                            <th class="font-weight-bold text-dark">
-                              <i class="fas fa-capsules mb-1"></i>
+                            <th class="font-weight-bold text-dark overview-icon" rowspan="2">
+                              <span class="icon-medicine">
+                                <i class="fas fa-capsules mb-1"></i><br>
+                                用藥紀錄
+                              </span>
+                            </th>
+                            <th class="pl-0 pr-0 pb-0">
                               <a href="/dashboard/children/${dashboard[5]}/${dashboard[4]}/${dashboard[3]}" class="font-weight-bold link-button">${dashboard[0]}</a>
                             </th>
-                            </tr>
+                          </tr>
                           <tr>
-                            <td>${content}</td>
-                          </tr>`                   
+                            <td class="pl-0 pr-0">${content}</td>
+                          </tr>`                
+                } else if (dashboard[4] === 'misc'){
+                  let content = dashboard[2]
+                  if (dashboard[2] === '') {
+                    content = '無紀錄詳細內容'
+                  }
+                  return` <tr>
+                            <th class="font-weight-bold text-dark overview-icon" rowspan="2">
+                              <span class="icon-misc">
+                                <i class="fas fa-pencil-alt mb-1"></i><br>
+                                生活紀錄
+                              </span>
+                            </th>
+                            <th class="pl-0 pr-0 pb-0">
+                              <a href="/dashboard/children/${dashboard[5]}/${dashboard[4]}/${dashboard[3]}" class="font-weight-bold link-button">${dashboard[0]}</a>
+                            </th>
+                          </tr>
+                          <tr>
+                            <td class="pl-0 pr-0">${content}</td>
+                          </tr>` 
                 }             
                 })
               let dashboard_area = document.querySelector('.overview_dashboard')
@@ -121,7 +150,7 @@ $(document).ready(()=>{
               }else{
                 Swal.fire({
                   title: '找不到相符的結果',
-                  html: '<p>請確認輸入日期格式</p><p>如 : <b>2020-01-02</b> 或 <b>2020</b> 或 <b>01-02</b></p>',
+                  html: '<p>請確認輸入日期格式</p><p>如 : <b>2020-01-02</b></p>',
                   icon: 'warning'
                   })
               }
@@ -135,7 +164,7 @@ $(document).ready(()=>{
       }else{
         Swal.fire({
           title: '請輸入欲查詢日期',
-          html: '<p>請確認輸入日期格式如 :</p><p> <b>2020-01-02</b> 或 <b>2020</b> 或 <b>01-02</b></p>',
+          html: '<p>請確認輸入日期格式如 :</p><p><b>2020-01-02</b></p>',
           icon: 'warning'
           })
       }
@@ -157,34 +186,63 @@ $(document).ready(()=>{
             })
             .then(result =>{
               let dashboard_list = result.map(dashboard => { 
-                if(dashboard[4] !== 'medicine') {
+                if(dashboard[4] === 'eat') {
                   let content = dashboard[2]
                   if (dashboard[2] === '') {
                     content = '無內容'
                   }
                   return` <tr>
-                            <th class="font-weight-bold text-dark">
-                              <i class="fas fa-capsules mb-1"></i>
+                            <th class="font-weight-bold text-dark overview-icon" rowspan="2">
+                              <span class="icon-meal">
+                                <i class="fas fa-utensils mb-1"></i><br>
+                                用餐紀錄
+                              </span>
+                            </th>
+                            <th class="pl-0 pr-0 pb-0">
                               <a href="/teacher/dashboard/children/${dashboard[5]}/${dashboard[4]}/${dashboard[3]}/edit" class="font-weight-bold link-button">${dashboard[0]}</a>
                             </th>
-                            </tr>
-                            <tr>
-                              <td>${content}</td>
-                            </tr>`
-                } else {
-                  let content = dashboard[2]
-                  if (dashboard[2] === '') {
-                    content = '無內容'
-                  }
-                  return` <tr>
-                            <th class="font-weight-bold text-dark">
-                              <i class="fas fa-capsules mb-1"></i>
-                              <a href="/teacher/dashboard/children/${dashboard[5]}/${dashboard[4]}/${dashboard[3]}" class="font-weight-bold link-button">${dashboard[0]}</a>
-                            </th>
-                            </tr>
+                          </tr>
                           <tr>
-                            <td>${content}</td>
-                          </tr>`                  
+                            <td class="pl-0 pr-0">${content}</td>
+                          </tr>`
+      } else if (dashboard[4] === 'medicine') {
+        let content = dashboard[2]
+        if (dashboard[2] === '') {
+          content = '無紀錄詳細內容'
+        }
+        return` <tr>
+                  <th class="font-weight-bold text-dark overview-icon" rowspan="2">
+                    <span class="icon-medicine">
+                      <i class="fas fa-capsules mb-1"></i><br>
+                      用藥紀錄
+                    </span>
+                  </th>
+                  <th class="pl-0 pr-0 pb-0">
+                    <a href="/teacher/dashboard/children/${dashboard[5]}/${dashboard[4]}/${dashboard[3]}" class="font-weight-bold link-button">${dashboard[0]}</a>
+                  </th>
+                </tr>
+                <tr>
+                  <td class="pl-0 pr-0">${content}</td>
+                </tr>`                
+      } else if (dashboard[4] === 'misc'){
+        let content = dashboard[2]
+        if (dashboard[2] === '') {
+          content = '無紀錄詳細內容'
+        }
+        return` <tr>
+                  <th class="font-weight-bold text-dark overview-icon" rowspan="2">
+                    <span class="icon-misc">
+                      <i class="fas fa-pencil-alt mb-1"></i><br>
+                      生活紀錄
+                    </span>
+                  </th>
+                  <th class="pl-0 pr-0 pb-0">
+                    <a href="/teacher/dashboard/children/${dashboard[5]}/${dashboard[4]}/${dashboard[3]}/edit" class="font-weight-bold link-button">${dashboard[0]}</a>
+                  </th>
+                </tr>
+                <tr>
+                  <td class="pl-0 pr-0">${content}</td>
+                </tr>`                  
                 }             
                 })
               let dashboard_area = document.querySelector('.overview_dashboard')
