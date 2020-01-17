@@ -8,7 +8,7 @@ $(document).ready(()=>{
   if(search_url === '/teacher/dashboard' || url_ary[3] === 'myclass'){
     $('.search_btn').on('click',function(){
       event.preventDefault()
-      axios.get('http://localhost:3000/api/search_student',{params:{serach_value: $('.search_value').val(), class: url_ary[3], class_id: url_ary[4]}})
+      axios.get('https://immense-plateau-18371.herokuapp.com/api/search_student',{params:{serach_value: $('.search_value').val(), class: url_ary[3], class_id: url_ary[4]}})
         .then(function(response){
           if (response.status === 200) {
             return response.data
@@ -71,7 +71,7 @@ $(document).ready(()=>{
       event.preventDefault()
       let date_style = /\d\d\d\d-\d\d-\d\d/.test($('.search').val())
       if ($('.search').val() !== '' && date_style) {
-        axios.get('http://localhost:3000/api/search_dashboard',{params:{serach_value: $('.search').val(), child_id: url_ary[3]}})
+        axios.get('https://immense-plateau-18371.herokuapp.com/api/search_dashboard',{params:{serach_value: $('.search').val(), child_id: url_ary[3]}})
             .then(function(response){
               if (response.status === 200) {
                 return response.data
@@ -176,7 +176,7 @@ $(document).ready(()=>{
       event.preventDefault()
       let date_style = /\d\d\d\d-\d\d-\d\d/.test($('.search').val())
       if ( $('.search').val() !== '' && date_style){
-        axios.get('http://localhost:3000/api/search_dashboard',{params:{serach_value: $('.search').val(), child_id: url_ary[4]}})
+        axios.get('https://immense-plateau-18371.herokuapp.com/api/search_dashboard',{params:{serach_value: $('.search').val(), child_id: url_ary[4]}})
             .then(function(response){
               if (response.status === 200) {
                 return response.data
