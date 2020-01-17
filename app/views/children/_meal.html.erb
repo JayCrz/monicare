@@ -11,9 +11,9 @@
                 <%= link_to d.title, dashboard_child_eat_path(child_id: d.child_id, id: d.id), class: 'text-dark' %>
               </th>
               <% if d.content.present? %>
-                <td><%= d.content %></td>
+                <td class="text-secondary"><%= d.content %></td>
               <% else %>
-                <td>無註明用餐內容</td>
+                <td class="text-secondary">無註明用餐內容</td>
               <% end %>
             </tr>
           <% end %>

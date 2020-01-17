@@ -11,9 +11,9 @@
                 <%= link_to d.title, dashboard_child_misc_path(child_id: d.child_id, id: d.id), class: 'text-dark' %>
               </th>
               <% if d.content.present? %>
-                <td><%= d.content %></td>
+                <td class="text-secondary"><%= d.content %></td>
               <% else %>
-                <td>尚無註明內容</td>
+                <td class="text-secondary">尚無註明內容</td>
               <% end %>
             </tr>
           <% end %>

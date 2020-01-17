@@ -32,7 +32,7 @@
         <input class="form-control mr-sm-2 search" type="search" placeholder="請輸入查詢日" aria-label="Search">
       </div>
       <div class="col-2 ml-0 pl-0">
-        <button class="btn search_bt search_btn_show" type="submit">
+        <button class="btn search_btn search_btn_show" type="submit">
           <i class="fas fa-search"></i>
         </button>
       </div>
@@ -70,9 +70,9 @@
               </tr>
               <tr>
                 <% if d.content.present? %>
-                  <td class="pl-0 pr-0"><%= d.content %></td>
+                  <td class="pl-0 pr-0 text-secondary"><%= d.content %></td>
                 <% else %>
-                  <td class="pl-0 pr-0">尚無紀錄詳細內容</td>
+                  <td class="pl-0 pr-0 text-secondary">無紀錄詳細內容</td>
                 <% end %>
               </tr>
             </tbody>
