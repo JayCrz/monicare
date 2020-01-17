@@ -6,7 +6,7 @@
     用餐紀錄
   </h4>
   <div class="meal_pic mb-3">
-    <%= cover_meal_pic_image_tag @meal_dashboard %>
+    <%= cover_meal_pic_image_tag @meal_dashboard if @meal_dashboard.admin_sign? %>
   </div>
   <table class="table table-hover">
     <tbody>
@@ -15,12 +15,18 @@
         <td><%= @meal_dashboard.title %></td>
       </tr>
       <tr>
-        <th scope="row">餐點內容</th>
-        <td><%= @meal_dashboard.content %></td>
-      </tr>
-      <tr>
         <th scope="row">用餐時間</th>
         <td><%= @meal_dashboard.finished_at.strftime("%Y-%m-%d") %></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <span class="font-weight-bold">餐點內容</span><br><br>
+          <% if @meal_dashboard.content.present? %>
+            <%= @meal_dashboard.content %>
+          <% else %>
+            無紀錄詳細內容
+          <% end %>
+        </td>
       </tr>
       <tr>
         <td colspan="4">
