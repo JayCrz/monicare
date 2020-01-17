@@ -78,7 +78,9 @@ body{
     box-shadow: 0 0 0 0.2rem rgba(217, 152, 115, .5);
     color: #ffffff;
   }
-  
+  .navwidth{
+    max-width: 960px;
+  }
 
 .frontend-navbar {
   .btn,.btn-fake{
@@ -261,7 +263,7 @@ body{
     box-shadow: none;
   }
   .search_btn:hover,
-  .search_btn:focus, {
+  .search_btn:focus {
     background-color: rgba(140, 81, 46, .9);
     box-shadow: none;
   }
