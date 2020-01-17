@@ -105,6 +105,9 @@ body{
   a.nav-link.frontend-link:hover {
     color: rgba(59, 88, 145, 1);
   }
+  .nav-link{
+    padding: 0.5rem 0.5rem;
+  }
   .sign-out-button,
   .user-name-button {
     color: rgba(255, 255, 255, 1);
@@ -147,6 +150,7 @@ body{
   .navbar-brand,
   a.nav-link.frontend-link {
     color: #FF7A01;
+    padding: 0.5rem 
   }
   .navbar-brand:hover,
   a.nav-link.frontend-link:hover {

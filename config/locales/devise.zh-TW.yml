@@ -1,4 +1,7 @@
 zh-TW:
+  
+    
+    
   devise:
     confirmations:
       confirmed: "您的帳號已通過驗證，現在您已成功登入。"
@@ -13,7 +16,7 @@ zh-TW:
       not_found_in_database: "信箱或密碼是無效的。"
       timeout: "您的登入時效過期，請重新登入。"
       unauthenticated: "您需要先登入或註冊後才能繼續。"
-      unconfirmed: "您的帳號需需要經過驗證後，才能繼續。"
+      unconfirmed: "您的帳號需需要經過驗證後，才能繼續。" 
     mailer:
       confirmation_instructions:
         subject: "帳號驗證步驟"
@@ -37,7 +40,7 @@ zh-TW:
       signed_up_but_locked: "您已註冊成功。 然而因為您的帳號已被鎖定，暫時無法登入，抱歉！"
       signed_up_but_unconfirmed: "確認信件已送至您的 Email 信箱，請點擊信件內連結以啓動您的帳號。"
       update_needs_confirmation: "您已經成功的更新帳號資訊，但我們仍需確認您的電子信箱，請至新信箱收信並點擊連結以確認您的新電子郵件帳號。"
-      updated: "您已經成功的更新帳號資訊。"
+      updated: "您已經成功的更新帳號資訊。"   
     sessions:
       signed_in: "您已成功登入"
       signed_out: "您已成功登出"
@@ -55,3 +58,4 @@ zh-TW:
       not_saved:
         one: "有一個錯誤導致 %{resource} 不能被儲存："
         other: "有 %{count} 個錯誤導致 %{resource} 不能被儲存："
+  
