@@ -1,6 +1,6 @@
 <nav class="nav navbar-expand-lg navbar-light backend-navbar mb-3">
   <a class="navbar-brand px-1" href="/teacher/dashboard">
-    <img src="/assets/logo.png" width="80px" alt="logo">
+    <img src="/assets/monicare_logo_witheye.png" width="80px" alt="logo">
   </a>
     <ul class="nav ml-auto p-2">
       <li class="nav-item">
@@ -9,16 +9,16 @@
       <li class="nav-item dropdown ">
         <% if @notification.empty? %>
           <a class="nav-link frontend-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="far fa-bell"></i>
+            <i class="far fa-bell "></i>
           </a>
-          <div class="dropdown-menu p-1 shadow-lg" aria-labelledby="navbarDropdown">
+          <div class="dropdown-menu p-1 shadow-lg btn-fake" aria-labelledby="navbarDropdown">
             目前沒有新的通知
           </div>
         <% else %>
           <a class="nav-link frontend-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-bell"></i>
+            <i class="fas fa-bell notification"></i>
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <div class="dropdown-menu btn-fake" aria-labelledby="navbarDropdown">
             <% @notification.where(teacher_id: current_teacher.id).each do |notification| %>
               <div><%= link_to notification.user.children.find(notification.child_id).name + notification.title, notification_read_url(notification), class:'btn' %></div>
             <% end %>

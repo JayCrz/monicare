@@ -81,14 +81,20 @@ body{
   
 
 .frontend-navbar {
+  .btn,.btn-fake{
+    color: #3D847B;
+  }
   background-color: #76D1C5;
   .navbar-brand,
   a.nav-link.frontend-link {
-    color: black;
+    color: #3D857B ;
+  }
+  .notification {
+    color: #F9CD00 ;
   }
   .navbar-brand:hover,
   a.nav-link.frontend-link:hover {
-    color: rgba(140, 81, 46, 1);
+    color: rgba(59, 88, 145, 1);
   }
   .sign-out-button,
   .user-name-button {
@@ -110,7 +116,7 @@ body{
       font-weight: bold;
     }
     .dropdown-item {
-      color: #D9653B;
+      color: #3D847B;
       font-weight: bold;
     }
   }
@@ -122,10 +128,16 @@ body{
   }
 }
 .backend-navbar {
+  .btn,.btn-fake{
+    color: #D9653B;
+  }
+  .notification{
+    color: #76D1C5;
+  }
   background-color: #F9CE00;
   .navbar-brand,
   a.nav-link.frontend-link {
-    color: black;
+    color: #FF7A01;
   }
   .navbar-brand:hover,
   a.nav-link.frontend-link:hover {
@@ -907,3 +919,5 @@ body{
     }
   }
 }
+
+

@@ -35,7 +35,7 @@
       </div>
       <div class="form-group">
         <%= form.label :finished_at, '用餐時間' %>
-        <%= form.date_field :finished_at, class: 'form-control form-control-color three_day_scope' %>
+        <%= form.date_field :finished_at, class: 'form-control form-control-color today_without_time' %>
       </div>
       <div class="form-group">
         <%= form.hidden_field :category, :value => 'eat', class: 'form-control form-control-color' %>
