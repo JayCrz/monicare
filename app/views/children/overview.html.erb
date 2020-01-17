@@ -22,7 +22,7 @@
       <% end %>
       <button class="btn searching-form-show search_btn mt-2">
         <i class="fas fa-search"></i>
-        搜尋日期
+        日期
       </button>
     </div>
   </div>
@@ -45,22 +45,33 @@
         <% dashboard.each do |d| %>
         <tbody class="list">
           <tr>
-            <th class="font-weight-bold text-dark">
+            <th class="font-weight-bold text-dark overview-icon" rowspan="2">
               <% if d.category == 'eat' %>
-                <i class="fas fa-utensils mb-1"></i>
+                <span class="icon-meal">
+                  <i class="fas fa-utensils mb-1"></i><br>
+                  用餐紀錄
+                </span>
               <% elsif d.category == 'medicine' %>
-                <i class="fas fa-capsules mb-1"></i>
+                <span class="icon-medicine">
+                  <i class="fas fa-capsules mb-1"></i><br>
+                  用藥紀錄
+                </span>
               <% elsif d.category == 'misc' %>
-                <i class="fas fa-pencil-alt mb-1"></i>
+                <span class="icon-misc">
+                	<i class="fas fa-pencil-alt mb-1"></i><br>
+                	生活紀錄
+                </span>
               <% end %>
+            </th>
+            <th class="pl-0">
               <%= link_to d.title, "/dashboard/children/#{d.child_id}/#{d.category}/#{d.id}", class: 'mb-1 mt-1 text-dark link-button' %>
             </th>
           </tr>
           <tr>
             <% if d.content.present? %>
-              <td><%= d.content %></td>
+              <td class="pl-0"><%= d.content %></td>
             <% else %>
-              <td>無內容</td>
+              <td class="pl-0">尚無紀錄詳細內容</td>
             <% end %>
           </tr>
         </tbody>  

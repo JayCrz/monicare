@@ -10,7 +10,11 @@
               <th>
                 <%= link_to d.title, dashboard_child_misc_path(child_id: d.child_id, id: d.id), class: 'text-dark' %>
               </th>
-              <td colspan="2"><%= d.content %></td>
+              <% if d.content.present? %>
+                <td><%= d.content %></td>
+              <% else %>
+                <td>尚無註明內容</td>
+              <% end %>
             </tr>
           <% end %>
         </tbody>

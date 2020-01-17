@@ -145,11 +145,11 @@ body{
   }
   background-color: #F9CE00;
   .navbar-brand,
-  a.nav-link.frontend-link {
+  a.nav-link.backend-link {
     color: #FF7A01;
   }
   .navbar-brand:hover,
-  a.nav-link.frontend-link:hover {
+  a.nav-link.backend-link:hover {
     color: rgba(140, 81, 46, 1);
   }
   .form-control:hover,
@@ -222,8 +222,8 @@ body{
       overflow: hidden;
     }
     .card-img-top.child_pic {
-      width: 140px;
-      height: 140px;
+      width: 130px;
+      height: 130px;
       object-fit: cover;
       border-radius: 50%;
     }
@@ -305,12 +305,45 @@ body{
     }
   }
   .table {
+    i {
+      font-size: 1.5rem;
+    }
+    .icon-medicine {
+      color: #2cacf7;
+    }
+    .icon-meal {
+      color: #f171af;
+    }
+    .icon-misc {
+      color: #41cfcf;
+    }
+    th.overview-icon {
+      text-align: center;
+      padding: 0.8rem 0 0.5rem 0;
+      span {
+        display: inline-block;
+        width: 10vw;
+        font-size: .5rem;
+      }
+    }
     th {
       padding: 0.5rem 0.75rem;
+      a{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: inline-block;
+        width: 45vw;
+      }
     }
     td {
       border-top: 0;
       padding: 0 0.75rem 0.5rem 0.75rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: inline-block;
+      width: 60vw;
     }
     caption {
       caption-side: initial;
@@ -361,7 +394,7 @@ body{
   .function-item-meal,
   .function-item-pick-up,
   .function-item-misc {
-    padding: .75rem .5rem;
+    padding: .75rem .1rem;
     i {
       font-size: 2rem;
     }
@@ -516,8 +549,8 @@ body{
       overflow: hidden;
     }
     .card-img-top.avatar-relative {
-      width: 125px;
-      height: 125px;
+      width: 110px;
+      height: 110px;
       object-fit: cover;
       border-radius: 50%;
     }
@@ -944,6 +977,9 @@ body{
         width: 240px;
       }
     }
+  }
+  .overview .table th.overview-icon span {
+    font-size: 1rem;
   }
   .function-page {
     .card {

@@ -21,14 +21,17 @@
       <tr>
         <th scope="row">需用藥日期</th>
         <td><%= @medicine_dashboard.started_at.to_date %></td>
+      </tr>
+      <tr>
         <th scope="row">需用藥時間</th>
         <td><%= @medicine_dashboard.started_at.strftime("%H:%M") %></td>
       </tr>
-
       <% if @medicine_dashboard.finished_at != nil %>
       <tr>
         <th scope="row">餵藥日期</th>
         <td><%= @medicine_dashboard.finished_at.to_date %></td>
+      </tr>
+      <tr>
         <th scope="row">餵藥時間</th>
         <td><%= @medicine_dashboard.finished_at.strftime("%H:%M") %></td>
       </tr>
@@ -36,22 +39,22 @@
 
       <tr>
         <th scope="row">備註</th>
-        <td colspan="3"><%= @medicine_dashboard.content %></td>
+        <td><%= @medicine_dashboard.content %></td>
       </tr>
       <tr>
-        <th colspan="4">
+        <th colspan="2">
           親屬簽名<br><br>
           <%= image_tag @medicine_dashboard.parent_sign.url %>
         </th>
       </tr>
       <tr>  
-        <th colspan="3">
-          餵藥者簽名<br><br>
+        <th colspan="2">
+          <span class="font-weight-bold">餵藥者簽名</span><br><br>
           <%= show_admin_sign %>
         </th>
       </tr>
       <tr>
-        <td colspan="4">
+        <td colspan="2">
           <%= link_to '返回功能列表',teacher_dashboard_child_path(id: params[:child_id], anchor: 'feed-medicine'), class: 'btn back-button' %>
         </td>
       </tr>

@@ -1,22 +1,22 @@
 <div class="backend-navbar">
-<ul class="nav navbar-expand-lg navwidth mb-3 mx-auto">
+<ul class="nav navbar-expand-lg navwidth mb-2 mx-auto">
   <a class="navbar-brand px-1" href="/teacher/dashboard">
-    <img src="/assets/monicare_logo_witheye.png" width="80px" alt="logo">
+    <%= image_tag("monicare_logo_witheye.png", width: '80px', alt: 'logo') %>
   </a>
     <ul class="nav ml-auto p-2">
       <li class="nav-item">
-        <a class="nav-link frontend-link" href="/teacher/dashboard/children/new"><i class="fas fa-user-plus"></i><span class="sr-only">(current)</span></a>
+        <a class="nav-link backend-link" href="/teacher/dashboard/children/new"><i class="fas fa-user-plus"></i><span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item dropdown ">
         <% if @notification.empty? %>
-          <a class="nav-link frontend-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link backend-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="far fa-bell "></i>
           </a>
           <div class="dropdown-menu p-1 shadow-lg btn-fake" aria-labelledby="navbarDropdown">
             目前沒有新的通知
           </div>
         <% else %>
-          <a class="nav-link frontend-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link backend-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-bell notification"></i>
           </a>
           <div class="dropdown-menu btn-fake" aria-labelledby="navbarDropdown">
@@ -27,7 +27,7 @@
         <% end %>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle frontend-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">班級</a>
+        <a class="nav-link dropdown-toggle backend-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">班級</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <% @babyclass.each do |babyclass| %>
             <%= link_to babyclass.nursery_class, teacher_dashboard_myclass_path(babyclass), class: 'dropdown-item' %>
@@ -35,7 +35,7 @@
         </div>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link frontend-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i></a>
+        <a class="nav-link backend-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i></a>
         <div class="dropdown-menu">
           <% if teacher_signed_in? %>
             <%= link_to "#{current_teacher.name}老師", teacher_dashboard_path, class: 'btn user-name' %><br>

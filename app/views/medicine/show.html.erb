@@ -18,16 +18,19 @@
         <td><%= @find_medicine.title %></td>
       </tr>
       <tr>
-        <th scope="row">用藥日期</th>
+        <th scope="row">需用藥日期</th>
         <td><%= @find_medicine.started_at.to_date %></td>
-        <th scope="row">用藥時間</th>
+      </tr>
+      <tr>
+        <th scope="row">需用藥時間</th>
         <td><%= @find_medicine.started_at.strftime("%H:%M") %></td>
       </tr>
-      
       <% if @find_medicine.finished_at != nil %>
       <tr>
         <th scope="row">餵藥日期</th>
         <td><%= @find_medicine.finished_at.to_date %></td>
+      </tr>
+      <tr>
         <th scope="row">餵藥時間</th>
         <td><%= @find_medicine.finished_at.strftime("%H:%M") %></td>
       </tr>
@@ -35,22 +38,22 @@
 
       <tr>
         <th scope="row">備註</th>
-        <td colspan="3"><%= @find_medicine.content %></td>
+        <td><%= @find_medicine.content %></td>
       </tr>
       <tr>
-        <th colspan="4">
-          給藥者簽名<br><br>
+        <th colspan="2">
+          親屬簽名<br><br>
           <%= image_tag @find_medicine.parent_sign.url %>
         </th>      
       </tr>
       <tr>
-        <th colspan="4">
-          餵藥者簽名<br><br>
+        <td colspan="2">
+          <span class="font-weight-bold">餵藥者簽名</span><br><br>
           <%= frontend_show_admin_sign %>
         </td>
       </tr>
       <tr>
-        <td colspan="4">
+        <td colspan="2">
           <%= link_to '返回功能列表',dashboard_child_path(id: params[:child_id], anchor: 'feed-medicine'), class: 'btn back-button' %>
         </td>
       </tr>
