@@ -1,9 +1,14 @@
 class Api::ApiController < ApplicationController
   before_action :serach_value, only:[:search,:search_dashboard]
   def search
-    teacher = current_teacher
-    student = teacher.children.where("name like '%#{serach_value}%'")
-    render json: student
+    if params[:class] === 'myclass'
+      student = Child.where("name like '%#{serach_value}%'").where(babyclass_id: params[:class_id])
+      render json: student
+    else
+      teacher = current_teacher
+      student = teacher.children.where("name like '%#{serach_value}%'")
+      render json: student
+    end
   end
 
   def search_dashboard
