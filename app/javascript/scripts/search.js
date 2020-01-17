@@ -98,7 +98,7 @@ $(document).ready(()=>{
                               </th>
                             </tr>
                             <tr>
-                              <td class="pl-0 pr-0">${content}</td>
+                              <td class="pl-0 pr-0 text-secondary">${content}</td>
                             </tr>`
                 } else if (dashboard[4] === 'medicine') {
                   let content = dashboard[2]
@@ -117,7 +117,7 @@ $(document).ready(()=>{
                             </th>
                           </tr>
                           <tr>
-                            <td class="pl-0 pr-0">${content}</td>
+                            <td class="pl-0 pr-0 text-secondary">${content}</td>
                           </tr>`                
                 } else if (dashboard[4] === 'misc'){
                   let content = dashboard[2]
@@ -136,7 +136,7 @@ $(document).ready(()=>{
                             </th>
                           </tr>
                           <tr>
-                            <td class="pl-0 pr-0">${content}</td>
+                            <td class="pl-0 pr-0 text-secondary">${content}</td>
                           </tr>` 
                 }             
                 })
@@ -203,7 +203,7 @@ $(document).ready(()=>{
                             </th>
                           </tr>
                           <tr>
-                            <td class="pl-0 pr-0">${content}</td>
+                            <td class="pl-0 pr-0 text-secondary">${content}</td>
                           </tr>`
       } else if (dashboard[4] === 'medicine') {
         let content = dashboard[2]
@@ -222,7 +222,7 @@ $(document).ready(()=>{
                   </th>
                 </tr>
                 <tr>
-                  <td class="pl-0 pr-0">${content}</td>
+                  <td class="pl-0 pr-0 text-secondary">${content}</td>
                 </tr>`                
       } else if (dashboard[4] === 'misc'){
         let content = dashboard[2]
@@ -241,7 +241,7 @@ $(document).ready(()=>{
                   </th>
                 </tr>
                 <tr>
-                  <td class="pl-0 pr-0">${content}</td>
+                  <td class="pl-0 pr-0 text-secondary">${content}</td>
                 </tr>`                  
                 }             
                 })

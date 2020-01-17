@@ -1,9 +1,9 @@
 <%- if controller_name != 'sessions' %>
-  <%= link_to "登入", new_session_path(resource_name),class: "btn sign-in-button" %><br />
+  <%= link_to "登入", new_session_path(resource_name),class: "btn w-100 sign-in-button" %><br />
 <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to "註冊", new_registration_path(resource_name),class: "btn sign-up-button" %><br />
+  <%= link_to "註冊", new_registration_path(resource_name),class: "btn w-100 sign-up-button" %><br />
 <% end %>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
@@ -20,6 +20,11 @@
 
 <%- if devise_mapping.omniauthable? %>
   <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to "使用 google", omniauth_authorize_path(resource_name, provider), class: 'btn facebook-button' %>
+    <div class="K-1uj Z7p_S">
+      <div class="s311c"></div>
+      <div class="_0tv-g mt-1 mb-2">或</div>
+      <div class="s311c"></div>
+    </div>
+    <%= link_to "使用 google 登入", omniauth_authorize_path(resource_name, provider), class: 'btn w-100 google-button' %>
   <% end %>
 <% end %>

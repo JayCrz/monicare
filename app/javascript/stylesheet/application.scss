@@ -22,12 +22,30 @@ body{
 .logoimg{
   width:30px;
 }
+.Z7p_S {
+  margin: 0 40px;
+  flex-direction: row;
+  ._0tv-g {
+    color: #555;
+    flex-grow: 0;
+    flex-shrink: 0;
+    font-weight: 600;
+    line-height: 15px;
+    margin: 0 18px;
+    text-transform: uppercase;
+    -webkit-box-flex:0;
+  }
+}
 .facebook-button {
   background-color: rgba(41, 72, 125, .8);
   color: #fff;
 }
-.facebook-button {
-  background-color: rgb(185, 82, 51);
+.google-button {
+  background-color: rgba(185, 82, 51, .8);
+  color: #fff;
+}
+.google-button {
+  background-color: rgba(185, 82, 51, 1);
   color: #fff;
 }
 .babybackgorund {
@@ -99,7 +117,7 @@ body{
     color: #3D857B ;
   }
   .notification {
-    color: #F9CD00 ;
+    color: #dc3545;
   }
   .navbar-brand:hover,
   a.nav-link.frontend-link:hover {
@@ -144,7 +162,7 @@ body{
     color: #D9653B;
   }
   .notification{
-    color: #76D1C5;
+    color: #dc3545;
   }
   background-color: #F9CE00;
   .navbar-brand,
@@ -243,6 +261,20 @@ body{
     background-color: rgba(140, 81, 46, .8);
     border-color: rgba(217, 152, 115, .5);
     color: #ffffff;
+  }
+  form {
+    color: #8C512E;
+    .form-control-color {
+      background-color: #F2F2F2;
+      color: #D9653B;
+      border: 1px solid rgba(217, 152, 115, .3);
+    }
+    .form-control-color:hover {
+      border-color: rgba(217, 152, 115, .7);
+    }
+    .form-control-color:focus {
+      box-shadow: 0 0 0 0.2rem rgba(217, 152, 115, .5);
+    }
   }
 }
 .overview {
@@ -467,10 +499,12 @@ body{
   .table-list {
     border: 0.05rem solid #dee2e6;
     border-radius: .5rem;
-    padding: 12px;
+    padding: 0 12px;
   }
   .table {
     th {
+      padding-top: 6px;
+      padding-bottom: 6px;
       text-align: left;
       a {
         white-space: nowrap;
@@ -484,6 +518,8 @@ body{
       }
     }
     td {
+      padding-top: 6px;
+      padding-bottom: 6px;
       vertical-align: inherit;
       text-align: left;
       white-space: nowrap;
@@ -493,6 +529,8 @@ body{
       width: 40vw;
     }
     td.icon-of-editor {
+      padding-top: 6px;
+      padding-bottom: 6px;
       width: 30vw;
       text-align: center;
     }

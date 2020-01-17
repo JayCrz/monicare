@@ -6,25 +6,33 @@
     用餐紀錄
   </h4>
   <div class="meal_pic mb-3">
-    <%= cover_meal_pic_image_tag @misc_dashboard %>
+    <%= cover_meal_pic_image_tag @misc_dashboard if @misc_dashboard.admin_sign? %>
   </div>
   <table class="table table-hover">
     <tbody>
       <tr>
-        <th scope="row">標題</th>
-        <td><%= @misc_dashboard.title %></td>
+        <td colspan="2">
+          <span class="font-weight-bold">標題</span><br><br>
+          <%= @misc_dashboard.title %>
+        </td>
       </tr>
       <tr>
       <th scope="row">時間</th>
       <td><%= @misc_dashboard.finished_at.strftime("%Y-%m-%d") %></td>
       </tr>
       <tr>
-        <th scope="row">內容</th>
-        <td><%= @misc_dashboard.content %></td>
+        <td colspan="2">
+          <span class="font-weight-bold">內容</span><br><br>
+          <% if @misc_dashboard.content.present? %>
+            <%= @misc_dashboard.content %>
+          <% else %>
+            無紀錄詳細內容
+          <% end %>
+        </td>
       </tr>
       <tr>
         <td colspan="4">
-        <%= link_to '返回功能列表', teacher_dashboard_child_path(id: params[:child_id], anchor: 'misc''), class: 'btn back-button' %>
+        <%= link_to '返回功能列表', teacher_dashboard_child_path(id: params[:child_id], anchor: 'misc'), class: 'btn back-button' %>
         </td>
       </tr>
     </tbody>
