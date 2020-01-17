@@ -32,51 +32,53 @@
         <input class="form-control mr-sm-2 search" type="search" placeholder="請輸入查詢日" aria-label="Search">
       </div>
       <div class="col-2 ml-0 pl-0">
-        <button class="btn search_btn" type="submit">
+        <button class="btn search_bt search_btn_show" type="submit">
           <i class="fas fa-search"></i>
         </button>
       </div>
     </form>
   </div>
-  <% @dashboards.each do |date,dashboard| %>
-    <div class="dashboard_list mt-2 mb-3">
-      <table class="table">
-        <caption><%= date.to_date %></caption>
-        <% dashboard.each do |d| %>
-          <tbody class="list">
-            <tr>
-            <th class="font-weight-bold text-dark overview-icon" rowspan="2">
-                <% if d.category == 'eat' %>
-                  <span class="icon-meal">
-                    <i class="fas fa-utensils mb-1"></i><br>
-                    用餐紀錄
-                  </span>
-                <% elsif d.category == 'medicine' %>
-                  <span class="icon-medicine">
-                    <i class="fas fa-capsules mb-1"></i><br>
-                    用藥紀錄
-                  </span>
-                <% elsif d.category == 'misc' %>
-                  <span class="icon-misc">
-                    <i class="fas fa-pencil-alt mb-1"></i><br>
-                    生活紀錄
-                  </span>
-                <% end %>
-                <th class="pl-0 pr-0 pb-0">
-                  <%= link_to d.title, teacher_redirect_to(d), class: 'mb-1 mt-1 text-dark link-button' %>
+  <div class="overview_dashboard">
+    <% @dashboards.each do |date,dashboard| %>
+      <div class="dashboard_list mt-2 mb-3">
+        <table class="table">
+          <caption><%= date.to_date %></caption>
+          <% dashboard.each do |d| %>
+            <tbody class="list">
+              <tr>
+              <th class="font-weight-bold text-dark overview-icon" rowspan="2">
+                  <% if d.category == 'eat' %>
+                    <span class="icon-meal">
+                      <i class="fas fa-utensils mb-1"></i><br>
+                      用餐紀錄
+                    </span>
+                  <% elsif d.category == 'medicine' %>
+                    <span class="icon-medicine">
+                      <i class="fas fa-capsules mb-1"></i><br>
+                      用藥紀錄
+                    </span>
+                  <% elsif d.category == 'misc' %>
+                    <span class="icon-misc">
+                      <i class="fas fa-pencil-alt mb-1"></i><br>
+                      生活紀錄
+                    </span>
+                  <% end %>
+                  <th class="pl-0 pr-0 pb-0">
+                    <%= link_to d.title, teacher_redirect_to(d), class: 'mb-1 mt-1 text-dark link-button' %>
+                  </th>
                 </th>
-              </th>
-            </tr>
-            <tr>
-              <% if d.content.present? %>
-                <td class="pl-0 pr-0"><%= d.content %></td>
-              <% else %>
-                <td class="pl-0 pr-0">尚無紀錄詳細內容</td>
-              <% end %>
-            </tr>
-          </tbody>
-        <% end %>
-      </table>
-    </div>
-  <% end %>
+              </tr>
+              <tr>
+                <% if d.content.present? %>
+                  <td class="pl-0 pr-0"><%= d.content %></td>
+                <% else %>
+                  <td class="pl-0 pr-0">尚無紀錄詳細內容</td>
+                <% end %>
+              </tr>
+            </tbody>
+          <% end %>
+        </table>
+      </div>
+    <% end %>
+  </div>
 </div>
