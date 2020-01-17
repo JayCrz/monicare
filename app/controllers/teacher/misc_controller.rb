@@ -1,5 +1,5 @@
 class Teacher::MiscController < BabyclassAppliciationController
-  before_action :find_misc_dashboard, only: [:edit, :update, :destroy]
+  before_action :find_misc_dashboard, only: [:edit, :show, :update, :destroy]
   before_action :find_student
 
   def new
@@ -13,6 +13,9 @@ class Teacher::MiscController < BabyclassAppliciationController
     else
       render :new
     end
+  end
+
+  def show
   end
 
   def edit
