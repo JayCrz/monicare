@@ -14,6 +14,11 @@ zh-TW:
         finished_at: 時間
         started_at: 餵藥時間
         parent_sign: 簽名
+      user:
+         current_password: 原始密碼  
+         password: 密碼
+         password_confirmation: 確認密碼
+         
     errors:
       messages:
         record_invalid: '驗證失敗: %{errors}'

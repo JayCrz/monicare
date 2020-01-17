@@ -9,7 +9,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       
       if @user.email.nil?
         # 如果 User 沒有提供 email 刪除 User 的 app 讓 User 重新授權
-        @user.delete_access_token(request.env["omniauth.auth"])
+      
         redirect_to new_user_registration_url, alert: "需要您同意 Email 授權唷！"
       else
         session["devise.facebook_data"] = request.env["omniauth.auth"]
