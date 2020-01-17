@@ -15,12 +15,12 @@ document.addEventListener('DOMContentLoaded',function(){
     enableTime: true,
     dateFormat: "Y-m-d H:i",
     defaultDate: "today",
-    // noCalendar: true,
+    noCalendar: true,
   })
 
 flatpickr(".today_without_time", {
   disableMobile: true,
     defaultDate: "today",
-    // noCalendar: true,
+    noCalendar: true,
   })
 })
