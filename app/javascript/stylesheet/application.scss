@@ -44,9 +44,11 @@ body{
   background-color: rgba(185, 82, 51, .8);
   color: #fff;
 }
-.google-button {
+.google-button:hover,
+.google-button:focus {
   background-color: rgba(185, 82, 51, 1);
   color: #fff;
+  box-shadow: 0 0 0 0.2rem rgba(185, 82, 51, .5);
 }
 .babybackgorund {
   background-image: linear-gradient( rgba(240, 178, 107, 0.3)), url(https://monicare.s3-ap-northeast-1.amazonaws.com/photo-1551934262-db2d7dd517f4.jpg);
