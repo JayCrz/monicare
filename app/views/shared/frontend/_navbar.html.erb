@@ -9,7 +9,7 @@
           <a class="nav-link frontend-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="far fa-bell"></i>
           </a>
-          <div class="dropdown-menu btn-fake" aria-labelledby="navbarDropdown">
+          <div class="dropdown-menu btn-fake dropdown-menu-right" aria-labelledby="navbarDropdown">
             目前沒有新的通知
           </div>
         <% else %>
@@ -23,11 +23,11 @@
           </div>
         <% end %>
       </li>
-      <li class="nav-item dropdown">
+      <li class="nav-item dropdown dropdown-menu-right">
         <a class="nav-link frontend-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-baby"></i>
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <% if @children_list.blank? %>
             請聯繫老師新增小孩
           <% else %>
@@ -40,7 +40,7 @@
        <span> 
       <li class="nav-item dropdown">
         <a class="nav-link frontend-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i></a>
-        <div class="dropdown-menu">
+        <div class="dropdown-menu dropdown-menu-right">
           <% if user_signed_in? %>
             <div><%= link_to current_user.name, dashboard_path, class:'btn user-name' %></div>
             <div><%= link_to('修改資料', edit_registration_path(:user), class:'btn user-name' )  %></div>
