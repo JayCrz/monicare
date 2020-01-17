@@ -1,6 +1,6 @@
 class Teacher::EatController < BabyclassAppliciationController
   before_action :find_student
-  before_action :find_eat_dashboard, only: [:edit, :update, :destroy]
+  before_action :find_eat_dashboard, only: [:edit, :show, :update, :destroy]
 
   def new
     @meal_dashboard = Dashboard.new
@@ -13,6 +13,9 @@ class Teacher::EatController < BabyclassAppliciationController
     else  
       render :new
     end
+  end
+
+  def show
   end
 
   def edit
