@@ -5,21 +5,29 @@
     生活紀錄
   </h4>
   <div class="misc_pic mb-3">
-    <%= cover_misc_pic_image_tag @misc_dashboards %>
+    <%= cover_misc_pic_image_tag @misc_dashboards if @misc_dashboards.admin_sign? %>
   </div>
   <table class="table table-hover">
     <tbody>
       <tr>
-        <th scope="row">餐別</th>
-        <td><%= @misc_dashboards.title %></td>
+        <td colspan="2">
+          <span class="font-weight-bold">標題</span><br><br>
+          <%= @misc_dashboards.title %>
+        </td>
       </tr>
       <tr>
-        <th scope="row">用餐日期</th>
+        <th scope="row">日期</th>
         <td><%= @misc_dashboards.finished_at.to_date %></td>
       </tr>
       <tr>
-        <th scope="row">用餐內容</th>
-        <td><%= @misc_dashboards.content %></td>
+        <td colspan="2">
+          <span class="font-weight-bold">內容</span><br><br>
+          <% if @misc_dashboards.content.present? %>
+            <%= @misc_dashboards.content %>
+          <% else %>
+            尚無紀錄詳細內容
+          <% end %>
+        </td>
       </tr>
       <tr>
         <td colspan="2">
