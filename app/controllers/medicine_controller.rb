@@ -14,7 +14,7 @@ class MedicineController < ChildrenlistAppliciationController
       teacher_ids =  @find_child.teachers.ids
       dashboard_id = Dashboard.last.id
       teacher_ids.each do |teacher|
-        Notification.create(title: '有新的用藥通知', teacher_id: teacher, user_id: current_user.id, dashboard_id: dashboard_id, teacher_read: false, user_read: false, child_id: params[:child_id])
+        Notification.create(title: '有餵藥通知', teacher_id: teacher, user_id: current_user.id, dashboard_id: dashboard_id, teacher_read: false, user_read: false, child_id: params[:child_id])
       end 
       redirect_to dashboard_child_path(params[:child_id], anchor: 'feed-medicine'),notice: '新增成功'
     else
