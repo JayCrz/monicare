@@ -38,10 +38,6 @@ class Teacher::ChildrenController < BabyclassAppliciationController
     @pick_ups = @student.pick_ups
   end
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> add teacher view overview (#26)
   def overview
     @student = Child.find(params[:child_id])
     @dashboards = @student.dashboards.where('finished_at IS NOT NULL').order(finished_at: :desc).reduce({}) do |rs, dm|
@@ -51,17 +47,8 @@ class Teacher::ChildrenController < BabyclassAppliciationController
       rs
     end
   end
-<<<<<<< HEAD
 
   private
-=======
-  private
-
->>>>>>> changed regist design
-=======
-
-  private
->>>>>>> add teacher view overview (#26)
   def child_params
     params.require(:child).permit(:name, 
                                   :user_id, 
