@@ -8,6 +8,6 @@ class ChildrenlistAppliciationController < ApplicationController
   end
 
   def notification
-    @notification = Notification.where(teacher_read: true, user_read: false)
+    @notification = current_user.notifications.where(teacher_read: true, user_read: false)
   end
 end
