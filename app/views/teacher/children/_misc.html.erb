@@ -6,19 +6,26 @@
     <% end %>
   </h4>
   <% dashboards.each do |date,dashboard| %>
-    <table class="table">
-      <caption><%= date.to_date %></caption>
-      <tbody>
-        <% dashboard.each do |d| %>
-        <tr>
-          <td><%= d.title %></td>
-          <td><%= d.finished_at.to_date %></td>
-          <td><%= d.content %></td>
-          <td><%= link_to '編輯', edit_teacher_dashboard_child_misc_path(child_id: d.child_id, id: d.id), class: 'btn edit-button' %></td>
-          <td><%= link_to '刪除', teacher_dashboard_child_misc_path(child_id: d.child_id, id: d.id), method: :delete, class: 'btn btn-danger confirm_delete' %></td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
+    <div class="table-list mt-2 mb-3 col-12">
+      <table class="table">
+        <caption><%= date.to_date %></caption>
+        <tbody>
+          <% dashboard.each do |d| %>
+          <tr>
+            <th class="font-weight-bold title-of-editor">
+              <%= link_to d.title, edit_teacher_dashboard_child_misc_path(child_id: d.child_id, id: d.id), class: 'text-dark' %>
+            </th>
+            <td class="icon-of-editor">
+              <%= link_to edit_teacher_dashboard_child_eat_path(child_id: d.child_id, id: d.id), class:'btn edit-button p-0' do %>
+                <i class="fas fa-edit"></i>
+              <% end %>
+              <%= link_to teacher_dashboard_child_misc_path(child_id: d.child_id, id: d.id), method: :delete, class: 'btn delete-button confirm_delete p-0' do %>
+                <i class="far fa-trash-alt"></i>
+              <% end %>
+            </td>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   <% end %>
 </div>

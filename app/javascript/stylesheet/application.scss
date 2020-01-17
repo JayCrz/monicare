@@ -22,7 +22,14 @@ body{
 .logoimg{
   width:30px;
 }
-
+.facebook-button {
+  background-color: rgba(41, 72, 125, .8);
+  color: #fff;
+}
+.facebook-button {
+  background-color: rgba(41, 72, 125, 1);
+  color: #fff;
+}
 .babybackgorund {
   background-image: linear-gradient( rgba(240, 178, 107, 0.3)), url(https://monicare.s3-ap-northeast-1.amazonaws.com/photo-1551934262-db2d7dd517f4.jpg);
   height: 100%;
@@ -241,6 +248,7 @@ body{
   }
   .overview-title-child-name{
     font-size: 1rem;
+    color: #000;
   }
   .function-button {
     background-color: #ff585d;
@@ -271,10 +279,23 @@ body{
     background-color: rgba(140, 81, 46, .8);
     border-color: rgba(217, 152, 115, .5);
     color: #ffffff;
-    vertical-align: inherit;
+    // vertical-align: inherit;
   }
-  .searching-form {
-    display: block;
+  .link-button {
+    color: #333;
+    text-decoration: none;
+  }
+  .link-button:hover,
+  .link-button:focus {
+    color: #111;
+  }
+  .dashboard_list {
+    border: 0.05rem solid #dee2e6;
+    border-radius: .5rem;
+    padding: .3rem;
+  }
+  .searching-form-hide {
+    display: none;
     .form-control {
       display: inline-block;
     }
@@ -283,8 +304,17 @@ body{
       box-shadow: 0 0 0 0.2rem rgba(217, 152, 115, .5);
     }
   }
-  table {
-    color: #8C512E;
+  .table {
+    th {
+      padding: 0.5rem 0.75rem;
+    }
+    td {
+      border-top: 0;
+      padding: 0 0.75rem 0.5rem 0.75rem;
+    }
+    caption {
+      caption-side: initial;
+    }
     .more-button {
       background-color: rgba(217, 152, 115, .8);
       border-color: transparent;
@@ -298,20 +328,27 @@ body{
       box-shadow: 0 0 0 0.2rem rgba(217, 152, 115, .5);
     }
     .link-button {
-      color: #D9653B;
+      color: #333;
       text-decoration: none;
     }
     .link-button:hover,
     .link-button:focus {
-      color: #C8543B;
+      color: #111;
     }
   }
 }
 .function-page {
-  .function-page-title {
+  .avatar-child {
+    overflow: hidden;
+    img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
     a {
       color: rgba(140, 81, 46, .8); 
-      font-size: 1.2rem;
+      font-size: 1rem;
       text-decoration: none;
       font-weight: 600;
       letter-spacing: .1rem;
@@ -320,19 +357,11 @@ body{
       color: rgba(140, 81, 46, 1);
     }
   }
-  .avatar-child {
-    overflow: hidden;
-    img {
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-      border-radius: 50%;
-    }
-  }
   .function-item-medicine,
   .function-item-meal,
   .function-item-pick-up,
   .function-item-misc {
+    padding: .75rem .5rem;
     i {
       font-size: 2rem;
     }
@@ -384,6 +413,7 @@ body{
   .create-button-pick-up:hover,
   .create-button-pick-up:focus {
     color: #807ad8;
+
   }
   .create-button-medicine:hover,
   .create-button-medicine:focus {
@@ -397,32 +427,76 @@ body{
   .create-button-misc-focus {
     color: #41bfbf;
   }
-  table {
-    color: #8C512E;
-    font-size: 20px;
+  .table-list {
+    border: 0.05rem solid #dee2e6;
+    border-radius: .5rem;
+    padding: 12px;
+  }
+  .table {
+    th {
+      text-align: left;
+      a {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: inline-block;
+        width: 20vw;
+      }
+      a.title-of-editor {
+        width: 35vw;
+      }
+    }
+    td {
+      vertical-align: inherit;
+      text-align: left;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: inline-block;
+      width: 40vw;
+    }
+    td.icon-of-editor {
+      width: 30vw;
+      text-align: center;
+    }
+    td.w-100 {
+      width: 60vw;
+    }
+    i {
+      font-size: 1.5rem;
+      letter-spacing: .5rem;
+      
+    }
+    caption {
+      caption-side: initial;
+      padding-left: 12px;
+    }
+    .delete-button {
+      color: #a00;
+    }
+    .delete-button:hover {
+      color: #800;
+    }
+    .delete-button:focus {
+      box-shadow: none;
+    }
     .edit-button {
-      background-color: rgba(217, 101, 59, .7);
-      border-color: transparent;
-      color: #ffffff;
+      color: rgba(217, 101, 59, .7);
     }
     .edit-button:hover {
-      background-color: rgba(217, 101, 59, .9);
-      border-color: rgba(217, 101, 59, 1);
+      color: rgba(217, 101, 59, .9);
     }
     .edit-button:focus {
-      box-shadow: 0 0 0 0.2rem rgba(217, 101, 59, .5);
+      box-shadow: none;
     }
     .more-button {
-      background-color: rgba(242, 136, 75, .7);
-      border-color: transparent;
-      color: #ffffff;
+      color: rgba(242, 136, 75, .7);
     }
     .more-button:hover {
-      background-color: rgba(242, 136, 75, .9);
-      border-color: rgba(242, 136, 75, 1);
+      color: rgba(242, 136, 75, .9);
     }
     .more-button:focus {
-      box-shadow: 0 0 0 0.2rem rgba(242, 136, 75, .5);
+      box-shadow: none;
     }
     .link-button {
       color: #D9653B;
@@ -442,8 +516,8 @@ body{
       overflow: hidden;
     }
     .card-img-top.avatar-relative {
-      width: 130px;
-      height: 130px;
+      width: 125px;
+      height: 125px;
       object-fit: cover;
       border-radius: 50%;
     }
@@ -766,6 +840,7 @@ body{
     top: 0;
     width:300px;
     height:150px;
+    border: 1.2px solid rgba(150, 150, 150, 1);
   }
 }
 .signature-button {
@@ -807,19 +882,20 @@ body{
 }
 .avatar-child {
   overflow: hidden;
+  color: rgba(140, 81, 46, .8); 
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: .1rem;
   img {
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
     object-fit: cover;
     border-radius: 50%;
   }
 }
-.avatar-child-title {
-  color: rgba(140, 81, 46, .8); 
-  font-size: 1.2rem;
-  text-decoration: none;
-  font-weight: 600;
-  letter-spacing: .1rem;
+.avatar-child:hover {
+  color: rgba(140, 81, 46, 1);
 }
 .pick_up_pic, .meal_pic, .misc_pic, .child_pic {
   text-align: center;
@@ -857,12 +933,6 @@ body{
     .homepageimg {
       width: 100%;
       height: 10%;
-    }
-  }
-  .dashboard,
-  .function-page {
-    td {
-      padding: 5px;
     }
   }
 }
