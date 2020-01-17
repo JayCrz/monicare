@@ -5,21 +5,29 @@
     用餐紀錄
   </h4>
   <div class="meal_pic mb-3">
-    <%= cover_meal_pic_image_tag @meal_dashboards %>
+    <%= cover_meal_pic_image_tag @meal_dashboards if @meal_dashboards.admin_sign? %>
   </div>
   <table class="table table-hover">
     <tbody>
       <tr>
-        <th scope="row">餐別</th>
-        <td><%= @meal_dashboards.title %></td>
+        <td colspan="2">
+          <span class="font-weight-bold">餐別</span><br><br>
+          <%= @meal_dashboards.title %>
+        </td>
       </tr>
       <tr>
         <th scope="row">用餐日期</th>
         <td><%= @meal_dashboards.finished_at.to_date %></td>
       </tr>
       <tr>
-        <th scope="row">用餐內容</th>
-        <td><%= @meal_dashboards.content %></td>
+        <td colspan="2">
+          <span class="font-weight-bold">用餐內容</span><br><br>
+          <% if @meal_dashboards.content.present? %>
+            <%= @meal_dashboards.content %>
+          <% else %>
+            無註明用餐內容
+          <% end %>
+        </td>
       </tr>
       <tr>
         <td colspan="2">
