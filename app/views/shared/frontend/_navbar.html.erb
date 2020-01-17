@@ -1,6 +1,6 @@
 <nav class="nav navbar-expand-lg navbar-light frontend-navbar mb-3">
   <a class="navbar-brand px-1" href="/dashboard" class="p-1">
-    <img src="/assets/logo.png" width="80px" alt="logo">
+    <img src="/assets/monicare_logo_witheye.png" width="80px" alt="logo">
   </a>
     <ul class="nav ml-auto p-2">
       <li class="nav-item dropdown">
@@ -8,14 +8,14 @@
           <a class="nav-link frontend-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="far fa-bell"></i>
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <div class="dropdown-menu btn-fake" aria-labelledby="navbarDropdown">
             目前沒有新的通知
           </div>
         <% else %>
           <a class="nav-link frontend-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-bell"></i>
+            <i class="fas fa-bell notification"></i>
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <div class="dropdown-menu btn-fake" aria-labelledby="navbarDropdown">
             <% @notification.each do |notification| %>
               <div><%= link_to notification.teacher.name + '老師已完成餵藥品', dashboard_child_medicine_path(child_id: notification.child_id, id: notification.dashboard_id), class:'btn' %></div>
             <% end %>
