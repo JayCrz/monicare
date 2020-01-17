@@ -1,8 +1,9 @@
-<nav class="nav navbar-expand-lg navbar-light frontend-navbar mb-3">
+<div class="frontend-navbar">
+  <ul class="nav navbar-expand-lg mb-3 navwidth mx-auto">
   <a class="navbar-brand px-1" href="/dashboard" class="p-1">
     <img src="/assets/monicare_logo_witheye.png" width="80px" alt="logo">
   </a>
-    <ul class="nav ml-auto p-2">
+    <ul class="nav p-2 ml-auto">
       <li class="nav-item dropdown">
         <% if @notification.blank? %>
           <a class="nav-link frontend-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -36,12 +37,12 @@
           <% end %>
           </div>
       </li>
-       <div> 
+       <span> 
       <li class="nav-item dropdown">
         <a class="nav-link frontend-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i></a>
         <div class="dropdown-menu">
           <% if user_signed_in? %>
-            <div><%= link_to "current_user.name", dashboard_path, class:'btn user-name' %></div>
+            <div><%= link_to current_user.name, dashboard_path, class:'btn user-name' %></div>
             <div><%= link_to('修改資料', edit_registration_path(:user), class:'btn user-name' )  %></div>
             <div><%= link_to "登出", destroy_user_session_path, method: 'delete', class: 'btn sign-out' %></div>
           <% else %>
@@ -51,9 +52,5 @@
         </div>
       </li>
     </ul>
-  
-    
-    
-    
-  
-</nav>
+  </ul>
+</div>
