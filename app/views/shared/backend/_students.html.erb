@@ -2,7 +2,7 @@
   <% if request.path === '/teacher/dashboard' %>
     <form class="col-12 d-flex mb-4">
       <div class="col-10 pr-1">
-        <input class="form-control search_value" type="search" placeholder="請輸入學生姓名" aria-label="Search">
+        <input class="form-control search_value form-control-color" type="search" placeholder="請輸入學生姓名" aria-label="Search">
       </div>
       <div class="search-btn-col col-2 ml-0 pl-0">
         <button class="btn search_btn" type="submit">
@@ -12,18 +12,18 @@
     </form>
   <% end %>
   <div class="col-12 col-sm-12 col-md-10 col-lg-8 mx-auto d-flex flex-wrap student_list">
-      <% @students.each do |student| %>
-        <%= link_to teacher_dashboard_child_overview_path(student), class: 'col-6 mb-3' do %>
-          <div class="card">
-            <div class="card-image">
-              <img src="<%= show_child_pic_image student %>" class="card-img-top child_pic" alt="<%= student.name %>的照片">
-            </div>
-            <div class="card-body align-items-center pt-3 pb-3">
-              <h5 class="child-name font-weight-bold"><%= student.name %></h5>
-            </div>
+    <% @students.each do |student| %>
+      <%= link_to teacher_dashboard_child_overview_path(student), class: 'col-6 mb-3' do %>
+        <div class="card">
+          <div class="card-image">
+            <img src="<%= show_child_pic_image student %>" class="card-img-top child_pic" alt="<%= student.name %>的照片">
           </div>
-        <% end %>
+          <div class="card-body align-items-center pt-3 pb-3">
+            <h5 class="child-name font-weight-bold"><%= student.name %></h5>
+          </div>
+        </div>
       <% end %>
+    <% end %>
   </div>
 </div>
 

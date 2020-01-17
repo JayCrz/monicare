@@ -18,7 +18,7 @@
           </a>
           <div class="dropdown-menu btn-fake" aria-labelledby="navbarDropdown">
             <% @notification.each do |notification| %>
-              <div><%= link_to notification.teacher.name + '老師已完成餵藥品', dashboard_child_medicine_path(child_id: notification.child_id, id: notification.dashboard_id), class:'btn' %></div>
+              <div><%= link_to notification.child.name.to_s + '已餵藥', dashboard_child_medicine_path(child_id: notification.child_id, id: notification.dashboard_id), class:'btn' %></div>
             <% end %>
           </div>
         <% end %>
