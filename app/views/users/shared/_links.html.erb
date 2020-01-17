@@ -20,6 +20,6 @@
 
 <%- if devise_mapping.omniauthable? %>
   <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to "使用 Facebook", omniauth_authorize_path(resource_name, provider), class: 'btn facebook-button my-1' %><br />
+    <%= link_to "使用 google", omniauth_authorize_path(resource_name, provider), class: 'btn facebook-button' %>
   <% end %>
 <% end %>
