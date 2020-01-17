@@ -3,9 +3,15 @@
 
 <div class="container task-show">
   <%= render 'shared/backend/child_avatar', student: @student %>
-  <h4 class="text-center font-weight-bold title-color mb-3">
-    餵藥紀錄
-  </h4>
+  <% if @medicine_dashboard.admin_sign.url != nil %>
+    <h4 class="text-center font-weight-bold title-color mb-3">
+      餵藥紀錄
+    </h4>
+  <% else %>
+    <h4 class="text-center font-weight-bold title-color mb-3">
+      餵藥通知
+    </h4>
+  <% end %>
   <table class="table table-hover">
     <tbody>
       <tr>
@@ -13,9 +19,9 @@
         <td><%= @medicine_dashboard.title %></td>
       </tr>
       <tr>
-        <th scope="row">用藥日期</th>
+        <th scope="row">需用藥日期</th>
         <td><%= @medicine_dashboard.started_at.to_date %></td>
-        <th scope="row">用藥時間</th>
+        <th scope="row">需用藥時間</th>
         <td><%= @medicine_dashboard.started_at.strftime("%H:%M") %></td>
       </tr>
 
@@ -34,7 +40,7 @@
       </tr>
       <tr>
         <th colspan="4">
-          給藥者簽名<br><br>
+          親屬簽名<br><br>
           <%= image_tag @medicine_dashboard.parent_sign.url %>
         </th>
       </tr>

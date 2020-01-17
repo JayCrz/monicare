@@ -13,13 +13,11 @@ document.addEventListener('DOMContentLoaded',function(){
     enableTime: true,
     dateFormat: "Y-m-d H:i",
     defaultDate: "today",
-    minDate: "today",
-    maxDate: "today"
+    noCalendar: true,
   })
 
-  flatpickr(".three_day_scope", {
+  flatpickr(".today_without_time", {
     defaultDate: "today",
-    minDate: "today",
-    maxDate: "today"
+    noCalendar: true,
   })
 })
