@@ -13,7 +13,7 @@
           <% dashboard.each do |d| %>
             <tr>
               <th class="font-weight-bold title-of-editor">
-                <%= link_to d.title, teacher_dashboard_child_medicine_path(child_id: d.child_id, id: d.id), class: 'text-dark' %>
+                <%= link_to d.title, teacher_dashboard_child_eat_path(child_id: d.child_id, id: d.id), class: 'text-dark' %>
               </th>
               <td class="icon-of-editor">
                 <%= link_to edit_teacher_dashboard_child_eat_path(child_id: d.child_id, id: d.id), class:'btn edit-button p-0' do %>
