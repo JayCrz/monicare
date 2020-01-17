@@ -2,12 +2,12 @@
 
 <div class="container overview">
   <div class="row no-gutters bg-light position-relative shadow-sm mb-3 pb-2">
-    <div class="col-md-4 col-4 mb-md-0 p-md-4 p-2 avatar-child text-right">
+    <div class="col-md-4 col-4 mb-md-0 mr-1 pr-0 p-2 avatar-child text-right align-self-center">
       <%= link_to teacher_dashboard_child_overview_path do %>
         <img src="<%= show_child_pic_image @student %>" class="card-img-top child_pic" alt="<%= @student.name %>的照片">
       <% end %>
     </div>
-    <div class="col-md-7 col-7 position-static p-sm-4 px-1">
+    <div class="col-md-7 col-7 position-static px-1">
       <%= link_to teacher_dashboard_child_overview_path, class: 'link-button font-weight-bold' do %>
         <span class="overview-title-child-name">
           <%= @student.name %><br>
@@ -22,7 +22,7 @@
       <% end %>
       <button class="btn searching-form-show search_btn mt-2">
         <i class="fas fa-search"></i>
-        搜尋日期
+        日期
       </button>
     </div>
   </div>
@@ -45,22 +45,33 @@
         <% dashboard.each do |d| %>
           <tbody class="list">
             <tr>
-              <th class="font-weight-bold text-dark">
+            <th class="font-weight-bold text-dark overview-icon" rowspan="2">
                 <% if d.category == 'eat' %>
-                  <i class="fas fa-utensils mb-1"></i>
+                  <span class="icon-meal">
+                    <i class="fas fa-utensils mb-1"></i><br>
+                    用餐紀錄
+                  </span>
                 <% elsif d.category == 'medicine' %>
-                  <i class="fas fa-capsules mb-1"></i>
+                  <span class="icon-medicine">
+                    <i class="fas fa-capsules mb-1"></i><br>
+                    用藥紀錄
+                  </span>
                 <% elsif d.category == 'misc' %>
-                  <i class="fas fa-pencil-alt mb-1"></i>
+                  <span class="icon-misc">
+                    <i class="fas fa-pencil-alt mb-1"></i><br>
+                    生活紀錄
+                  </span>
                 <% end %>
-                <%= link_to d.title, teacher_redirect_to(d), class: 'mb-1 mt-1 text-dark link-button' %>
+                <th class="pl-0 pr-0 pb-0">
+                  <%= link_to d.title, teacher_redirect_to(d), class: 'mb-1 mt-1 text-dark link-button' %>
+                </th>
               </th>
             </tr>
             <tr>
               <% if d.content.present? %>
-                <td><%= d.content %></td>
+                <td class="pl-0 pr-0"><%= d.content %></td>
               <% else %>
-                <td>無內容</td>
+                <td class="pl-0 pr-0">尚無紀錄詳細內容</td>
               <% end %>
             </tr>
           </tbody>
