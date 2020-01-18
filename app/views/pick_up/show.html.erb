@@ -16,8 +16,14 @@
         <td><%= @pick_up.relationship %></td>
       </tr>
       <tr>
-        <th scope="row">備註</th>
-        <td><%= @pick_up.note %></td>
+        <td colspan="2">
+          <span class="font-weight-bold">備註</span><br><br>
+          <% if @pick_up.note.present? %>
+            <%= @pick_up.note.content %>
+          <% else %>
+            無特殊備註事項
+          <% end %>
+        </td>
       </tr>
       <tr>
         <td colspan="2">
