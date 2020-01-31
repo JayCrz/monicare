@@ -32,7 +32,7 @@
         <div class="form-group col-sm-12 col-md-6">
           <%= form.label :babyclass_id, '班級' %>
           <% if current_teacher.babyclasses.empty? %>
-            <%= form.text_field :nursery_teacher, :value => '請先新增班級', class: 'form-control form-control-color', disabled: true %>
+            <%= link_to '請先新增班級', new_teacher_dashboard_myclass_path, class: 'form-control form-control-color', disabled: true %>
           <% else %>
             <%= form.collection_select :babyclass_id, current_teacher.babyclasses, :id, :nursery_class %>
           <% end %>
