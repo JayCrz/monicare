@@ -31,10 +31,13 @@
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <% if @babyclass.empty? %>
             <div class="dropdown-item">您不是班級導師</div>
+            <%= link_to '新增班級', new_teacher_dashboard_myclass_path, class: 'dropdown-item add_class_color' %>
           <% else %>
             <% @babyclass.each do |babyclass| %>
               <%= link_to babyclass.nursery_class, teacher_dashboard_myclass_path(babyclass), class: 'dropdown-item' %>
             <% end %>
+            <%= link_to '新增班級', new_teacher_dashboard_myclass_path, class: 'dropdown-item add_class_color' %>
+
           <% end %>
         </div>
       </li>
