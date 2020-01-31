@@ -8,6 +8,7 @@ zh-TW:
       child:
         name: 姓名
         child_pic: 照片
+        babyclass: 班級
       dashboard:
         title: 標題
         content: 內容
@@ -146,7 +147,7 @@ zh-TW:
       odd: 必須是奇數
       other_than: 不可以是 %{count} 個字
       present: 必須是空白
-      required: 必須存在
+      required: 為必填
       taken: 已經被使用
       too_long:
         one: 過長（最長是一個字）

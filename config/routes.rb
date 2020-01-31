@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   
   namespace :teacher do
     resource :dashboard, only:[:show] do
-      resources :myclass, only:[:show]
+      resources :myclass
       resources :children do 
         get :overview
         resources :eat, except:[:index]
